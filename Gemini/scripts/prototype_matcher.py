@@ -1,6 +1,6 @@
 """
 Prototype Matcher for Gemini.
-Implements the 'DiscoveryScore' algorithm from Master Foundation v3.2 (Section 9).
+Prototype implementation of the LV3 similarity scoring approach (separate orthography vs sound components + combined ranking).
 Refactored for modularity and future expansion.
 """
 
@@ -22,7 +22,7 @@ LEGACY_CONCEPTS_FILES = [
     BASE_DIR / "data/processed/concepts/concepts_v3_2_enriched.jsonl",
 ]
 
-# Default Weights (Master Foundation v3.2)
+# Default weights (LV3 v1; tune later)
 DEFAULT_WEIGHTS = {
     "skeleton": 3.0,
     "artic": 3.0,

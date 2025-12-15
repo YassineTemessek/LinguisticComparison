@@ -7,11 +7,17 @@ This repo separates **code**, **tracked references**, and **local datasets**:
 - `resources/`: tracked, lightweight reference assets (concept registry, anchors, small reference tables).
 - `data/`: local datasets and generated tables (**not committed by default**; see `data/README.md`).
 
-## What “ingest” means here
+## What "ingest" means here
 
 Ingest converts raw linguistic sources under `data/raw/` into consistent JSONL/CSV tables under `data/processed/` that downstream matchers can consume.
 
 Canonical outputs are documented in `data/processed/README.md`.
+
+## What "matching" means here (LV3)
+
+Matching computes **separate component scores** (orthography vs sound) and a combined score to rank cross-language candidates per concept.
+
+See `docs/SIMILARITY_SCORING_SPEC.md`.
 
 ## Run the pipeline (recommended)
 
