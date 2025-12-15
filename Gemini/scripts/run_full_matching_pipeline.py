@@ -92,7 +92,7 @@ def run_pipeline(limit_per_part: int = 0):
         # Append to master file
         with open(OUTPUT_FILE, 'a', encoding='utf-8') as f:
             for lead in leads_buffer:
-                f.write(json.dumps(lead) + "\n")
+                f.write(json.dumps(lead, ensure_ascii=False) + "\n")
         
         total_leads += len(leads_buffer)
         part_duration = time.time() - part_start

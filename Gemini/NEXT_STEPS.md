@@ -6,7 +6,7 @@
 ## Folder Policy
 - **Scripts:** All my execution logic resides in `Gemini/scripts/`.
 - **Outputs:** All my results (Leads, Heatmaps) go to `Gemini/output/`.
-- **Inputs:** I will read from `OpenAI/output/` (if available) or generate my own mock data for testing.
+- **Inputs:** I will read canonical processed data under `data/processed/` (built by `OpenAI/scripts/run_ingest_all.py`).
 
 ## Phase 1: Infrastructure Setup (Completed)
 - [x] Initialize `src/score` module (The Matcher).

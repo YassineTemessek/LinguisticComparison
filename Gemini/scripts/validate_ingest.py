@@ -1,113 +1,95 @@
 """
-Validation Script for Master Foundation V3.2 Lexeme Schema.
-Usage: python validate_ingest.py <path_to_jsonl_file>
+Validate processed JSONL files against the project's shared minimal schema.
 
-Checks for:
-1. Presence of all required fields from Section 6.2.
-2. Validity of 'lemma_status' (gold, silver, auto_brut).
-3. Structure of nested objects (ort, lemma_anchor).
+Required fields:
+  id, lemma, language, stage, script, source, lemma_status
+
+Optional normalization checks (if present):
+  - pos is a list
+  - ipa is not wrapped in /.../ or [...]
+
+Usage:
+  python validate_ingest.py data/processed/english/english_ipa_merged_pos.jsonl
 """
 
-import sys
-import json
+from __future__ import annotations
+
 import argparse
+import json
 from pathlib import Path
-from typing import Dict, List, Any
 
-# --- Schema Definition (Master Foundation v3.2) ---
 
-REQUIRED_FIELDS = [
-    "id", "language", "stage", "script", "date_window",
-    "orthography", "ipa", "skeleton", "vowel_matrix", "syllable_template",
-    "ort", "gloss", "concept_id", "sense_id", "register",
-    "mapping_type", "lemma_anchor", "provenance", "notes"
-]
+REQUIRED = ("id", "lemma", "language", "stage", "script", "source", "lemma_status")
 
-REQUIRED_NESTED = {
-    "ort": ["trace", "flags"],
-    "lemma_anchor": ["is_anchor", "lemma_form", "lemma_pos", "lemma_status", "lemma_source"],
-    "provenance": ["source", "ref"] # minimally source or ref
-}
 
-VALID_LEMMA_STATUS = ["gold", "silver", "auto_brut"]
+def is_wrapped_ipa(value: str) -> bool:
+    value = (value or "").strip()
+    return len(value) >= 2 and ((value[0] == "/" and value[-1] == "/") or (value[0] == "[" and value[-1] == "]"))
 
-# --- Validation Logic ---
 
-def validate_row(row: Dict[str, Any], line_num: int) -> List[str]:
-    errors = []
-    
-    # 1. Check Top-Level Fields
-    for field in REQUIRED_FIELDS:
-        if field not in row:
-            errors.append(f"Missing required field: '{field}'")
-    
-    # 2. Check Nested Fields
-    if "ort" in row and isinstance(row["ort"], dict):
-        for subfield in REQUIRED_NESTED["ort"]:
-            if subfield not in row["ort"]:
-                errors.append(f"Missing nested field: 'ort.{subfield}'")
-    
-    if "lemma_anchor" in row and isinstance(row["lemma_anchor"], dict):
-        for subfield in REQUIRED_NESTED["lemma_anchor"]:
-            if subfield not in row["lemma_anchor"]:
-                errors.append(f"Missing nested field: 'lemma_anchor.{subfield}'")
-        
-        # 3. Check Enum Values
-        status = row["lemma_anchor"].get("lemma_status")
-        if status and status not in VALID_LEMMA_STATUS:
-            errors.append(f"Invalid lemma_status: '{status}' (Must be {VALID_LEMMA_STATUS})")
+def validate(path: Path, *, sample_errors: int = 10) -> int:
+    total = 0
+    invalid = 0
+    missing_required = {k: 0 for k in REQUIRED}
+    pos_type_errors = 0
+    wrapped_ipa = 0
 
-    return errors
+    with path.open("r", encoding="utf-8") as fh:
+        for line_num, line in enumerate(fh, start=1):
+            line = line.strip()
+            if not line:
+                continue
+            total += 1
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                invalid += 1
+                if invalid <= sample_errors:
+                    print(f"[line {line_num}] invalid JSON")
+                continue
 
-def process_file(file_path: Path):
-    print(f"Validating: {file_path}")
-    if not file_path.exists():
-        print(f"Error: File not found: {file_path}")
-        return
+            row_errors: list[str] = []
+            for k in REQUIRED:
+                if not rec.get(k):
+                    missing_required[k] += 1
+                    row_errors.append(f"missing:{k}")
 
-    total_rows = 0
-    valid_rows = 0
-    invalid_rows = 0
-    
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            for line_num, line in enumerate(f, 1):
-                line = line.strip()
-                if not line: continue
-                
-                total_rows += 1
-                try:
-                    data = json.loads(line)
-                    errors = validate_row(data, line_num)
-                    
-                    if errors:
-                        invalid_rows += 1
-                        # Print first 5 errors only to avoid spam
-                        if invalid_rows <= 5:
-                            print(f"[Row {line_num}] Errors: {', '.join(errors)}")
-                    else:
-                        valid_rows += 1
-                        
-                except json.JSONDecodeError:
-                    print(f"[Row {line_num}] Invalid JSON format.")
-                    invalid_rows += 1
+            if "pos" in rec and not isinstance(rec.get("pos"), list):
+                pos_type_errors += 1
+                row_errors.append("pos_not_list")
 
-        print("-" * 40)
-        print(f"Validation Complete.")
-        print(f"Total Rows: {total_rows}")
-        print(f"Valid Rows: {valid_rows}")
-        print(f"Invalid Rows: {invalid_rows}")
-        print("-" * 40)
+            if isinstance(rec.get("ipa"), str) and is_wrapped_ipa(rec["ipa"]):
+                wrapped_ipa += 1
+                row_errors.append("ipa_wrapped")
 
-    except Exception as e:
-        print(f"Fatal Error: {e}")
+            if row_errors:
+                invalid += 1
+                if invalid <= sample_errors:
+                    print(f"[line {line_num}] " + ", ".join(row_errors))
 
-def main():
-    parser = argparse.ArgumentParser(description="Validate Lexeme JSONL against V3.2 Schema")
-    parser.add_argument("file_path", help="Path to the JSONL file to validate")
-    args = parser.parse_args()
-    
-    process_file(Path(args.file_path))
+    print(f"File: {path}")
+    print(f"Total rows: {total}")
+    print(f"Invalid rows: {invalid}")
+    for k in REQUIRED:
+        if total:
+            pct = (missing_required[k] / total) * 100.0
+            print(f"Missing `{k}`: {missing_required[k]} ({pct:.2f}%)")
+        else:
+            print(f"Missing `{k}`: {missing_required[k]}")
+    if total:
+        print(f"pos type errors: {pos_type_errors} ({(pos_type_errors/total)*100.0:.2f}%)")
+        print(f"wrapped ipa: {wrapped_ipa} ({(wrapped_ipa/total)*100.0:.2f}%)")
+    return 0 if invalid == 0 else 2
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("path", type=Path)
+    ap.add_argument("--sample-errors", type=int, default=10)
+    args = ap.parse_args()
+    raise SystemExit(validate(args.path, sample_errors=args.sample_errors))
+
 
 if __name__ == "__main__":
     main()
+
