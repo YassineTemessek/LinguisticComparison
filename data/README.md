@@ -25,5 +25,5 @@ This project uses large linguistic datasets under `data/`. They are intentionall
 ## How to use
 
 - Put downloaded sources under `data/raw/`.
-- Run the ingest scripts (see `Codex CLI/scripts/run_ingest_all.py`) to generate/refresh `data/processed/`.
-- Downstream preview/matching scripts consume `data/processed/` (and write results under `Codex CLI/output/` or `Gemini CLI/output/`).
+- Run the ingest scripts (see `OpenAI/scripts/run_ingest_all.py`) to generate/refresh `data/processed/`.
+- Downstream preview/matching scripts consume `data/processed/` (and write results under `OpenAI/output/` or `Gemini/output/`).

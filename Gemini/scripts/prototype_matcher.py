@@ -1,5 +1,5 @@
 """
-Prototype Matcher for Gemini CLI.
+Prototype Matcher for Gemini.
 Implements the 'DiscoveryScore' algorithm from Master Foundation v3.2 (Section 9).
 Refactored for modularity and future expansion.
 """

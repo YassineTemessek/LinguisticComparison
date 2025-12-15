@@ -27,11 +27,8 @@ Desktop.ini
 /data/processed/*
 !/data/processed/README.md
 
-# Tooling scratch
-.grok/
-
 # Local QA reports
-Codex CLI/output/processed_manifest*.json
+OpenAI/output/processed_manifest*.json
 
 # Local previews
-Codex CLI/output/anchor_previews/
+OpenAI/output/anchor_previews/

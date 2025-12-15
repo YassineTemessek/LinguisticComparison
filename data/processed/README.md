@@ -47,7 +47,7 @@ For chunked processing (optional), prefer putting splits under:
 
 - `data/processed/_parts/<stem>/...`
 
-Use `Codex CLI/scripts/split_processed_jsonl.py` to generate these without cluttering language folders.
+Use `OpenAI/scripts/split_processed_jsonl.py` to generate these without cluttering language folders.
 
 ## Folder layout (summary)
 
@@ -60,4 +60,4 @@ Use `Codex CLI/scripts/split_processed_jsonl.py` to generate these without clutt
 
 - Canonical outputs: stable names (no timestamps), consistent schema, safe to depend on.
 - Intermediate outputs: stage suffixes (`_normalized`, `_enriched`, `_with_pos`) and/or generated folders (`*_parts/`).
-- Previews/checkpoints: should live under `Codex CLI/output/` or `Gemini CLI/output/`, not `data/processed/`.
+- Previews/checkpoints: should live under `OpenAI/output/` or `Gemini/output/`, not `data/processed/`.

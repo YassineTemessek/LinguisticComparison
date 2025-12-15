@@ -52,12 +52,12 @@ Anchor/contrast:
 6) Add normalization utilities (skeleton/ORT/articulatory) shared across ingests; expand test harness to validate schema compliance on the new JSONL outputs.
 
 ## New utility scripts (Codex)
-- `Codex CLI/scripts/convert_stardict.py` — convert extracted Wiktionary StarDict bundles to JSONL (`lemma`, `gloss`, `language`, `source=wiktionary-stardict`, `lemma_status=auto_brut`). Example:  
-  `python "Codex CLI/scripts/convert_stardict.py" --root data/raw/wiktionary_extracted --out data/processed/wiktionary_stardict`
-- `Codex CLI/scripts/ingest_quran_morphology.py` — parse Quranic Arabic Corpus morphology mirror into unique lemma/root list. Example:  
-  `python "Codex CLI/scripts/ingest_quran_morphology.py" --input data/raw/arabic/quran-morphology/quran-morphology.txt --output data/processed/arabic/quran_lemmas.jsonl`
-- `Codex CLI/scripts/ingest_english_ipa.py` and `ingest_cmudict_ipa.py` — build Modern English IPA lexicons (ipa-dict and CMUdict).
-- `Codex CLI/scripts/run_ingest_all.py` — orchestrator for Codex-side scripts (not src stubs).
+- `OpenAI/scripts/convert_stardict.py` — convert extracted Wiktionary StarDict bundles to JSONL (`lemma`, `gloss_html`, `gloss_plain`, `language`, etc.). Example:  
+  `python "OpenAI/scripts/convert_stardict.py" --root data/raw/wiktionary_extracted --out data/processed/wiktionary_stardict/raw`
+- `OpenAI/scripts/ingest_quran_morphology.py` — parse Quranic Arabic Corpus morphology mirror into unique lemma/root list. Example:  
+  `python "OpenAI/scripts/ingest_quran_morphology.py" --input data/raw/arabic/quran-morphology/quran-morphology.txt --output data/processed/_intermediate/arabic/quran_lemmas.jsonl`
+- `OpenAI/scripts/ingest_english_ipa.py` and `ingest_cmudict_ipa.py` — build Modern English IPA lexicons (ipa-dict and CMUdict).
+- `OpenAI/scripts/run_ingest_all.py` — orchestrator for OpenAI-side scripts (not src stubs).
 
 ## Current raw data on disk (open)
 - Wiktionary stardict extractions: Arabic, Aramaic, Assyrian Neo-Aramaic, Classical Syriac, Ancient/Modern Greek, Latin, Middle/Old English, Akkadian, Ugaritic, Hebrew, Egyptian/Gulf/Hijazi/South Levantine Arabic, Ge’ez (`data/raw/wiktionary_extracted/...`).
@@ -90,6 +90,6 @@ Anchor/contrast:
 3) Aramaic/Syriac: mine `syriac-corpus` and `peshitta` for lemmas/frequencies; optionally add Payne-Smith/Dukhrana when available.
 4) Anchor languages: Whitaker’s + Latin WordNet; Perseus/LSJ for Greek; IPA mapping in progress.
 5) English: merge CMUdict + ipa-dict (done); POS alignment from WordNet; heuristics for colloquials.
-6) Build and run RCG previews (`Codex CLI/scripts/match_preview.py`) to generate leads and avoid ingest-only loops.
+6) Build and run RCG previews (`OpenAI/scripts/match_preview.py`) to generate leads and avoid ingest-only loops.
 
 *Updated by Codex agent (2025-12-03).*

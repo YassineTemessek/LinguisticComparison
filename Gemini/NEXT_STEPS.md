@@ -1,16 +1,16 @@
-# Gemini CLI Plan: Rapid Candidate Generation (RCG)
+# Gemini Plan: Rapid Candidate Generation (RCG)
 
 **Role:** Lead Architect & Matching Engine Lead
 **Objective:** Implement the "Rapid Candidate Generation" pipeline to find connections between Semitic and Indo-European lexemes.
 
 ## Folder Policy
-- **Scripts:** All my execution logic resides in `Gemini CLI/scripts/`.
-- **Outputs:** All my results (Leads, Heatmaps) go to `Gemini CLI/output/`.
-- **Inputs:** I will read from `Codex CLI/output/` (if available) or generate my own mock data for testing.
+- **Scripts:** All my execution logic resides in `Gemini/scripts/`.
+- **Outputs:** All my results (Leads, Heatmaps) go to `Gemini/output/`.
+- **Inputs:** I will read from `OpenAI/output/` (if available) or generate my own mock data for testing.
 
 ## Phase 1: Infrastructure Setup (Completed)
 - [x] Initialize `src/score` module (The Matcher).
-- [x] Create `Gemini CLI/scripts/prototype_matcher.py` to test matching logic.
+- [x] Create `Gemini/scripts/prototype_matcher.py` to test matching logic.
 - [x] Define `DiscoveryScore` algorithm explicitly.
 
 ## Phase 2: The Matcher Logic (RCG) (Completed)
@@ -26,6 +26,6 @@
 - [ ] **Heatmap Visualization:** Generate `comparison_heatmap.png` from the final `leads.jsonl`.
 
 ## Immediate Next Steps
-1. Execute `python "Gemini CLI/scripts/run_full_matching_pipeline.py"` (No limit) when ready.
+1. Execute `python "Gemini/scripts/run_full_matching_pipeline.py"` (No limit) when ready.
 2. Analyze the full output (likely >100k leads).
 3. Generate visualization.

@@ -3,7 +3,7 @@ Build a small QA manifest for `data/processed/` JSONL/CSV outputs.
 
 This is meant to be run locally (datasets are not committed to Git by default).
 
-Output (default): Codex CLI/output/processed_manifest.json
+Output (default): OpenAI/output/processed_manifest.json
 """
 
 from __future__ import annotations
@@ -89,7 +89,7 @@ def summarize_csv(path: Path) -> dict[str, Any]:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", type=Path, default=Path("data/processed"))
-    ap.add_argument("--out", type=Path, default=Path("Codex CLI/output/processed_manifest.json"))
+    ap.add_argument("--out", type=Path, default=Path("OpenAI/output/processed_manifest.json"))
     ap.add_argument("--sample", type=int, default=2000, help="How many rows to sample for key presence stats.")
     ap.add_argument("--include-intermediate", action="store_true", help="Include `data/processed/_intermediate` in the manifest.")
     args = ap.parse_args()

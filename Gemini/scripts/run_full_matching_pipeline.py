@@ -19,7 +19,7 @@ LEGACY_SEMITIC_FILES = [
 ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/_parts/english_ipa_merged_pos"
 LEGACY_ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/_parts/english_ipa_merged"
 CONCEPTS_FILE = BASE_DIR / "data/processed/concepts/concepts_v3_2_enriched.jsonl"
-OUTPUT_FILE = BASE_DIR / "Gemini CLI/output/leads_full.jsonl"
+OUTPUT_FILE = BASE_DIR / "Gemini/output/leads_full.jsonl"
 
 # Weights (tuned from prototype)
 WEIGHTS = {
