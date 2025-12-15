@@ -14,6 +14,12 @@ Repository for a reproducible **linguistic ingest + similarity scoring** pipelin
 ## Quickstart
 
 1) Put datasets under `data/raw/` (see `data/README.md`).
+2) Create a Python environment and install dependencies:
+
+- `python -m venv .venv`
+- Windows PowerShell: `.\.venv\Scripts\Activate.ps1`
+- Install: `python -m pip install -r requirements.txt` (or `requirements.lock.txt` for pinned versions)
+
 2) Build processed tables: `python "OpenAI/scripts/run_ingest_all.py"`
 3) Run matching: `python "Gemini/scripts/run_full_matching_pipeline.py"`
 

@@ -27,6 +27,14 @@ See `docs/SIMILARITY_SCORING_SPEC.md`.
 
 - `python "OpenAI/scripts/run_ingest_all.py"`
 
+Common options:
+
+- List steps: `python "OpenAI/scripts/run_ingest_all.py" --list`
+- Run only Arabic: `python "OpenAI/scripts/run_ingest_all.py" --only arabic`
+- Run only English: `python "OpenAI/scripts/run_ingest_all.py" --only english`
+- Use an external datasets folder: `python "OpenAI/scripts/run_ingest_all.py" --resources-dir "C:/AI Projects/Resources"`
+- Produce a run manifest: enabled by default (disable with `--no-write-manifest`)
+
 3) (Optional) Split large English JSONL for chunked matching:
 
 - `python "OpenAI/scripts/split_processed_jsonl.py" data/processed/english/english_ipa_merged_pos.jsonl --lines 50000`
@@ -34,6 +42,11 @@ See `docs/SIMILARITY_SCORING_SPEC.md`.
 4) Run Gemini matching:
 
 - `python "Gemini/scripts/run_full_matching_pipeline.py"`
+
+## Validate outputs
+
+- Validate canonical processed outputs (skips missing files): `python "OpenAI/scripts/validate_processed.py" --all`
+- Fail on missing files too: `python "OpenAI/scripts/validate_processed.py" --all --require-files`
 
 ## Notes
 

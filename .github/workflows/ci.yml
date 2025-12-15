@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Compile
+        run: |
+          python -m compileall OpenAI/scripts Gemini/scripts src
+      - name: Validate (skip missing data)
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          python OpenAI/scripts/validate_processed.py --all
+      - name: Ingest smoke (skips missing inputs)
+        env:
+          PYTHONUTF8: "1"
+        run: |
+          python OpenAI/scripts/run_ingest_all.py --skip-missing-inputs --no-count-lines --no-write-manifest
+
