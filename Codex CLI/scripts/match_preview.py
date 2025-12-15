@@ -45,8 +45,8 @@ LANGS = ["eng", "lat", "grc", "ara"]
 
 PATHS = {
     "eng": Path("data/processed/english/english_ipa_merged_pos.jsonl"),
-    "lat": Path("data/processed/wiktionary_stardict/Latin-English_Wiktionary_dictionary_stardict_filtered.jsonl"),
-    "grc": Path("data/processed/wiktionary_stardict/Ancient_Greek-English_Wiktionary_dictionary_stardict_filtered.jsonl"),
+    "lat": Path("data/processed/wiktionary_stardict/filtered/Latin-English_Wiktionary_dictionary_stardict_filtered.jsonl"),
+    "grc": Path("data/processed/wiktionary_stardict/filtered/Ancient_Greek-English_Wiktionary_dictionary_stardict_filtered.jsonl"),
     "ara": Path("data/processed/arabic/quran_lemmas_enriched.jsonl"),
 }
 

@@ -1,7 +1,7 @@
 """
 Add simple heuristic POS to English IPA merged file when WordNet POS is missing.
 
-Input: data/processed/english/english_ipa_merged.jsonl
+Input: data/processed/_intermediate/english/english_ipa_merged.jsonl
 Output: data/processed/english/english_ipa_merged_pos.jsonl
 """
 
@@ -54,7 +54,7 @@ def enrich(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_ipa_merged.jsonl"))
+    ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_ipa_merged.jsonl"))
     ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_ipa_merged_pos.jsonl"))
     args = ap.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)

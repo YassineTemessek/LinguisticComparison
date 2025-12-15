@@ -11,7 +11,7 @@ These are the “stable targets” we optimize for and keep consistent across ve
 - `data/processed/arabic/quran_lemmas_enriched.jsonl` (Quran lemmas + translit + IPA)
 - `data/processed/arabic/hf_roots.jsonl` (Arabic roots dataset with translit + IPA)
 - `data/processed/english/english_ipa_merged_pos.jsonl` (merged English IPA lexicon with POS)
-- `data/processed/wiktionary_stardict/*_filtered.jsonl` (filtered Wiktionary stardict exports for languages where we run filtering)
+- `data/processed/wiktionary_stardict/filtered/*_filtered.jsonl` (filtered Wiktionary stardict exports for languages where we run filtering)
 - `data/processed/concepts/concepts_v3_2_enriched.jsonl` (concept registry used for semantic gating/mapping)
 - `data/processed/anchors/*.csv` (anchor tables/scaffolds)
 - `data/processed/arabic/word_root_map_filtered.jsonl` (word→root mapping with high-noise rows removed; adds `type`)
@@ -32,21 +32,29 @@ For JSONL lexeme files, we aim for a shared minimal schema:
 
 These are useful for auditability, but should be treated as rebuildable intermediates:
 
-- Stage-by-stage files such as `*_with_pos.jsonl`, `*_enriched.jsonl`, `*_normalized.jsonl`
-- Chunked splits in `*_parts/` (generate on demand; do not treat as canonical storage)
+- Stage-by-stage files under `data/processed/_intermediate/`
+- Wiktionary StarDict stages under `data/processed/wiktionary_stardict/{raw,enriched,normalized}/`
+- Chunked splits under `data/processed/_parts/` (generate on demand; do not treat as canonical storage)
 
 For English, the intended build order is:
 
-- `english_ipa.jsonl` + `english_cmudict_ipa.jsonl` (base sources)
+- `data/processed/_intermediate/english/english_ipa.jsonl` + `data/processed/_intermediate/english/english_cmudict_ipa.jsonl` (base sources)
 - `*_with_pos.jsonl` via `enrich_english_pos.py`
-- `english_ipa_merged.jsonl` via `merge_english_ipa_sources.py`
-- `english_ipa_merged_pos.jsonl` via `english_pos_fallback.py` (fills missing POS heuristically)
+- `data/processed/_intermediate/english/english_ipa_merged.jsonl` via `merge_english_ipa_sources.py`
+- `data/processed/english/english_ipa_merged_pos.jsonl` via `english_pos_fallback.py` (fills missing POS heuristically)
 
 For chunked processing (optional), prefer putting splits under:
 
 - `data/processed/_parts/<stem>/...`
 
 Use `Codex CLI/scripts/split_processed_jsonl.py` to generate these without cluttering language folders.
+
+## Folder layout (summary)
+
+- Canonical: language folders (`arabic/`, `english/`, `concepts/`, `anchors/`) + `wiktionary_stardict/filtered/`
+- Intermediate: `data/processed/_intermediate/`
+- Chunked parts: `data/processed/_parts/`
+- Wiktionary staging: `data/processed/wiktionary_stardict/{raw,enriched,normalized,filtered}/`
 
 ## Naming + lifecycle conventions
 

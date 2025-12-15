@@ -3,7 +3,7 @@ Generate basic transliteration and IPA for Quran lemmas (Arabic script).
 This is a lightweight, rule-based mapper for quick comparison runs; it is not
 phonologically complete. Extend mapping for higher fidelity.
 
-Input: data/processed/arabic/quran_lemmas.jsonl
+Input: data/processed/_intermediate/arabic/quran_lemmas.jsonl
 Output: data/processed/arabic/quran_lemmas_enriched.jsonl
 """
 
@@ -116,7 +116,7 @@ def enrich(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/processed/arabic/quran_lemmas.jsonl"))
+    ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/arabic/quran_lemmas.jsonl"))
     ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/arabic/quran_lemmas_enriched.jsonl"))
     args = ap.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)

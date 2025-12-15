@@ -11,9 +11,13 @@ from prototype_matcher import DiscoveryScorer, ConceptMapper, load_jsonl, is_ara
 
 # Configuration
 BASE_DIR = Path(__file__).resolve().parents[2]
-SEMITIC_FILE = BASE_DIR / "data/processed/wiktionary_stardict/Arabic-English_Wiktionary_dictionary_stardict.jsonl"
+SEMITIC_FILE = BASE_DIR / "data/processed/wiktionary_stardict/filtered/Arabic-English_Wiktionary_dictionary_stardict_filtered.jsonl"
+LEGACY_SEMITIC_FILES = [
+    BASE_DIR / "data/processed/wiktionary_stardict/normalized/Arabic-English_Wiktionary_dictionary_stardict_normalized.jsonl",
+    BASE_DIR / "data/processed/wiktionary_stardict/raw/Arabic-English_Wiktionary_dictionary_stardict.jsonl",
+]
 ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/_parts/english_ipa_merged_pos"
-LEGACY_ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/english/english_ipa_merged_parts"
+LEGACY_ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/_parts/english_ipa_merged"
 CONCEPTS_FILE = BASE_DIR / "data/processed/concepts/concepts_v3_2_enriched.jsonl"
 OUTPUT_FILE = BASE_DIR / "Gemini CLI/output/leads_full.jsonl"
 
@@ -33,8 +37,14 @@ def run_pipeline(limit_per_part: int = 0):
     print(f"Loading Concept Map from {CONCEPTS_FILE}...")
     mapper = ConceptMapper(CONCEPTS_FILE)
     
-    print(f"Loading Semitic Data from {SEMITIC_FILE}...")
-    semitic_data = load_jsonl(SEMITIC_FILE, limit=0, filter_arabic=True)
+    semitic_path = SEMITIC_FILE
+    if not semitic_path.exists():
+        for candidate in LEGACY_SEMITIC_FILES:
+            if candidate.exists():
+                semitic_path = candidate
+                break
+    print(f"Loading Semitic Data from {semitic_path}...")
+    semitic_data = load_jsonl(semitic_path, limit=0, filter_arabic=True)
     print(f"Loaded {len(semitic_data)} Semitic lexemes.")
     
     # 2. Setup Scorer

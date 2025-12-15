@@ -2,7 +2,7 @@
 Ingest word_root_map.csv into a JSONL with simple transliteration/IPA.
 
 Input: C:/AI Projects/Resources/word_root_map.csv
-Output: data/processed/arabic/word_root_map.jsonl
+Output: data/processed/_intermediate/arabic/word_root_map.jsonl
 """
 
 from __future__ import annotations
@@ -49,7 +49,7 @@ def ingest(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path(r"C:/AI Projects/Resources/word_root_map.csv"))
-    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/arabic/word_root_map.jsonl"))
+    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/arabic/word_root_map.jsonl"))
     args = ap.parse_args()
     total = ingest(args.input, args.output)
     print(f"Wrote {total} records to {args.output}")

@@ -5,7 +5,7 @@ from __future__ import annotations
 Parse the Quranic Arabic Corpus morphology file into a lemma list (JSONL).
 
 Default input: data/raw/arabic/quran-morphology/quran-morphology.txt
-Default output: data/processed/arabic/quran_lemmas.jsonl
+Default output: data/processed/_intermediate/arabic/quran_lemmas.jsonl
 """
 
 import argparse
@@ -72,7 +72,7 @@ def write_jsonl(records: Dict[Tuple[str, str], Dict[str, str]], out_path: pathli
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/raw/arabic/quran-morphology/quran-morphology.txt"))
-    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/arabic/quran_lemmas.jsonl"))
+    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/arabic/quran_lemmas.jsonl"))
     args = ap.parse_args()
 
     records = read_morph(args.input)

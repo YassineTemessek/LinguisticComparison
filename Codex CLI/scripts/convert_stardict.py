@@ -6,8 +6,8 @@ Convert extracted StarDict dictionaries (from the Wiktionary-Dictionaries repo)
 into JSONL for downstream ingest.
 
 Usage:
-  python scripts/convert_stardict.py --root data/raw/wiktionary_extracted --out data/processed/wiktionary_stardict
-  python scripts/convert_stardict.py --package "data/raw/wiktionary_extracted/Arabic-English Wiktionary dictionary stardict/Arabic-English Wiktionary dictionary stardict" --lang ara --out data/processed/wiktionary_stardict
+  python scripts/convert_stardict.py --root data/raw/wiktionary_extracted --out data/processed/wiktionary_stardict/raw
+  python scripts/convert_stardict.py --package "data/raw/wiktionary_extracted/Arabic-English Wiktionary dictionary stardict/Arabic-English Wiktionary dictionary stardict" --lang ara --out data/processed/wiktionary_stardict/raw
 """
 
 import argparse

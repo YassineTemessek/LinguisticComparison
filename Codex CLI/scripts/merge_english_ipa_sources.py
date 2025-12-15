@@ -2,11 +2,11 @@
 Merge English IPA sources into a single lexeme file.
 
 Inputs:
-- data/processed/english/english_ipa_with_pos.jsonl (ipa-dict, per-variant)
-- data/processed/english/english_cmudict_ipa_with_pos.jsonl (cmudict)
+- data/processed/_intermediate/english/english_ipa_with_pos.jsonl (ipa-dict, per-variant)
+- data/processed/_intermediate/english/english_cmudict_ipa_with_pos.jsonl (cmudict)
 
 Outputs:
-- data/processed/english/english_ipa_merged.jsonl
+- data/processed/_intermediate/english/english_ipa_merged.jsonl
 
 Notes:
 - De-duplicates by (lemma_lower, ipa) and unions POS where possible.
@@ -90,9 +90,9 @@ def merge(
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--ipa_dict", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_ipa_with_pos.jsonl"))
-    ap.add_argument("--cmudict", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_cmudict_ipa_with_pos.jsonl"))
-    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_ipa_merged.jsonl"))
+    ap.add_argument("--ipa_dict", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_ipa_with_pos.jsonl"))
+    ap.add_argument("--cmudict", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_cmudict_ipa_with_pos.jsonl"))
+    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_ipa_merged.jsonl"))
     args = ap.parse_args()
 
     total = merge(args.ipa_dict, args.cmudict, args.output)
@@ -101,4 +101,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

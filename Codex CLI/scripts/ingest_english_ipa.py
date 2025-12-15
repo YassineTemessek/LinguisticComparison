@@ -1,7 +1,7 @@
 """
 Build a simple Modern English IPA lexicon from ipa-dict (en_US + en_UK).
 
-Output: JSONL at data/processed/english/english_ipa.jsonl
+Output: JSONL at data/processed/_intermediate/english/english_ipa.jsonl
 Fields: lemma, orthography, ipa, language, stage, script, lemma_status, source, variant.
 """
 
@@ -66,7 +66,7 @@ def merge_sources() -> List[dict]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_ipa.jsonl"))
+    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_ipa.jsonl"))
     args = ap.parse_args()
 
     records = merge_sources()

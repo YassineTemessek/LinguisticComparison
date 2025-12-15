@@ -32,3 +32,6 @@ Desktop.ini
 
 # Local QA reports
 Codex CLI/output/processed_manifest*.json
+
+# Local previews
+Codex CLI/output/anchor_previews/

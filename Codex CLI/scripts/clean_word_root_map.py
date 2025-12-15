@@ -3,7 +3,7 @@ Clean `word_root_map.jsonl` by removing high-noise rows (e.g., empty roots) and
 adding a lightweight `type` classification so downstream matchers can ignore
 function words/clitics by default.
 
-Input:  data/processed/arabic/word_root_map.jsonl
+Input:  data/processed/_intermediate/arabic/word_root_map.jsonl
 Output: data/processed/arabic/word_root_map_filtered.jsonl
 """
 
@@ -71,7 +71,7 @@ def clean(input_path: pathlib.Path, output_path: pathlib.Path, *, keep_empty_roo
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/processed/arabic/word_root_map.jsonl"))
+    ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/arabic/word_root_map.jsonl"))
     ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/arabic/word_root_map_filtered.jsonl"))
     ap.add_argument("--keep-empty-root", action="store_true", help="Keep rows with empty root (still classified).")
     args = ap.parse_args()
@@ -82,4 +82,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

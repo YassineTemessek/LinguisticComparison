@@ -89,10 +89,10 @@ def enrich_file(input_path: pathlib.Path, output_path: pathlib.Path, mapper: Cal
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--latin_in", type=pathlib.Path, default=pathlib.Path("data/processed/wiktionary_stardict/Latin-English_Wiktionary_dictionary_stardict.jsonl"))
-    ap.add_argument("--latin_out", type=pathlib.Path, default=pathlib.Path("data/processed/wiktionary_stardict/Latin-English_Wiktionary_dictionary_stardict_enriched.jsonl"))
-    ap.add_argument("--greek_in", type=pathlib.Path, default=pathlib.Path("data/processed/wiktionary_stardict/Ancient_Greek-English_Wiktionary_dictionary_stardict.jsonl"))
-    ap.add_argument("--greek_out", type=pathlib.Path, default=pathlib.Path("data/processed/wiktionary_stardict/Ancient_Greek-English_Wiktionary_dictionary_stardict_enriched.jsonl"))
+    ap.add_argument("--latin_in", type=pathlib.Path, default=pathlib.Path("data/processed/wiktionary_stardict/raw/Latin-English_Wiktionary_dictionary_stardict.jsonl"))
+    ap.add_argument("--latin_out", type=pathlib.Path, default=pathlib.Path("data/processed/wiktionary_stardict/enriched/Latin-English_Wiktionary_dictionary_stardict_enriched.jsonl"))
+    ap.add_argument("--greek_in", type=pathlib.Path, default=pathlib.Path("data/processed/wiktionary_stardict/raw/Ancient_Greek-English_Wiktionary_dictionary_stardict.jsonl"))
+    ap.add_argument("--greek_out", type=pathlib.Path, default=pathlib.Path("data/processed/wiktionary_stardict/enriched/Ancient_Greek-English_Wiktionary_dictionary_stardict_enriched.jsonl"))
     args = ap.parse_args()
 
     lat_total = enrich_file(args.latin_in, args.latin_out, lambda s: to_ipa(s, LATIN_MAP), "lat")

@@ -1,8 +1,8 @@
 """
 Enrich Quran lemma list with Buckwalter -> IPA conversion when possible.
 
-Input: data/processed/arabic/quran_lemmas.jsonl
-Output: data/processed/arabic/quran_lemmas_with_ipa.jsonl
+Input: data/processed/_intermediate/arabic/quran_lemmas.jsonl
+Output: data/processed/_intermediate/arabic/quran_lemmas_with_ipa.jsonl
 
 Assumes lemmas are in Arabic script; we also accept Buckwalter in features (ROOT/LEM) and try to convert.
 If no mapping is possible, ipa field is left empty.
@@ -51,8 +51,8 @@ def enrich(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/processed/arabic/quran_lemmas.jsonl"))
-    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/arabic/quran_lemmas_with_ipa.jsonl"))
+    ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/arabic/quran_lemmas.jsonl"))
+    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/arabic/quran_lemmas_with_ipa.jsonl"))
     args = ap.parse_args()
 
     args.output.parent.mkdir(parents=True, exist_ok=True)

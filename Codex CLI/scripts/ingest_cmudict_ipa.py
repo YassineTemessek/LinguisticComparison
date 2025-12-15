@@ -2,7 +2,7 @@
 Convert CMUdict ARPAbet to IPA and emit a simple English lexicon.
 
 Input: data/raw/english/cmudict/cmudict.dict
-Output: data/processed/english/english_cmudict_ipa.jsonl
+Output: data/processed/_intermediate/english/english_cmudict_ipa.jsonl
 
 Fields: lemma, orthography, ipa, language=eng, stage=Modern, script=Latin, lemma_status=auto_brut, source=cmudict, pos="" (CMUdict has no POS).
 """
@@ -66,7 +66,7 @@ def parse_cmudict(path: pathlib.Path) -> list[dict]:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path("data/raw/english/cmudict/cmudict.dict"))
-    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_cmudict_ipa.jsonl"))
+    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_cmudict_ipa.jsonl"))
     args = ap.parse_args()
 
     records = parse_cmudict(args.input)

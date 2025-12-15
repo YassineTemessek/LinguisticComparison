@@ -3,12 +3,12 @@ Add coarse POS tags to English IPA lexicons using WordNet index files.
 
 Inputs:
 - data/raw/english/dict/index.noun / index.verb / index.adj / index.adv
-- data/processed/english/english_ipa.jsonl (from ipa-dict)
-- data/processed/english/english_cmudict_ipa.jsonl (from cmudict)
+- data/processed/_intermediate/english/english_ipa.jsonl (from ipa-dict)
+- data/processed/_intermediate/english/english_cmudict_ipa.jsonl (from cmudict)
 
 Outputs:
-- data/processed/english/english_ipa_with_pos.jsonl
-- data/processed/english/english_cmudict_ipa_with_pos.jsonl
+- data/processed/_intermediate/english/english_ipa_with_pos.jsonl
+- data/processed/_intermediate/english/english_cmudict_ipa_with_pos.jsonl
 """
 
 from __future__ import annotations
@@ -69,10 +69,10 @@ def enrich_file(input_path: pathlib.Path, output_path: pathlib.Path, pos_map: Di
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dict_dir", type=pathlib.Path, default=pathlib.Path("data/raw/english/dict"))
-    ap.add_argument("--ipa_in", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_ipa.jsonl"))
-    ap.add_argument("--ipa_out", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_ipa_with_pos.jsonl"))
-    ap.add_argument("--cmu_in", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_cmudict_ipa.jsonl"))
-    ap.add_argument("--cmu_out", type=pathlib.Path, default=pathlib.Path("data/processed/english/english_cmudict_ipa_with_pos.jsonl"))
+    ap.add_argument("--ipa_in", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_ipa.jsonl"))
+    ap.add_argument("--ipa_out", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_ipa_with_pos.jsonl"))
+    ap.add_argument("--cmu_in", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_cmudict_ipa.jsonl"))
+    ap.add_argument("--cmu_out", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/english/english_cmudict_ipa_with_pos.jsonl"))
     args = ap.parse_args()
 
     pos_map = load_wordnet_pos(args.dict_dir)

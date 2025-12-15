@@ -91,6 +91,7 @@ def main() -> None:
     ap.add_argument("--root", type=Path, default=Path("data/processed"))
     ap.add_argument("--out", type=Path, default=Path("Codex CLI/output/processed_manifest.json"))
     ap.add_argument("--sample", type=int, default=2000, help="How many rows to sample for key presence stats.")
+    ap.add_argument("--include-intermediate", action="store_true", help="Include `data/processed/_intermediate` in the manifest.")
     args = ap.parse_args()
 
     root = args.root
@@ -102,7 +103,9 @@ def main() -> None:
     for path in sorted(root.rglob("*")):
         if path.is_dir():
             continue
-        if any(part.endswith("_parts") for part in path.parts):
+        if "_parts" in path.parts:
+            continue
+        if (not args.include_intermediate) and ("_intermediate" in path.parts):
             continue
         if path.suffix.lower() == ".jsonl":
             items.append(summarize_jsonl(path, sample=args.sample))
@@ -117,4 +120,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
