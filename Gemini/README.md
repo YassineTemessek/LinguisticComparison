@@ -17,5 +17,5 @@ All Gemini outputs go under `Gemini/output/`.
 ## Common runs
 
 - Full matching pipeline: `python "Gemini/scripts/run_full_matching_pipeline.py"`
-- Validate a processed JSONL file: `python "Gemini/scripts/validate_ingest.py" <path>`
+- Validate a processed JSONL file: `python "Gemini/scripts/validate_ingest.py" <path>` (or `python "OpenAI/scripts/validate_processed.py" --all`)
 - Prototype matcher (quick smoke test): `python "Gemini/scripts/prototype_matcher.py" --limit 200`
