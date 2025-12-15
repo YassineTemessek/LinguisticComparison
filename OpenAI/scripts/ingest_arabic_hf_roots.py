@@ -1,24 +1,41 @@
 """
-Ingest Arabic roots from HF parquet (Resources/arabic_roots_hf/train-00000-of-00001.parquet)
+Ingest Arabic roots from HF parquet (default: data/raw/arabic/arabic_roots_hf/train-00000-of-00001.parquet)
 into a simple JSONL with translit/IPA.
 
 Output: data/processed/arabic/hf_roots.jsonl
 Fields: lemma (root), definition (raw), translit, ipa, language=ara, source=arabic_roots_hf
+
+If you keep datasets outside the repo, set `LC_RESOURCES_DIR` to point at that folder
+and the default input will become: %LC_RESOURCES_DIR%/arabic_roots_hf/train-00000-of-00001.parquet
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
-
-import pandas as pd
 
 from enrich_quran_translit import translit_and_ipa
 from processed_schema import ensure_min_schema, normalize_ipa
 
 
+def default_input_path() -> Path:
+    resources_dir = os.environ.get("LC_RESOURCES_DIR")
+    if resources_dir:
+        return Path(resources_dir) / "arabic_roots_hf" / "train-00000-of-00001.parquet"
+    repo_root = Path(__file__).resolve().parents[2]
+    return repo_root / "data" / "raw" / "arabic" / "arabic_roots_hf" / "train-00000-of-00001.parquet"
+
+
 def ingest(parquet_path: Path, out_path: Path) -> int:
+    try:
+        import pandas as pd
+    except ImportError as exc:
+        raise SystemExit(
+            "Missing dependency 'pandas'. Install dependencies (and 'pyarrow' for parquet) or run via the project's recommended environment."
+        ) from exc
+
     df = pd.read_parquet(parquet_path, engine="pyarrow")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     count = 0
@@ -46,9 +63,19 @@ def ingest(parquet_path: Path, out_path: Path) -> int:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--input", type=Path, default=Path(r"C:/AI Projects/Resources/arabic_roots_hf/train-00000-of-00001.parquet"))
-    ap.add_argument("--output", type=Path, default=Path("data/processed/arabic/hf_roots.jsonl"))
+    ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    ap.add_argument(
+        "--input",
+        type=Path,
+        default=default_input_path(),
+        help="Input parquet path (or set LC_RESOURCES_DIR to use an external datasets folder).",
+    )
+    ap.add_argument(
+        "--output",
+        type=Path,
+        default=Path("data/processed/arabic/hf_roots.jsonl"),
+        help="Output JSONL path.",
+    )
     args = ap.parse_args()
     total = ingest(args.input, args.output)
     print(f"Wrote {total} records to {args.output}")

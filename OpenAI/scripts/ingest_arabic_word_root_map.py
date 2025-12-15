@@ -1,8 +1,11 @@
 """
 Ingest word_root_map.csv into a JSONL with simple transliteration/IPA.
 
-Input: C:/AI Projects/Resources/word_root_map.csv
+Input (default): data/raw/arabic/word_root_map.csv
 Output: data/processed/_intermediate/arabic/word_root_map.jsonl
+
+If you keep datasets outside the repo, set `LC_RESOURCES_DIR` to point at that folder
+and the default input will become: %LC_RESOURCES_DIR%/word_root_map.csv
 """
 
 from __future__ import annotations
@@ -10,12 +13,21 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import pathlib
 from typing import Tuple, List, Dict
 
 # Reuse a simple transliteration/IPA map (same as enrich_quran_translit.py)
 from enrich_quran_translit import translit_and_ipa
 from processed_schema import ensure_min_schema, normalize_ipa
+
+
+def default_input_path() -> pathlib.Path:
+    resources_dir = os.environ.get("LC_RESOURCES_DIR")
+    if resources_dir:
+        return pathlib.Path(resources_dir) / "word_root_map.csv"
+    repo_root = pathlib.Path(__file__).resolve().parents[2]
+    return repo_root / "data" / "raw" / "arabic" / "word_root_map.csv"
 
 
 def ingest(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
@@ -47,9 +59,19 @@ def ingest(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--input", type=pathlib.Path, default=pathlib.Path(r"C:/AI Projects/Resources/word_root_map.csv"))
-    ap.add_argument("--output", type=pathlib.Path, default=pathlib.Path("data/processed/_intermediate/arabic/word_root_map.jsonl"))
+    ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    ap.add_argument(
+        "--input",
+        type=pathlib.Path,
+        default=default_input_path(),
+        help="Input CSV path (or set LC_RESOURCES_DIR to use an external datasets folder).",
+    )
+    ap.add_argument(
+        "--output",
+        type=pathlib.Path,
+        default=pathlib.Path("data/processed/_intermediate/arabic/word_root_map.jsonl"),
+        help="Output JSONL path.",
+    )
     args = ap.parse_args()
     total = ingest(args.input, args.output)
     print(f"Wrote {total} records to {args.output}")

@@ -37,5 +37,5 @@ See `docs/SIMILARITY_SCORING_SPEC.md`.
 
 ## Notes
 
-- Some Arabic resources in this project were sourced from an external local folder (examples referenced in scripts): `C:/AI Projects/Resources/...`.
+- Some Arabic datasets may live outside the repo on your machine; for the related ingest scripts you can set `LC_RESOURCES_DIR` (e.g., `C:/AI Projects/Resources`) instead of copying files into `data/raw/`.
 - `src/ingest/*_stub.py` are stubs/plans, not the current production ingest path (which is `OpenAI/scripts/*`).
