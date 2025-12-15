@@ -12,7 +12,8 @@ from prototype_matcher import DiscoveryScorer, ConceptMapper, load_jsonl, is_ara
 # Configuration
 BASE_DIR = Path(__file__).resolve().parents[2]
 SEMITIC_FILE = BASE_DIR / "data/processed/wiktionary_stardict/Arabic-English_Wiktionary_dictionary_stardict.jsonl"
-ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/english/english_ipa_merged_parts"
+ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/_parts/english_ipa_merged_pos"
+LEGACY_ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/english/english_ipa_merged_parts"
 CONCEPTS_FILE = BASE_DIR / "data/processed/concepts/concepts_v3_2_enriched.jsonl"
 OUTPUT_FILE = BASE_DIR / "Gemini CLI/output/leads_full.jsonl"
 
@@ -41,6 +42,8 @@ def run_pipeline(limit_per_part: int = 0):
     
     # 3. Iterate English Parts
     english_files = sorted(list(ENGLISH_PARTS_DIR.glob("*.jsonl")))
+    if not english_files and LEGACY_ENGLISH_PARTS_DIR.exists():
+        english_files = sorted(list(LEGACY_ENGLISH_PARTS_DIR.glob("*.jsonl")))
     if not english_files:
         print(f"No English parts found in {ENGLISH_PARTS_DIR}")
         return

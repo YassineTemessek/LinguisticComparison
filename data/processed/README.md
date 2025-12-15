@@ -42,6 +42,12 @@ For English, the intended build order is:
 - `english_ipa_merged.jsonl` via `merge_english_ipa_sources.py`
 - `english_ipa_merged_pos.jsonl` via `english_pos_fallback.py` (fills missing POS heuristically)
 
+For chunked processing (optional), prefer putting splits under:
+
+- `data/processed/_parts/<stem>/...`
+
+Use `Codex CLI/scripts/split_processed_jsonl.py` to generate these without cluttering language folders.
+
 ## Naming + lifecycle conventions
 
 - Canonical outputs: stable names (no timestamps), consistent schema, safe to depend on.
