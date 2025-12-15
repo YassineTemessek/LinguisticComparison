@@ -32,3 +32,10 @@ OpenAI/output/processed_manifest*.json
 
 # Local previews
 OpenAI/output/anchor_previews/
+
+# Gemini local outputs (generated artifacts)
+Gemini/output/*
+!Gemini/output/README.md
+
+# Python caches
+Gemini/scripts/__pycache__/
