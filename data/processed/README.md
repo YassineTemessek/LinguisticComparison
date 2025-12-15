@@ -14,6 +14,7 @@ These are the “stable targets” we optimize for and keep consistent across ve
 - `data/processed/wiktionary_stardict/*_filtered.jsonl` (filtered Wiktionary stardict exports for languages where we run filtering)
 - `data/processed/concepts/concepts_v3_2_enriched.jsonl` (concept registry used for semantic gating/mapping)
 - `data/processed/anchors/*.csv` (anchor tables/scaffolds)
+- `data/processed/arabic/word_root_map_filtered.jsonl` (word→root mapping with high-noise rows removed; adds `type`)
 
 Downstream scripts should prefer these paths and avoid hard-coding intermediate filenames.
 
