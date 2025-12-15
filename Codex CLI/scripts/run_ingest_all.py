@@ -11,8 +11,12 @@ BASE = Path(__file__).resolve().parents[1]
 COMMANDS = [
     ["python", str(BASE / "scripts" / "convert_stardict.py"), "--root", str(BASE / "data" / "raw" / "wiktionary_extracted"), "--out", str(BASE / "data" / "processed" / "wiktionary_stardict")],
     ["python", str(BASE / "scripts" / "ingest_quran_morphology.py"), "--input", str(BASE / "data" / "raw" / "arabic" / "quran-morphology" / "quran-morphology.txt"), "--output", str(BASE / "data" / "processed" / "arabic" / "quran_lemmas.jsonl")],
+    ["python", str(BASE / "scripts" / "enrich_quran_translit.py"), "--input", str(BASE / "data" / "processed" / "arabic" / "quran_lemmas.jsonl"), "--output", str(BASE / "data" / "processed" / "arabic" / "quran_lemmas_enriched.jsonl")],
     ["python", str(BASE / "scripts" / "ingest_english_ipa.py")],
     ["python", str(BASE / "scripts" / "ingest_cmudict_ipa.py")],
+    ["python", str(BASE / "scripts" / "enrich_english_pos.py")],
+    ["python", str(BASE / "scripts" / "merge_english_ipa_sources.py")],
+    ["python", str(BASE / "scripts" / "english_pos_fallback.py")],
     # add more as they become stable
 ]
 

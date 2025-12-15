@@ -35,6 +35,13 @@ These are useful for auditability, but should be treated as rebuildable intermed
 - Stage-by-stage files such as `*_with_pos.jsonl`, `*_enriched.jsonl`, `*_normalized.jsonl`
 - Chunked splits in `*_parts/` (generate on demand; do not treat as canonical storage)
 
+For English, the intended build order is:
+
+- `english_ipa.jsonl` + `english_cmudict_ipa.jsonl` (base sources)
+- `*_with_pos.jsonl` via `enrich_english_pos.py`
+- `english_ipa_merged.jsonl` via `merge_english_ipa_sources.py`
+- `english_ipa_merged_pos.jsonl` via `english_pos_fallback.py` (fills missing POS heuristically)
+
 ## Naming + lifecycle conventions
 
 - Canonical outputs: stable names (no timestamps), consistent schema, safe to depend on.

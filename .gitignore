@@ -29,3 +29,6 @@ Desktop.ini
 
 # Tooling scratch
 .grok/
+
+# Local QA reports
+Codex CLI/output/processed_manifest*.json
