@@ -14,6 +14,8 @@ import json
 import pathlib
 from typing import Dict, Tuple, List
 
+from processed_schema import ensure_min_schema, normalize_ipa
+
 # Consonant mapping (Arabic letter -> (translit, ipa))
 CONS_MAP: Dict[str, Tuple[str, str]] = {
     "ء": ("'", "ʔ"),
@@ -102,9 +104,11 @@ def enrich(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
             lemma = rec.get("lemma", "")
             tr, ipa = translit_and_ipa(lemma)
             rec["translit"] = tr
-            rec["ipa"] = ipa
+            rec["ipa_raw"] = ipa
+            rec["ipa"] = normalize_ipa(ipa)
             rec["source_ipa"] = "rule_based_ar"
             rec["lemma_status"] = rec.get("lemma_status", "silver")
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             total += 1
     return total

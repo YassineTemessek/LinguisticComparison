@@ -11,6 +11,8 @@ import argparse
 import json
 import pathlib
 
+from processed_schema import ensure_min_schema
+
 
 def heuristic_pos(word: str) -> str:
     w = word.lower()
@@ -44,6 +46,7 @@ def enrich(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
                 if guess:
                     pos_list = [guess]
             rec["pos"] = pos_list
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             total += 1
     return total

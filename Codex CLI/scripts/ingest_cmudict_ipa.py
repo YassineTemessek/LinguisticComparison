@@ -13,6 +13,8 @@ import argparse
 import json
 import pathlib
 
+from processed_schema import ensure_min_schema, normalize_ipa
+
 ARPABET_TO_IPA = {
     "AA": "ɑ", "AE": "æ", "AH": "ʌ", "AO": "ɔ", "AW": "aʊ", "AY": "aɪ",
     "B": "b", "CH": "tʃ", "D": "d", "DH": "ð", "EH": "ɛ", "ER": "ɝ", "EY": "eɪ",
@@ -47,14 +49,16 @@ def parse_cmudict(path: pathlib.Path) -> list[dict]:
             rec = {
                 "lemma": word.lower(),
                 "orthography": word,
-                "ipa": ipa,
+                "ipa_raw": ipa,
+                "ipa": normalize_ipa(ipa),
                 "language": "eng",
                 "stage": "Modern",
                 "script": "Latin",
                 "lemma_status": "auto_brut",
                 "source": "cmudict",
-                "pos": "",
+                "pos": [],
             }
+            rec = ensure_min_schema(rec)
             records.append(rec)
     return records
 

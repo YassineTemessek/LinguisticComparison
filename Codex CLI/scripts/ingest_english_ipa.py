@@ -12,6 +12,8 @@ import json
 import pathlib
 from typing import Dict, List
 
+from processed_schema import ensure_min_schema, normalize_ipa
+
 IPA_FILES = [
     ("en_US", pathlib.Path("data/raw/english/ipa-dict/data/en_US.txt")),
     ("en_UK", pathlib.Path("data/raw/english/ipa-dict/data/en_UK.txt")),
@@ -48,7 +50,8 @@ def merge_sources() -> List[dict]:
                 rec = {
                     "lemma": word,
                     "orthography": word,
-                    "ipa": ipa,
+                    "ipa_raw": ipa,
+                    "ipa": normalize_ipa(ipa),
                     "language": "eng",
                     "stage": "Modern",
                     "script": "Latin",
@@ -56,6 +59,7 @@ def merge_sources() -> List[dict]:
                     "source": f"ipa-dict:{variant}",
                     "variant": variant,
                 }
+                rec = ensure_min_schema(rec)
                 records.append(rec)
     return records
 

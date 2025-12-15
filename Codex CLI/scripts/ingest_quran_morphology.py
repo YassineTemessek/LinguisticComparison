@@ -13,6 +13,8 @@ import json
 import pathlib
 from typing import Dict, Tuple
 
+from processed_schema import ensure_min_schema
+
 
 def parse_features(feat_str: str) -> Dict[str, str]:
     parts = feat_str.split("|")
@@ -46,6 +48,7 @@ def read_morph(path: pathlib.Path) -> Dict[Tuple[str, str], Dict[str, str]]:
                     "lemma": lemma,
                     "root": root,
                     "pos_tag": pos_tag,
+                    "pos": [pos_tag] if pos_tag else [],
                     "example_surface": surface,
                     "language": "ara-qur",
                     "stage": "Classical",
@@ -61,6 +64,7 @@ def write_jsonl(records: Dict[Tuple[str, str], Dict[str, str]], out_path: pathli
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as out_f:
         for rec in records.values():
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
     return len(records)
 

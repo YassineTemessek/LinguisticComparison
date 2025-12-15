@@ -15,6 +15,8 @@ import pathlib
 import re
 from typing import Dict
 
+from processed_schema import coerce_pos_list, ensure_min_schema
+
 POS_MAP: Dict[str, str] = {
     "noun": "N",
     "n": "N",
@@ -53,10 +55,13 @@ def normalize_file(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
             lemma = str(rec.get("lemma", "")).strip()
             if not lemma or SYMBOL_RE.match(lemma):
                 continue
-            raw_pos = rec.get("pos", "")
-            rec["pos"] = normalize_pos(raw_pos)
+            pos_list = coerce_pos_list(rec.get("pos"))
+            raw_pos = pos_list[0] if pos_list else ""
+            norm = normalize_pos(raw_pos)
+            rec["pos"] = [norm] if norm else []
             rec["lemma_status"] = rec.get("lemma_status", "auto_brut")
             rec["source"] = rec.get("source", "wiktionary-stardict")
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             total += 1
     return total

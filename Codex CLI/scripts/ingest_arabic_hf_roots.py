@@ -15,6 +15,7 @@ from pathlib import Path
 import pandas as pd
 
 from enrich_quran_translit import translit_and_ipa
+from processed_schema import ensure_min_schema, normalize_ipa
 
 
 def ingest(parquet_path: Path, out_path: Path) -> int:
@@ -30,13 +31,15 @@ def ingest(parquet_path: Path, out_path: Path) -> int:
                 "lemma": lemma,
                 "definition": definition,
                 "translit": tr,
-                "ipa": ipa,
+                "ipa_raw": ipa,
+                "ipa": normalize_ipa(ipa),
                 "language": "ara",
                 "stage": "Classical",
                 "script": "Arabic",
                 "source": "arabic_roots_hf",
                 "lemma_status": "auto_brut",
             }
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             count += 1
     return count

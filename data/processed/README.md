@@ -17,6 +17,16 @@ These are the “stable targets” we optimize for and keep consistent across ve
 
 Downstream scripts should prefer these paths and avoid hard-coding intermediate filenames.
 
+## Common JSONL schema (target contract)
+
+For JSONL lexeme files, we aim for a shared minimal schema:
+
+- Always present: `id`, `lemma`, `language`, `stage`, `script`, `source`, `lemma_status`
+- Optional but normalized when present:
+  - `ipa_raw` + `ipa` (where `ipa` is normalized; no surrounding `/.../` or `[...]`)
+  - `pos` (always a list)
+  - `gloss_html` + `gloss_plain` (when a gloss exists)
+
 ## Intermediate outputs (debugging / pipeline stages)
 
 These are useful for auditability, but should be treated as rebuildable intermediates:
@@ -29,4 +39,3 @@ These are useful for auditability, but should be treated as rebuildable intermed
 - Canonical outputs: stable names (no timestamps), consistent schema, safe to depend on.
 - Intermediate outputs: stage suffixes (`_normalized`, `_enriched`, `_with_pos`) and/or generated folders (`*_parts/`).
 - Previews/checkpoints: should live under `Codex CLI/output/` or `Gemini CLI/output/`, not `data/processed/`.
-

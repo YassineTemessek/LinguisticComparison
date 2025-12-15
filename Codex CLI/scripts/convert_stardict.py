@@ -16,6 +16,8 @@ import json
 import pathlib
 from typing import Iterable, Iterator, List, Tuple
 
+from processed_schema import ensure_min_schema, strip_html
+
 
 def read_ifo(ifo_path: pathlib.Path) -> dict:
     meta: dict = {}
@@ -53,7 +55,54 @@ def load_dict_bytes(dict_path: pathlib.Path) -> bytes:
     return dict_path.read_bytes()
 
 
-def convert_package(pkg_dir: pathlib.Path, lang: str, out_path: pathlib.Path, source: str = "wiktionary-stardict", limit: int | None = None) -> int:
+LANG_META = {
+    # Semitic / Arabic varieties
+    "Arabic-English": ("ara", "Modern", "Arabic"),
+    "Egyptian_Arabic-English": ("arz", "Modern", "Arabic"),
+    "Gulf_Arabic-English": ("afb", "Modern", "Arabic"),
+    "Hijazi_Arabic-English": ("acw", "Modern", "Arabic"),
+    "South_Levantine_Arabic-English": ("apc", "Modern", "Arabic"),
+    "Classical_Syriac-English": ("syc", "Classical", "Syriac"),
+    "Aramaic-English": ("arc", "Classical", "Aramaic"),
+    "Assyrian_Neo-Aramaic-English": ("aii", "Modern", "Syriac"),
+    "Ugaritic-English": ("uga", "Ancient", "Ugaritic"),
+    "Akkadian-English": ("akk", "Ancient", "Cuneiform"),
+    "Ge'ez-English": ("gez", "Classical", "Ethiopic"),
+    "Hebrew-English": ("heb", "Modern", "Hebrew"),
+    # Indo-European / others
+    "Latin-English": ("lat", "Classical", "Latin"),
+    "Ancient_Greek-English": ("grc", "Classical", "Greek"),
+    "Greek-English": ("ell", "Modern", "Greek"),
+    "Old_English-English": ("ang", "Old", "Latin"),
+    "Middle_English-English": ("enm", "Middle", "Latin"),
+}
+
+
+def label_from_safe_slug(safe_slug: str) -> str:
+    suffix = "_Wiktionary_dictionary_stardict"
+    if safe_slug.endswith(suffix):
+        return safe_slug[: -len(suffix)]
+    return safe_slug
+
+
+def infer_lang_stage_script(safe_slug: str, inferred_lang: str) -> tuple[str, str, str]:
+    label = label_from_safe_slug(safe_slug)
+    meta = LANG_META.get(label)
+    if meta:
+        return meta
+    # fallback (keeps older behavior but fills required fields)
+    return inferred_lang, "Attested", "Unknown"
+
+
+def convert_package(
+    pkg_dir: pathlib.Path,
+    lang: str,
+    stage: str,
+    script: str,
+    out_path: pathlib.Path,
+    source: str = "wiktionary-stardict",
+    limit: int | None = None,
+) -> int:
     ifo = next(pkg_dir.glob("*.ifo"), None)
     if not ifo:
         raise FileNotFoundError(f"No .ifo file in {pkg_dir}")
@@ -74,13 +123,19 @@ def convert_package(pkg_dir: pathlib.Path, lang: str, out_path: pathlib.Path, so
         for word, offset, size in iter_idx(idx, offset_bits):
             gloss_bytes = dict_bytes[offset : offset + size]
             gloss = gloss_bytes.decode("utf-8", errors="ignore")
+            gloss_plain = strip_html(gloss)
             entry = {
                 "lemma": word,
-                "gloss": gloss,
+                "gloss_html": gloss,
+                "gloss_plain": gloss_plain,
                 "language": lang,
+                "stage": stage,
+                "script": script,
                 "source": source,
                 "lemma_status": "auto_brut",
+                "pos": [],
             }
+            entry = ensure_min_schema(entry)
             out_f.write(json.dumps(entry, ensure_ascii=False) + "\n")
             count += 1
             if limit and count >= limit:
@@ -114,10 +169,11 @@ def main() -> None:
         folder_name = pkg.name
         inferred_lang = args.lang or folder_name.split(" ")[0].lower()
         safe_slug = folder_name.replace(" ", "_")
+        lang_code, stage, script = infer_lang_stage_script(safe_slug, inferred_lang)
         out_file = args.out / f"{safe_slug}.jsonl"
         try:
-            total = convert_package(pkg, inferred_lang, out_file, limit=args.limit)
-            print(f"[ok] {pkg} -> {out_file} ({total} entries, lang={inferred_lang})")
+            total = convert_package(pkg, lang_code, stage, script, out_file, limit=args.limit)
+            print(f"[ok] {pkg} -> {out_file} ({total} entries, lang={lang_code}, stage={stage}, script={script})")
         except Exception as exc:  # noqa: BLE001
             print(f"[fail] {pkg}: {exc}")
 

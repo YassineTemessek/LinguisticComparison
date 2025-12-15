@@ -18,6 +18,8 @@ import json
 import pathlib
 from typing import Dict, Set
 
+from processed_schema import ensure_min_schema
+
 
 def load_wordnet_pos(dict_dir: pathlib.Path) -> Dict[str, Set[str]]:
     pos_map: Dict[str, Set[str]] = {}
@@ -58,6 +60,7 @@ def enrich_file(input_path: pathlib.Path, output_path: pathlib.Path, pos_map: Di
             tags = sorted(pos_map.get(lemma, []))
             rec["pos"] = tags
             rec["lemma_status"] = rec.get("lemma_status", "auto_brut")
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             total += 1
     return total

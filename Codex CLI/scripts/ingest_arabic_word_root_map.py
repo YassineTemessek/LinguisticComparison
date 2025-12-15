@@ -15,6 +15,7 @@ from typing import Tuple, List, Dict
 
 # Reuse a simple transliteration/IPA map (same as enrich_quran_translit.py)
 from enrich_quran_translit import translit_and_ipa
+from processed_schema import ensure_min_schema, normalize_ipa
 
 
 def ingest(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
@@ -30,13 +31,16 @@ def ingest(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
                 "lemma": word,
                 "root": root,
                 "translit": tr,
-                "ipa": ipa,
+                "ipa_raw": ipa,
+                "ipa": normalize_ipa(ipa),
                 "language": "ara",
                 "stage": "Classical",
                 "script": "Arabic",
                 "source": "word_root_map.csv",
                 "lemma_status": "auto_brut",
+                "pos": [],
             }
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             total += 1
     return total

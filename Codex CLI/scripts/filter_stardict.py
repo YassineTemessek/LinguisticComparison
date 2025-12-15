@@ -12,6 +12,8 @@ import json
 import pathlib
 import re
 
+from processed_schema import coerce_pos_list, ensure_min_schema
+
 BANNED_POS = {"phrase", "character", "symbol", "punct", "abbreviation", "name"}
 
 def is_ok_lemma(lemma: str) -> bool:
@@ -36,15 +38,14 @@ def filter_file(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
         for line in inp:
             rec = json.loads(line)
             lemma = rec.get("lemma", "")
-            pos = rec.get("pos", "")
-            if isinstance(pos, list):
-                pos_val = pos[0] if pos else ""
-            else:
-                pos_val = pos
+            pos_list = coerce_pos_list(rec.get("pos"))
+            pos_val = pos_list[0] if pos_list else ""
             if pos_val.lower() in BANNED_POS:
                 continue
             if not is_ok_lemma(lemma):
                 continue
+            rec["pos"] = pos_list
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             total += 1
     return total

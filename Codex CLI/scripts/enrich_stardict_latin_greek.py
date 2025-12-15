@@ -18,6 +18,8 @@ import pathlib
 import re
 from typing import Callable
 
+from processed_schema import ensure_min_schema, normalize_ipa
+
 POS_TAG_RE = re.compile(r"<i>([^<]+)</i>", re.IGNORECASE)
 
 
@@ -71,11 +73,15 @@ def enrich_file(input_path: pathlib.Path, output_path: pathlib.Path, mapper: Cal
             rec = json.loads(line)
             lemma = rec.get("lemma", "")
             gloss = rec.get("gloss", "")
-            rec["ipa"] = mapper(lemma)
-            rec["pos"] = extract_pos(gloss)
+            ipa = mapper(lemma)
+            rec["ipa_raw"] = ipa
+            rec["ipa"] = normalize_ipa(ipa)
+            raw_pos = extract_pos(gloss)
+            rec["pos"] = [raw_pos] if raw_pos else []
             rec["language"] = lang_code
             rec["lemma_status"] = rec.get("lemma_status", "auto_brut")
             rec["source"] = rec.get("source", "wiktionary-stardict")
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             total += 1
     return total

@@ -24,6 +24,7 @@ Desktop.ini
 /data/*
 !/data/README.md
 !/data/processed/
+/data/processed/*
 !/data/processed/README.md
 
 # Tooling scratch

@@ -16,6 +16,7 @@ import pathlib
 from typing import Dict
 
 from buckwalter_to_ipa import bw_to_ipa
+from processed_schema import ensure_min_schema, normalize_ipa
 
 
 def guess_bw(form: str) -> str | None:
@@ -38,9 +39,11 @@ def enrich(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
                 bw_guess = guess_bw(rec["lemma"])
                 if bw_guess:
                     ipa = bw_to_ipa(bw_guess)
-            rec["ipa"] = ipa
+            rec["ipa_raw"] = ipa
+            rec["ipa"] = normalize_ipa(ipa)
             rec["lemma_status"] = rec.get("lemma_status", "silver")
             rec["source_ipa"] = "buckwalter_to_ipa" if ipa else ""
+            rec = ensure_min_schema(rec)
             out_f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             count += 1
     return count
