@@ -1,0 +1,1724 @@
+[
+  {
+    "id": "BODY_01_HEAD",
+    "gloss": "Head",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_02_HAIR_(HEAD)",
+    "gloss": "Hair (head)",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_03_EYE",
+    "gloss": "Eye",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_04_EAR",
+    "gloss": "Ear",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_05_NOSE",
+    "gloss": "Nose",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_06_MOUTH",
+    "gloss": "Mouth",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_07_TOOTH",
+    "gloss": "Tooth",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_08_TONGUE",
+    "gloss": "Tongue",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_09_NECK",
+    "gloss": "Neck",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_10_SHOULDER",
+    "gloss": "Shoulder",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_11_ARM",
+    "gloss": "Arm",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_12_ELBOW",
+    "gloss": "Elbow",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_13_HAND",
+    "gloss": "Hand",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_14_FINGER",
+    "gloss": "Finger",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_15_NAIL",
+    "gloss": "Nail",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_16_CHEST_BREAST",
+    "gloss": "Chest / Breast",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_17_BACK",
+    "gloss": "Back",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_18_BELLY_STOMACH",
+    "gloss": "Belly / Stomach",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_19_HIP",
+    "gloss": "Hip",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_20_LEG",
+    "gloss": "Leg",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_21_KNEE",
+    "gloss": "Knee",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_22_FOOT",
+    "gloss": "Foot",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_23_BONE",
+    "gloss": "Bone",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_24_HEART",
+    "gloss": "Heart",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_25_LUNG",
+    "gloss": "Lung",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_26_LIVER",
+    "gloss": "Liver",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_27_BLOOD",
+    "gloss": "Blood",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_28_SKIN_HIDE",
+    "gloss": "Skin / Hide",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_29_BRAIN",
+    "gloss": "Brain",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_30_BREATH",
+    "gloss": "Breath",
+    "category": "Body & Anatomy",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "BODY_31_FAT_GREASE",
+    "gloss": "Fat / Grease",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_32_MARROW",
+    "gloss": "Marrow",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_33_SWEAT",
+    "gloss": "Sweat",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_34_TEAR_(EYE)",
+    "gloss": "Tear (eye)",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_35_SALIVA",
+    "gloss": "Saliva",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "BODY_36_VOICE",
+    "gloss": "Voice",
+    "category": "Body & Anatomy",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "KIN_01_MOTHER",
+    "gloss": "Mother",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_02_FATHER",
+    "gloss": "Father",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_03_BROTHER",
+    "gloss": "Brother",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_04_SISTER",
+    "gloss": "Sister",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_05_SON",
+    "gloss": "Son",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_06_DAUGHTER",
+    "gloss": "Daughter",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_07_CHILD_(OFFSPRING)",
+    "gloss": "Child (offspring)",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_08_PARENT",
+    "gloss": "Parent",
+    "category": "Family & Kinship",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "KIN_09_HUSBAND",
+    "gloss": "Husband",
+    "category": "Family & Kinship",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "KIN_10_WIFE",
+    "gloss": "Wife",
+    "category": "Family & Kinship",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "KIN_11_MAN_(MALE_HUMAN)",
+    "gloss": "Man (male human)",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_12_WOMAN_(FEMALE_HUMAN)",
+    "gloss": "Woman (female human)",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_13_PERSON_HUMAN",
+    "gloss": "Person / Human",
+    "category": "Family & Kinship",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "KIN_14_FAMILY",
+    "gloss": "Family",
+    "category": "Family & Kinship",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "KIN_15_ANCESTOR",
+    "gloss": "Ancestor",
+    "category": "Family & Kinship",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "KIN_16_TRIBE_CLAN",
+    "gloss": "Tribe / Clan",
+    "category": "Family & Kinship",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_01_SUN",
+    "gloss": "Sun",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_02_MOON",
+    "gloss": "Moon",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_03_STAR",
+    "gloss": "Star",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_04_SKY_HEAVEN",
+    "gloss": "Sky / Heaven",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_05_EARTH_GROUND_SOIL",
+    "gloss": "Earth / Ground / Soil",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_06_FIRE",
+    "gloss": "Fire",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_07_WATER",
+    "gloss": "Water",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_08_WIND_AIR",
+    "gloss": "Wind / Air",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_09_STONE_ROCK",
+    "gloss": "Stone / Rock",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_10_MOUNTAIN",
+    "gloss": "Mountain",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_11_RIVER_STREAM",
+    "gloss": "River / Stream",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_12_SEA_LAKE",
+    "gloss": "Sea / Lake",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_13_TREE",
+    "gloss": "Tree",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_14_LEAF",
+    "gloss": "Leaf",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_15_SEED",
+    "gloss": "Seed",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_16_ROOT_(PLANT)",
+    "gloss": "Root (plant)",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_17_WOOD_(MATERIAL)",
+    "gloss": "Wood (material)",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_18_GRASS",
+    "gloss": "Grass",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_19_SAND",
+    "gloss": "Sand",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_20_CLAY_MUD",
+    "gloss": "Clay / Mud",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_21_DUST",
+    "gloss": "Dust",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_22_SMOKE",
+    "gloss": "Smoke",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_23_ASH",
+    "gloss": "Ash",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_24_RAIN",
+    "gloss": "Rain",
+    "category": "Nature & Environment",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NATURE_25_SNOW_ICE",
+    "gloss": "Snow / Ice",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_26_THUNDER",
+    "gloss": "Thunder",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_27_LIGHTNING",
+    "gloss": "Lightning",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NATURE_28_STONE_TOOL_AXE",
+    "gloss": "Stone Tool / Axe",
+    "category": "Nature & Environment",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CREATURE_01_ANIMAL_BEAST_(GENERIC)",
+    "gloss": "Animal / Beast (generic)",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CREATURE_02_BIRD",
+    "gloss": "Bird",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CREATURE_03_FISH",
+    "gloss": "Fish",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CREATURE_04_SNAKE_SERPENT",
+    "gloss": "Snake / Serpent",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CREATURE_05_DOG",
+    "gloss": "Dog",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CREATURE_06_COW_OX_CATTLE",
+    "gloss": "Cow / Ox / Cattle",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CREATURE_07_SHEEP_GOAT",
+    "gloss": "Sheep / Goat",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CREATURE_08_HORSE",
+    "gloss": "Horse",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CREATURE_09_DONKEY",
+    "gloss": "Donkey",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CREATURE_10_CAMEL",
+    "gloss": "Camel",
+    "category": "Key Domesticates & Creatures",
+    "tier": "R Regional"
+  },
+  {
+    "id": "CREATURE_11_PIG_BOAR",
+    "gloss": "Pig / Boar",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CREATURE_12_CHICKEN_FOWL",
+    "gloss": "Chicken / Fowl",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CREATURE_13_BEE",
+    "gloss": "Bee",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CREATURE_14_WOLF",
+    "gloss": "Wolf",
+    "category": "Key Domesticates & Creatures",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "TIME_SPACE_01_DAY",
+    "gloss": "Day",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_02_NIGHT",
+    "gloss": "Night",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_03_YEAR",
+    "gloss": "Year",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_04_TIME_(DURATION)",
+    "gloss": "Time (duration)",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_05_MORNING",
+    "gloss": "Morning",
+    "category": "Time & Space",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "TIME_SPACE_06_EVENING",
+    "gloss": "Evening",
+    "category": "Time & Space",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "TIME_SPACE_07_TODAY_NOW",
+    "gloss": "Today / Now",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_08_YESTERDAY",
+    "gloss": "Yesterday",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_09_TOMORROW",
+    "gloss": "Tomorrow",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_10_BEFORE",
+    "gloss": "Before",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_11_AFTER",
+    "gloss": "After",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_12_EARLY_SOON",
+    "gloss": "Early / Soon",
+    "category": "Time & Space",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "TIME_SPACE_13_LATE",
+    "gloss": "Late",
+    "category": "Time & Space",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "TIME_SPACE_14_HERE",
+    "gloss": "Here",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_15_THERE",
+    "gloss": "There",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_16_NEAR",
+    "gloss": "Near",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_17_FAR",
+    "gloss": "Far",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_18_UP_ABOVE",
+    "gloss": "Up / Above",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_19_DOWN_BELOW",
+    "gloss": "Down / Below",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_20_INSIDE",
+    "gloss": "Inside",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_21_OUTSIDE",
+    "gloss": "Outside",
+    "category": "Time & Space",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "TIME_SPACE_22_FRONT",
+    "gloss": "Front",
+    "category": "Time & Space",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "TIME_SPACE_23_BACK_(LOCATION)",
+    "gloss": "Back (location)",
+    "category": "Time & Space",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "TIME_SPACE_24_LEFT",
+    "gloss": "Left",
+    "category": "Time & Space",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "TIME_SPACE_25_RIGHT",
+    "gloss": "Right",
+    "category": "Time & Space",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "MOTION_01_GO_WALK",
+    "gloss": "Go / Walk",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_02_COME",
+    "gloss": "Come",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_03_RUN",
+    "gloss": "Run",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_04_ENTER",
+    "gloss": "Enter",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_05_EXIT_LEAVE",
+    "gloss": "Exit / Leave",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_06_SIT",
+    "gloss": "Sit",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_07_STAND",
+    "gloss": "Stand",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_08_LIE_(RECLINE)",
+    "gloss": "Lie (recline)",
+    "category": "Motion & Physical Verbs",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "MOTION_09_FALL",
+    "gloss": "Fall",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_10_CLIMB",
+    "gloss": "Climb",
+    "category": "Motion & Physical Verbs",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "MOTION_11_CARRY",
+    "gloss": "Carry",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_12_BRING",
+    "gloss": "Bring",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_13_TAKE",
+    "gloss": "Take",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_14_GIVE",
+    "gloss": "Give",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_15_PUT_PLACE",
+    "gloss": "Put / Place",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_16_HOLD",
+    "gloss": "Hold",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_17_THROW",
+    "gloss": "Throw",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_18_HIT_STRIKE",
+    "gloss": "Hit / Strike",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_19_CUT",
+    "gloss": "Cut",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_20_BREAK",
+    "gloss": "Break",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_21_OPEN",
+    "gloss": "Open",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_22_CLOSE",
+    "gloss": "Close",
+    "category": "Motion & Physical Verbs",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "MOTION_23_FLY",
+    "gloss": "Fly",
+    "category": "Motion & Physical Verbs",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "MOTION_24_SWIM",
+    "gloss": "Swim",
+    "category": "Motion & Physical Verbs",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_01_EAT",
+    "gloss": "Eat",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_02_DRINK",
+    "gloss": "Drink",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_03_BREATHE",
+    "gloss": "Breathe",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_04_SLEEP",
+    "gloss": "Sleep",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_05_WAKE",
+    "gloss": "Wake",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_06_LIVE_BE_ALIVE",
+    "gloss": "Live / Be Alive",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_07_DIE",
+    "gloss": "Die",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_08_KILL",
+    "gloss": "Kill",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_09_HUNT",
+    "gloss": "Hunt",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_10_COOK",
+    "gloss": "Cook",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_11_BURN_(TR/INTR)",
+    "gloss": "Burn (tr/intr)",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_12_SPEAK_SAY_TALK",
+    "gloss": "Speak / Say / Talk",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_13_HEAR",
+    "gloss": "Hear",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_14_SEE",
+    "gloss": "See",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_15_SMELL",
+    "gloss": "Smell",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_16_TASTE",
+    "gloss": "Taste",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_17_TOUCH",
+    "gloss": "Touch",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_18_KNOW",
+    "gloss": "Know",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_19_THINK",
+    "gloss": "Think",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_20_REMEMBER",
+    "gloss": "Remember",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_21_FORGET",
+    "gloss": "Forget",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_22_WANT_DESIRE",
+    "gloss": "Want / Desire",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_23_LIKE_LOVE",
+    "gloss": "Like / Love",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_24_FEAR",
+    "gloss": "Fear",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_25_PAIN_HURT",
+    "gloss": "Pain / Hurt",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_26_LAUGH",
+    "gloss": "Laugh",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_27_CRY_(WEEP)",
+    "gloss": "Cry (weep)",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_28_BITE",
+    "gloss": "Bite",
+    "category": "Needs & Human Actions",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "NEED_29_CHEW",
+    "gloss": "Chew",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_30_SWALLOW",
+    "gloss": "Swallow",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_31_SPIT",
+    "gloss": "Spit",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_32_URINATE",
+    "gloss": "Urinate",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "NEED_33_DEFECATE",
+    "gloss": "Defecate",
+    "category": "Needs & Human Actions",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_01_ONE",
+    "gloss": "One",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_02_TWO",
+    "gloss": "Two",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_03_THREE",
+    "gloss": "Three",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_04_FOUR",
+    "gloss": "Four",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_05_FIVE",
+    "gloss": "Five",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_06_SIX",
+    "gloss": "Six",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_07_SEVEN",
+    "gloss": "Seven",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_08_EIGHT",
+    "gloss": "Eight",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_09_NINE",
+    "gloss": "Nine",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_10_TEN",
+    "gloss": "Ten",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_11_ALL",
+    "gloss": "All",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_12_MANY",
+    "gloss": "Many",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_13_FEW",
+    "gloss": "Few",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_14_SOME",
+    "gloss": "Some",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_15_SAME",
+    "gloss": "Same",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_16_DIFFERENT",
+    "gloss": "Different",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_17_BIG_LARGE",
+    "gloss": "Big / Large",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_18_SMALL_LITTLE",
+    "gloss": "Small / Little",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_19_LONG",
+    "gloss": "Long",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_20_SHORT",
+    "gloss": "Short",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_21_TALL_HIGH",
+    "gloss": "Tall / High",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_22_DEEP",
+    "gloss": "Deep",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_23_WIDE_BROAD",
+    "gloss": "Wide / Broad",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_24_NARROW",
+    "gloss": "Narrow",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_25_GOOD",
+    "gloss": "Good",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_26_BAD_EVIL",
+    "gloss": "Bad / Evil",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_27_HOT",
+    "gloss": "Hot",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_28_COLD",
+    "gloss": "Cold",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_29_WARM",
+    "gloss": "Warm",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_30_COOL",
+    "gloss": "Cool",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_31_NEW",
+    "gloss": "New",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_32_OLD",
+    "gloss": "Old",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_33_DRY",
+    "gloss": "Dry",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_34_WET",
+    "gloss": "Wet",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_35_HEAVY",
+    "gloss": "Heavy",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_36_LIGHT_(WEIGHT)",
+    "gloss": "Light (weight)",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_37_HARD",
+    "gloss": "Hard",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_38_SOFT",
+    "gloss": "Soft",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_39_SHARP",
+    "gloss": "Sharp",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_40_DULL_BLUNT",
+    "gloss": "Dull / Blunt",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_41_FULL",
+    "gloss": "Full",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_42_EMPTY",
+    "gloss": "Empty",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_43_CLEAN",
+    "gloss": "Clean",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_44_DIRTY",
+    "gloss": "Dirty",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_45_WHITE",
+    "gloss": "White",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_46_BLACK",
+    "gloss": "Black",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_47_RED",
+    "gloss": "Red",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "QUAL_48_GREEN",
+    "gloss": "Green",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_49_YELLOW",
+    "gloss": "Yellow",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_50_BLUE",
+    "gloss": "Blue",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_51_SWEET",
+    "gloss": "Sweet",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_52_SALTY",
+    "gloss": "Salty",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_53_SOUR",
+    "gloss": "Sour",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "QUAL_54_BITTER",
+    "gloss": "Bitter",
+    "category": "Quantity, Quality & Identity",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_01_GOD_DEITY",
+    "gloss": "God / Deity",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CULT_02_SPIRIT_SOUL_BREATH",
+    "gloss": "Spirit / Soul / Breath",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_03_KING_RULER",
+    "gloss": "King / Ruler",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_04_SLAVE_SERVANT",
+    "gloss": "Slave / Servant",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_05_HOUSE_HOME_DWELLING",
+    "gloss": "House / Home / Dwelling",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CULT_06_DOOR",
+    "gloss": "Door",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CULT_07_WALL",
+    "gloss": "Wall",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_08_PATH_WAY_ROAD",
+    "gloss": "Path / Way / Road",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CULT_09_VILLAGE_TOWN",
+    "gloss": "Village / Town",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_10_NAME",
+    "gloss": "Name",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CULT_11_LAW_RULE_ORDER",
+    "gloss": "Law / Rule / Order",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_12_TRUTH",
+    "gloss": "Truth",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_13_BREAD_STAPLE_FOOD",
+    "gloss": "Bread / Staple Food",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CULT_14_MEAT",
+    "gloss": "Meat",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_15_MILK",
+    "gloss": "Milk",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_16_SALT",
+    "gloss": "Salt",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "CULT_17_OIL_FAT",
+    "gloss": "Oil / Fat",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_18_HONEY",
+    "gloss": "Honey",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_19_BOAT_SHIP",
+    "gloss": "Boat / Ship",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_20_FIREPLACE_HEARTH",
+    "gloss": "Fireplace / Hearth",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_21_MARKET_TRADE",
+    "gloss": "Market / Trade",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "CULT_22_WAR_BATTLE",
+    "gloss": "War / Battle",
+    "category": "Cultural & Spiritual Concepts",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "PRONQ_01_I_ME",
+    "gloss": "I / Me",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_02_YOU_(SG)",
+    "gloss": "You (sg)",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_03_HE_SHE_IT",
+    "gloss": "He / She / It",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_04_WE_(INCLUSIVE/EXCLUSIVE_NOT_MARKED)",
+    "gloss": "We (inclusive/exclusive not marked)",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_05_YOU_(PL)",
+    "gloss": "You (pl)",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_06_THEY",
+    "gloss": "They",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_07_WHO",
+    "gloss": "Who?",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_08_WHAT",
+    "gloss": "What?",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_09_WHERE",
+    "gloss": "Where?",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_10_WHEN",
+    "gloss": "When?",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_11_HOW",
+    "gloss": "How?",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_12_WHY",
+    "gloss": "Why?",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "PRONQ_13_THIS_(PROXIMAL)",
+    "gloss": "This (proximal)",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_14_THAT_(DISTAL)",
+    "gloss": "That (distal)",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "PRONQ_15_THESE_(PROX._PL.)",
+    "gloss": "These (prox. pl.)",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "PRONQ_16_THOSE_(DIST._PL.)",
+    "gloss": "Those (dist. pl.)",
+    "category": "Pronouns & Interrogatives",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "REL_01_AND",
+    "gloss": "And",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "REL_02_OR",
+    "gloss": "Or",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "REL_03_NOT_NO",
+    "gloss": "Not / No",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "REL_04_IF",
+    "gloss": "If",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "REL_05_BECAUSE",
+    "gloss": "Because",
+    "category": "Relational & Function Words",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "REL_06_WITH",
+    "gloss": "With",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "REL_07_WITHOUT",
+    "gloss": "Without",
+    "category": "Relational & Function Words",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "REL_08_IN_AT_ON",
+    "gloss": "In / At / On",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "REL_09_FROM",
+    "gloss": "From",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "REL_10_TO_TOWARD",
+    "gloss": "To / Toward",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "REL_11_OVER_ABOVE",
+    "gloss": "Over / Above",
+    "category": "Relational & Function Words",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "REL_12_UNDER_BELOW",
+    "gloss": "Under / Below",
+    "category": "Relational & Function Words",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "REL_13_BETWEEN",
+    "gloss": "Between",
+    "category": "Relational & Function Words",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "REL_14_BEFORE_(TIME)",
+    "gloss": "Before (time)",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "REL_15_AFTER_(TIME)",
+    "gloss": "After (time)",
+    "category": "Relational & Function Words",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "POSEX_01_HAVE_POSSESS",
+    "gloss": "Have / Possess",
+    "category": "Possession & Existence",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "POSEX_02_BE_EXIST",
+    "gloss": "Be / Exist",
+    "category": "Possession & Existence",
+    "tier": "C1 Core"
+  },
+  {
+    "id": "POSEX_03_OWN_PROPERTY",
+    "gloss": "Own / Property",
+    "category": "Possession & Existence",
+    "tier": "C2 Near-Universal"
+  },
+  {
+    "id": "POSEX_04_BELONG_(TO)",
+    "gloss": "Belong (to)",
+    "category": "Possession & Existence",
+    "tier": "C2 Near-Universal"
+  }
+]

@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editors/OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+Desktop.ini
+
+# Logs & env
+*.log
+.env
+.env.*
+
+# Large local datasets (keep only lightweight docs/metadata in git)
+/data/*
+!/data/README.md
+
+# Tooling scratch
+.grok/
+

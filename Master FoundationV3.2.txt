@@ -1,0 +1,866 @@
+MASTER FOUNDATION DOCUMENT — v3.2
+The Ancient Semitic Root Hypothesis
+
+Rewriting Language History Through Deep Root Analysis, Anchored Lemmas, and AI-Tracked Sound Structures
+Authoring Mode: Discovery-First (recall-maximizing, non-restrictive) with a dormant Validation Track
+
+0) Executive Summary
+
+This program explores whether ancient Semitic root systems—especially East and Northwest Semitic, Old Arabic epigraphy, and Qur’ānic Arabic—show systematic structural correspondences with attested Indo-European lexica beyond chance.
+
+We will discover first and decide later:
+
+Track A — Discovery (active):
+Find, rank, and narrate similarities; keep everything attested; avoid premature filters; allow a brute lemma layer as long as it is explicitly tagged.
+
+Track B — Validation (designed, dormant):
+Once Discovery stabilizes, apply chronology locks, rule-constrained paths, null models, and publication-grade tests on a clean, attested anchor layer.
+
+New in v3.2 we introduce:
+
+A lemma anchor policy (starting with Latin as the first cross-family anchor language).
+
+Explicit lemma metadata fields (lemma_form, lemma_pos, lemma_status, lemma_source).
+
+A Brute Lemma Layer for early discovery (auto_brut status), quarantined from formal evidence.
+
+Updated KPIs that track anchor coverage and anchor quality before Validation is activated.
+
+This document fixes the language scope, English-forward concept modeling, anchor lemma policy, schemas, corridors, and a rapid candidate pipeline to scale discovery responsibly.
+
+1) Core Principles
+
+Discover, don’t decide.
+Early work maximizes recall. No deletions—only ranking and tagging.
+
+Attested only (for evidence).
+No Proto reconstructions counted as data (they may be cited in notes).
+Brute-filled lemma anchors are allowed for UI & exploratory navigation but explicitly tagged.
+
+Multi-view evidence.
+Compare Consonantal Skeletons, Orthographic Root Traces (ORT), and Articulatory–Sonority profiles.
+
+Transparent provenance.
+Every form carries stage, script, date window, source, and now lemma_status & lemma_source.
+
+English-forward with anchor languages.
+English appears as real data across stages (Old → Middle → Early Modern → Modern) and is the user-facing anchor, while Latin serves as the first cross-family lemma anchor language.
+
+Meaning is layered.
+Concepts can surface via synonyms, part–whole (meronym/holonym), and figurative paths (metonymy/synecdoche), especially in Semitic.
+
+Anchors before claims.
+Before making strong historical claims, lemma anchors for key languages must reach defined coverage/quality thresholds.
+
+2) Hypotheses (Exploratory Framing)
+
+H1-E (Exploratory Correlation):
+Recurrent overlaps appear across views for stable concepts.
+
+H2-E (Directionality Unfixed):
+Direction and pathways remain open; log chronology/contact hints without enforcing them.
+
+H3-E (Orthographic Echo):
+ORT (silent letters, digraphs, fossil clusters) often improves discovery ranking.
+
+H4-E (Corridors):
+“Sound corridors” are catalogued as soft tendencies, not certified laws.
+
+(These elevate to strict H1–H4 only after Discovery Corpus v1.0 is frozen.)
+
+3) Language Scope — v2.2 (Condensed, Attested, Final)
+A) Semitic — Core Ancient & Classical
+
+Akkadian (Old/Standard Babylonian & Assyrian)
+
+Eblaite
+
+Ugaritic
+
+Imperial Aramaic (with Biblical Aramaic encompassed in the same lexical layer)
+
+Biblical Hebrew
+
+Phoenician (incl. Punic/Neo-Punic)
+
+Old Arabic epigraphy: Safaitic, Hismaic, Dadanitic/Taymanitic
+
+Qur’ānic / Classical Arabic
+
+Sabaic (Old South Arabian)
+
+Geʿez (Classical Ethiopic)
+
+B) Semitic — Modern & Dialect Continua (specific, non-generic)
+
+Egyptian (Cairene) · Saʿīdi (Upper Egypt)
+
+Najdi (Saudi, central) · Ḥijāzi (Saudi, western)
+
+Iraqi (Baghdad) · Syrian (Damascus) · Lebanese (Beirut)
+
+Tunisian (Derja) (sole Maghrebi per policy) · Yemeni (Ṣanʿānī)
+
+Maltese (Semitic lexicon in Latin script; prime ORT catalyst)
+
+Classical Syriac · Turoyo (Neo-Aramaic, Ṭūr ʿAbdīn) · Modern Hebrew
+
+Mehri · Soqotri · Amharic
+
+C) Indo-European — Core Ancient & Early (attested only)
+
+Hittite
+
+Mycenaean (Linear B) · Classical Greek (Attic/Ionic)
+
+Latin (first lemma anchor language)
+
+Gothic · Old English
+
+Old Irish
+
+Old Prussian
+
+Old Church Slavonic (Glagolitic/Cyrillic)
+
+Vedic Sanskrit · Pāli (Prakrit)
+
+Avestan · Old Persian (cuneiform)
+
+Classical Armenian
+
+D) English Continuity (experience + ORT)
+
+Middle English
+
+Early Modern English
+
+Modern English
+
+(Old English is in section C but forms part of the English historical chain.)
+
+Inclusion / Exclusion
+
+Attested only; no umbrella labels (e.g., “Levantine,” “Gulf”), no reconstructed Proto forms.
+
+Orthography policy
+
+Store raw script + scholarly transliteration + IPA; preserve fossil segments for ORT.
+
+3bis) Lemma Policy & Language Anchors (New in v3.2)
+
+For each concept and language, we maintain lemma anchors with explicit metadata.
+
+Per-language lemma fields:
+
+lemma_form — canonical citation form (with diacritics where standard).
+
+lemma_pos — part of speech (N, V, ADJ, ADV, etc.).
+
+lemma_status — one of:
+
+"gold" — fully attested, verified via authoritative dictionary/grammar.
+
+"silver" — attested but with residual sense ambiguity or register uncertainty.
+
+"auto_brut" — automatically generated or heuristic “best guess”; allowed in Discovery but quarantined from Validation.
+
+lemma_source — dictionary/grammar reference, or "heuristic" for brute-derived entries.
+
+Anchor languages (initial set):
+
+Latin (lat) — first cross-family anchor language; stored in a dedicated lat_lemma field and in generic anchor structures.
+
+Subsequent anchor sets will be defined for Classical Greek, Hittite, etc., following the same policy.
+
+Usage rules
+
+Discovery Track
+
+All lemma anchors may appear in UI, exploratory tables, and light semantic gating.
+
+Only gold/silver anchors can be used as positive evidence in pattern narratives.
+
+auto_brut anchors can guide exploration but must be explicitly recognized as provisional.
+
+Validation Track
+
+Only gold and (carefully documented) silver anchors are admitted into formal statistical tests and historical arguments.
+
+auto_brut entries must be either upgraded or excluded from evaluation datasets before use.
+
+Multiple lemma options
+
+When a concept has more than one plausible lemma (e.g., ROAD: via vs iter in Latin), pick one as the primary lemma with lemma_status: "gold" and list others in notes and/or as secondary anchors.
+
+4) Concept Inventory — v2.2 (Final)
+
+Ready-to-use inventory of 536 base concepts across 21 categories with Priority Tiers:
+
+Tier A: core
+
+Tier B: daily life
+
+Tier C: extended
+
+Download artifacts
+
+CSV: lexical_concepts_v2_2.csv
+
+JSONL: lexical_concepts_v2_2.jsonl
+
+Seeding quotas per concept (Discovery phase)
+
+Semitic Ancient/Core: ≥ 4 forms
+
+Semitic Modern/Dialects: ≥ 5 forms
+
+Prefer Tunisian, Cairene, Saʿīdi, Najdi, Ḥijāzi, Iraqi, Syrian, Lebanese, Yemeni, Maltese.
+
+IE Ancient/Early: ≥ 6 forms
+
+Ensure Hittite, Greek (Mycenaean/Classic), Latin, one Germanic, one Indo-Aryan, one Iranian, plus one from Old Irish / Old Prussian / OCS / Armenian.
+
+5) Concept Modeling: Synonyms, Part–Whole, Figuratives (English-Forward)
+5.1 What we encode
+
+Synset (English):
+Core lemma + near-synonyms (e.g., EYE → eye, eyeball), with register/frequency flags.
+
+Meronyms & Holonyms:
+Parts like iris, pupil, cornea; wholes like face, head.
+
+Figurative links:
+Metonymy/synecdoche widely attested in Semitic (e.g., عين ʿayn “eye” → “spring (of water)”, “spy/agent”).
+These are allowed in Discovery with penalties and explicit tags.
+
+5.2 Expansion policy during Discovery
+
+Radius 0 (default): literal sense only.
+
+Radius 1: allow synset/meronym with a light penalty (–10% semantics, –0.2 composite) and tag.
+
+Radius 2: allow figuratives (metonymy/synecdoche) with stronger penalty (–25% semantics, –0.5 composite) and a figurative tag.
+
+(Radius toggles are per notebook; nothing is forced.)
+
+6) Data Schemas (Minimal yet Extensible)
+6.1 Concept entry
+{
+  "concept_id": "EYE",
+  "core_gloss_en": "eye (organ of sight)",
+  "synonyms_en": ["eyeball", "peeper (colloq.)"],
+  "meronyms": ["iris","pupil","cornea","sclera","retina","eyelid","eyelash","tear duct","socket"],
+  "holonyms": ["face","head","vision system"],
+  "figurative_links": [
+    {"lang":"ara","form":"ʿayn","gloss":"spring of water","type":"metonymy"},
+    {"lang":"ara","form":"ʿayn","gloss":"spy/agent","type":"metonymy"},
+    {"lang":"heb","form":"ʿayin","gloss":"spring (toponymic)","type":"metonymy"}
+  ],
+  "priority_tier": "A",
+  "anchors": {
+    "lat": {
+      "lemma": "oculus",
+      "lemma_pos": "N",
+      "lemma_status": "gold",
+      "lemma_source": "Standard Latin dictionary ref"
+    }
+  },
+  "notes": "Use expansion radius 1 for meronyms; radius 2 for figuratives in Semitic polysemy."
+}
+
+6.2 Lexeme entry
+{
+  "id": "ENG.mod.eye.0001",
+  "language": "English",
+  "stage": "Modern",
+  "script": "Latin",
+  "date_window": "20th–21st c.",
+  "orthography": "eye",
+  "ipa": "aɪ",
+  "skeleton": {"cons":["ʔ","y"], "vowels":["aɪ"], "syllable_template":"V"},
+  "vowel_matrix": {...},
+  "syllable_template": "V",
+  "ort": {"trace":["e","y","e"], "flags":["vowel_digraph"]},
+  "gloss": "eye",
+  "concept_id": "EYE",
+  "sense_id": "literal",
+  "register": "standard",
+  "mapping_type": "literal",
+  "lemma_anchor": {
+    "is_anchor": true,
+    "lemma_form": "eye",
+    "lemma_pos": "N",
+    "lemma_status": "gold",
+    "lemma_source": "Standard English dictionary"
+  },
+  "provenance": {"source":"standard dictionary","ref":"..."},
+  "notes": ""
+}
+
+6.3 Lead (candidate correspondence)
+{
+  "concept_id": "EYE",
+  "semitic_lexeme_ids": ["ARA.class.ʿayn.0001","HEB.bib.ayin.0003"],
+  "ie_lexeme_ids": ["ENG.mod.eye.0001","ANG.ēage.0002","LAT.class.oculus.0001"],
+  "views": {"skeleton":1.9,"articulatory":2.4,"ort":0.8,"semantics":2.0},
+  "expansion": {"radius":1,"via":"meronym/synset"},
+  "corridor_tags": ["glottal","liquid?"],
+  "discovery_score": 6.7,
+  "rank": 12,
+  "status": "open",
+  "figurative": false,
+  "loan_flag": false,
+  "chronology_note": "not enforced in discovery; dates in lexeme entries",
+  "lemma_evidence": {
+    "lat_status": "gold",
+    "eng_status": "gold"
+  },
+  "analyst_notes": "Add Maltese għajn for ORT; check Turoyo reflex."
+}
+
+6.4 Corridor Card (YAML)
+id: CORRIDOR_GUTTURAL_01
+name: "k–x–h–Ø corridor"
+attested_examples:
+  - "OE niht > Eng night (l-gh-t fossil class parallel)"
+  - "Arabic ḫ weakening > h in specific dialect continua"
+notes: "Soft tag in discovery; chronology enforced only in Validation Track."
+
+
+Required fields (lexeme)
+id, language, stage, script, date_window, orthography, ipa, skeleton, vowel_matrix, syllable_template, ort.trace, ort.flags, gloss, concept_id, sense_id, register, mapping_type, lemma_anchor, provenance, notes
+
+7) Representations (Three Views)
+
+Skeleton View (C-only)
+Consonantal sequence; bigram/trigram shingles; permissive about epenthesis/gemination in Discovery.
+
+ORT View (Orthography-as-is)
+Preserve silent letters, digraphs, archaic clusters.
+English is especially valuable: kn-, wr-, gh, ps-, pt-, mn-.
+Script-switch languages (Maltese, Judeo-Arabic, Bactrian) amplify ORT signals.
+
+Articulatory–Sonority View
+Feature vectors (place, manner, voicing, emphatic/pharyngealization) and a whole-word sonority profile curve.
+
+Vowel matrices and syllable templates are stored and down-weighted, used when stabilizing patterns.
+
+8) Discovery Corridors (Soft, Tagged)
+
+Guttural: k ↔ x ↔ h ↔ Ø; q/ḳ ↔ k/g
+
+Spirantization: p ↔ f ↔ ph; t ↔ θ ↔ s; d ↔ ð ↔ z
+
+Liquid: r ↔ l (rhotacism/lateralization)
+
+Labialization: b ↔ v ↔ w; gʷ ↔ w
+
+Palatal–sibilant: s ↔ š ↔ sh ↔ ch/tsch
+
+Velar–palatal: k/g ↔ č/j/y under front-vowel pressure
+
+Nasal: m ↔ n (assimilation/cluster repair)
+
+Glottal/Vowel repair: ʔ ↔ vowel insertion/lengthening; ḥ/ʕ → h/Ø
+
+Cluster memory: kn-, gn-, wr-, ps-, pt-, mn- persist in spelling after phonetic simplification
+
+(Store as tags; no hard enforcement in Discovery.)
+
+9) Rapid Candidate Generation (RCG) Pipeline
+
+Ingest & Normalize
+Transliteration + IPA; generate Skeleton / ORT / Sonority; tag provenance and lemma anchor fields.
+
+Multi-view neighbor search
+
+LSH over consonant shingles (skeleton)
+
+BK-trees for consonant-sequence edit distance
+
+Cosine over articulatory vectors
+
+ORT fingerprints (grapheme n-grams, digraphs, fossils)
+
+Soft semantic gating
+
+Map to concept rings; embed dictionary glosses (not noisy corpora).
+
+Optional expansion radii (synset / meronym / figurative) with penalties.
+
+Lead scoring (exploratory)
+
+DiscoveryScore (0–10) = w₁·Skeleton (0–3) + w₂·Articulatory (0–3) + w₃·ORT (0–2) + w₄·Semantics (0–2) + Corridor bonus (cap +2)
+
+Expansion penalties:
+
+Radius-1: –10% semantics, –0.2 composite
+
+Radius-2: –25% semantics, –0.5 composite + figurative tag
+
+Triaging & Tagging
+
+Tags: guttural, liquid, spirant, cluster_echo, aspiration, palatal, labial, glottal, nasal, areal_possible, loan_flag, chronology_note, plus e.g. lemma_status_lat.
+
+Lead Bank
+
+Nothing deleted; low-score leads are parked, not pruned.
+
+9.7 Brute Lemma Layer (New in v3.2)
+
+During early Discovery, some lemma fields may be automatically generated / Latinized:
+
+All such entries are tagged with lemma_status: "auto_brut" and lemma_source: "heuristic".
+
+They may be:
+
+Used for UI display, quick navigation, and rough semantic anchoring.
+
+Excluded from corridor stats and motif arguments unless manually checked.
+
+The scoring engine must not treat auto_brut anchors as positive historical evidence.
+
+Before Validation Track activation, every auto_brut anchor is either:
+
+Upgraded to gold / silver (attested, documented), or
+
+Excluded from evaluation datasets.
+
+10) Pattern Atlas (Living, Narrative-First)
+
+Cluster recurrent patterns into motifs (e.g., liquid alternation in kinship, guttural corridor in fire/heat, cluster echoes in tools).
+
+Each motif entry contains:
+
+Top leads
+
+Short narrative
+
+Key corridors
+
+Scripts involved
+
+Paradox notes
+
+“Next-up languages”
+
+11) Visual Analytics (Exploration Aids)
+
+Discovery heatmaps: concept × language-pair scores.
+
+Corridor chord diagrams: corridor usage across families.
+
+Timeline sparklines: earliest attestations vs. lead density.
+
+Neighborhood maps: UMAP / t-SNE over articulatory vectors.
+
+Chart grammar guidelines:
+
+Axes and scales must be documented.
+
+Colors carry consistent meaning (e.g., language families, corridor types).
+
+“Red flag” views highlight:
+
+Chronology violations
+
+Corridor overuse
+
+Over-reliance on auto_brut anchors
+
+(Interpretive tools only—claims wait for Validation.)
+
+12) Data Architecture
+/data
+  /raw/{language}/{source}/...
+  /processed/{IPA|ORT|skeleton}.jsonl
+/schemas
+  lexeme.schema.json
+  lead.schema.json
+  concept.schema.json
+  corridor_card.schema.yaml
+  anchor.schema.json
+/src
+  /ingest  /align  /nn  /score  /viz
+/notebooks
+/docs
+
+13) English Curation Rules
+
+Seed four stages: Old, Middle, Early Modern, Modern—so users see real English and ORT fossils.
+
+Prefer literal sense_id:
+Add figuratives as separate lexemes under the same concept_id with mapping_type: "metonymy" | "synecdoche".
+
+Mark register:
+Dialectal, archaic, colloquial, technical. Keep low-frequency items if they clarify part–whole mappings (eyeball).
+
+Never collapse figuratives into literal:
+Keep them but down-weight with Radius-2 penalties.
+
+English + Latin as front row:
+English remains the primary user-facing language, while Latin anchors serve as a cross-family pivot for many concepts. Both appear prominently in UI and analytics.
+
+14) Governance (Discovery-Mode)
+
+Explorers
+Run searches, score leads, write motif notes.
+
+Curators
+Enforce attestation quality, stage/script integrity, schema consistency.
+
+Anchor Curators (new)
+
+Upgrade auto_brut lemma anchors to gold / silver.
+
+Validate lemmas against grammars/dictionaries.
+
+Maintain per-language lemma guidelines (verb principal parts, gender, irregular plurals).
+
+Mapmakers
+Produce dashboards, heatmaps, and motif galleries, with red-flag views for potential overinterpretation.
+
+Chroniclers
+Capture paradoxes, hunches, and anomalies succinctly in a Paradox Registry.
+
+Daily stand-ups report patterns found, motifs emerging, coverage gaps, and anchor upgrades—not verdicts.
+
+15) Milestones & KPIs (0–90 Days)
+Days 0–10
+
+Lock scope (this document).
+
+Seed Tier-A concepts first:
+WATER, FIRE, EARTH, STONE, SUN, MOON, EYE, EAR, HAND, HEART, MOTHER, FATHER, ONE–FIVE, GO, SEE, SAY, NAME, NIGHT, DAY.
+
+Ingest:
+
+Semitic ancient + Tunisian / Egyptian / Saʿīdi / Najdi / Ḥijāzi / Iraqi / Syrian / Lebanese / Yemeni + Maltese.
+
+Hittite, Latin, Classical Greek, Mycenaean, Gothic / Old English, Vedic, Avestan / Old Persian, Old Irish / Old Prussian / OCS / Armenian.
+
+Add English Old / Middle / Early Modern / Modern entries for Tier-A concepts.
+
+Brute-fill Latin lemma anchors for all concepts with lemma_status: "auto_brut".
+
+Days 11–30
+
+Run RCG; harvest top-200 leads per concept.
+
+Stand up Pattern Atlas v0.1 and Corridor Cards v0.1.
+
+Snapshot Discovery Heatmap v0.1.
+
+Begin anchor upgrading: convert highest-impact Latin lemmas from auto_brut → silver / gold.
+
+Days 31–60
+
+Expand to 60–100 Tier-A concepts.
+
+Author 20+ motif notes with narratives.
+
+Release Lead Bank v0.1 (≈10k–30k ranked leads).
+
+Establish Lemma Anchor Style Guides for Latin and at least one additional anchor language (Greek or Hittite).
+
+Days 61–90
+
+Saturate remaining Tier-A coverage and IE anchors.
+
+Achieve initial anchor quality thresholds (see KPIs).
+
+Freeze Discovery Corpus v1.0 and draft an Exploratory Report (galleries, heatmaps, motif narratives, prioritized leads, anchor coverage tables).
+
+Prepare Validation Track checklist.
+
+KPIs
+
+Coverage KPIs
+
+concept_language_coverage: % of concepts × languages meeting minimal lexeme quotas.
+
+lead_density: average number of leads per concept above a DiscoveryScore threshold (e.g. DS ≥ 6.0).
+
+motif_count: number of motifs with cross-family support.
+
+corridor_diversity: distribution of corridor tags across leads.
+
+Anchor KPIs (new)
+
+lemma_anchor_coverage_lat: % of concepts with a non-empty Latin lemma anchor.
+
+lemma_anchor_confidence_lat: proportion of Latin lemmas with lemma_status: "gold" | "silver" vs. auto_brut.
+
+Suggested gate before Validation activation:
+
+lemma_anchor_coverage_lat ≥ 90%
+
+lemma_anchor_confidence_lat (gold+silver) ≥ 70%
+
+ORT uplift KPI
+
+ort_uplift_frequency: proportion of leads where ORT view improves ranking vs skeleton-only.
+
+KPIs must be tracked per sprint and explicitly reported before moving to Validation.
+
+16) Validation Track (Designed, Dormant)
+
+Activate after Discovery Corpus v1.0 is frozen and anchor KPIs are met.
+
+Validation includes:
+
+Chronology locks and contact windows.
+
+Rule-constrained paths (Grimm, Verner, High German shift, Sanskrit → Prakrit, Avestan → Middle Persian, Semitic emphatic softening / loss of pharyngeals, etc.).
+
+Permutation tests with phonotactic-matched nulls and FDR control.
+
+Loan filters that exclude (not just tag).
+
+Anchor cleanliness:
+
+Use only gold and carefully documented silver anchors for formal tests.
+
+Exclude or separately model any residual auto_brut items.
+
+Pre-registration and publication workflow.
+
+17) Language Codes (Examples)
+
+Semitic dialects
+
+ara-eg-cai (Cairene)
+
+ara-eg-sae (Saʿīdi)
+
+ara-sa-naj (Najdi)
+
+ara-sa-hij (Ḥijāzi)
+
+ara-iq-bag (Iraqi)
+
+ara-sy-dam (Syrian/Damascus)
+
+ara-lb-bey (Lebanese/Beirut)
+
+ara-tn-tun (Tunisian/Derja)
+
+ara-ye-san (Yemeni/Ṣanʿānī)
+
+mlt (Maltese)
+
+syr (Classical Syriac)
+
+tru (Turoyo)
+
+heb (Modern Hebrew)
+
+xme (Mehri)
+
+sqt (Soqotri)
+
+amh (Amharic)
+
+IE & neighbors
+
+hit (Hittite)
+
+grc-linb (Mycenaean)
+
+grc (Classical Greek)
+
+lat (Latin)
+
+got (Gothic)
+
+ang (Old English)
+
+enm (Middle English)
+
+eme (Early Modern English)
+
+eng (Modern English)
+
+sga (Old Irish)
+
+prg (Old Prussian)
+
+chu (OCS)
+
+san-ved (Vedic)
+
+pli (Pāli)
+
+ave (Avestan)
+
+peo (Old Persian)
+
+xcl (Classical Armenian)
+
+18) One-Page Authoring Templates
+18.1 Concept (copy/paste)
+{
+  "concept_id": "HAND",
+  "core_gloss_en": "hand (part of upper limb)",
+  "synonyms_en": ["palm (near-meronym use)", "mitt (colloq.)"],
+  "meronyms": ["palm","back of hand","knuckle","finger","thumb","nail"],
+  "holonyms": ["arm","upper limb","body"],
+  "figurative_links": [
+    {"lang":"ara","form":"yad","gloss":"power/authority","type":"metonymy"}
+  ],
+  "priority_tier": "A",
+  "anchors": {
+    "lat": {
+      "lemma": "manus",
+      "lemma_pos": "N",
+      "lemma_status": "gold",
+      "lemma_source": "Standard Latin dictionary"
+    }
+  },
+  "notes": "Radius 1 for meronyms; radius 2 for figuratives in Semitic idiom."
+}
+
+18.2 Motif Note
+Concept(s): EYE, WATER (spring)
+Lead IDs: ARA.class.ʿayn.0001 ↔ ENG.mod.spring.0021 (figurative), MLT.ghajn.0005
+Corridors observed: glottal weakening; cluster echo via Maltese 'għ'
+Scripts/ORT notes: Arabic vs Latin script-switch amplifies ORT
+Narrative (≤5 lines): Recurrent 'ʿayn/ghajn' ~ 'spring' mapping; appears in toponyms; English unrelated etymologically yet serves as figurative target node for Semitic sense expansion.
+Next languages: Turoyo, Biblical Hebrew toponyms with ʿayin.
+
+19) Artifacts (Ready Now)
+19.1 Internal project files
+
+Concept Inventory (536 items)
+
+CSV: lexical_concepts_v2_2.csv
+
+JSONL: lexical_concepts_v2_2.jsonl
+
+Latin Anchor Layer (v0.1)
+
+CSV: lexical_concepts_v2_2_with_latin_anchors.csv (includes lat_lemma + lemma_status fields)
+
+JSONL equivalent
+
+Filter Tier “A” to prioritize the first sprint. Use Tier “B” for daily-life breadth and Tier “C” for extended discovery.
+
+19.2 External lexical data baselines (v0.1)
+
+These are the primary external sources to seed the lexeme layer (to be ingested into /data/raw):
+
+Multilingual / IPA backbone (all languages)
+
+Wiktextract dump (English Wiktionary, all languages, JSONL + IPA):
+enwiktionary-latest.jsonl.gz via
+https://github.com/tatuylonen/wiktextract/releases/latest/download/enwiktionary-latest.jsonl.gz
+
+Language–English TSV dictionaries (Wiktionary-derived)
+
+Arabic-English, Aramaic-English, Assyrian Neo-Aramaic-English, Akkadian-English, Ancient Greek-English, Middle English-English, Old English-English, etc.:
+https://github.com/Vuizur/Wiktionary-Dictionaries
+
+Qur’ānic / Classical Arabic (morphology + lemmas + roots)
+
+Qur’anic Arabic Corpus (downloadable morphology):
+official: https://corpus.quran.com/download
+GitHub mirror: https://github.com/mustafa0x/quran-morphology
+
+Latin (anchors and rich lexicon)
+
+Whitaker’s Words (Latin lexicon, public domain):
+https://sourceforge.net/projects/wwwords/
+
+Latin WordNet (lemma–synset graph):
+https://github.com/CIRCSE/latinwordnet
+
+Syriac / Aramaic corpora
+
+Syriac corpus (TEI XML):
+https://github.com/srophe/syriac-corpus
+
+Peshitta ETCBC (morphologically annotated Syriac NT):
+https://github.com/ETCBC/peshitta
+
+Old English
+
+Bosworth–Toller Anglo-Saxon Dictionary (digital):
+http://bosworth.ff.cuni.cz (XML / TEI files via project)
+
+Iraqi Arabic (lexeme seeds)
+
+Lisan Iraqi Arabic corpus (dialectal texts with annotations):
+https://github.com/lisancorpus/lisancorpus
+
+Each of these is ingested under /data/raw/{language}/{source}/ and normalized into the unified lexeme schema before RCG.
+
+20) Close
+
+This v3.2 Master Foundation Document is the operative baseline for the project.
+
+It keeps Discovery wide and English-forward, introduces a lemma anchor system with Latin as the first anchor language, encodes synonyms and part–whole structure, respects Semitic figurative usage, and preserves the orthographic fossils that power ORT.
+
+Nothing is prematurely filtered; all evidence is ranked, tagged, anchored, and narrated.
+When Discovery Corpus v1.0 is frozen and anchor KPIs are satisfied, the Validation Track will be activated to rigorously test what endures.
+
+21) Appendix A — Latin Anchor Style Guide (v1.0)
+
+Stage
+Use Classical Latin (roughly late Republic–early Empire) as the default temporal frame.
+
+Citation forms
+
+Nouns in nominative singular (aqua, ignis, manus, cor).
+
+Verbs in the 1st principal part (ire, videre, dicere, amare).
+
+Adjectives in masculine nominative singular (bonus, magnus, novus).
+
+Concept vs lemma type
+
+Concepts primarily actions/states (GO, SEE, SAY, LIVE) → verbs.
+
+Concepts primarily entities/events (DEATH, BIRTH, HOUSE) → nouns.
+
+If both are central, choose the more cross-linguistically comparable and record alternates in notes.
+
+Polysemy and multiple candidates
+
+If a concept can map to several Latin lemmas (e.g., ROAD: via vs iter), designate one as the primary lemma (gold) and treat others as secondary, documented in notes and/or additional anchors.
+
+Sense discipline
+
+Keep anchors Radius-0 literal unless the concept is explicitly figurative.
+
+Do not let idiomatic/figurative Latin choices stand for literal concepts unless clearly flagged.
+
+Morphology & gender
+
+Always record grammatical gender and full dictionary information in notes where relevant (e.g., manus, -us (f.)).
+
+Where irregular plurals or stem changes exist (os/ossis, dens/dentis), document them in notes.
+
+Status progression
+
+Default brute-filled anchors start as lemma_status: "auto_brut".
+
+Once checked against a reliable dictionary/grammar, upgrade to silver or gold.
+
+gold implies both attestation and clear sense alignment with the concept definition.
+
+Orthographic choices
+
+Use macrons where helpful (sōl, lūna, ūnus) in internal data.
+
+Maintain a parallel ASCII-safe representation where needed for tooling.
+
+Loanwords & later forms
+
+Avoid Medieval or later Latin unless the concept is explicitly temporally anchored there.
+
+For obviously borrowed or late forms, tag with loan_flag: true and consider them separate from core Classical anchors.
+
+Change control
+
+Any systematic change to Latin lemma choices should be versioned (e.g., Latin Anchor Set v1.1) and propagated via scripts (not manual edits) to keep the pipeline reproducible.

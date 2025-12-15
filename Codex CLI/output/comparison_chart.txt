@@ -1,0 +1,6 @@
+Concept	English	Latin	Greek	Arabic
+mother	mother / /ˈməðɝ/	mater / mater	μήτηρ / mήtɛːr	
+father	father / /ˈfɑðɝ/	pater / pater	πατήρ / patήr	أَب / ʔaːab
+hand	hand / /ˈhænd/	manus / manus	χείρ / kʰeίr	يَد / jad
+eye	eye / /ˈaɪ/	oculus / okulus	ὀφθαλμός / opʰtʰalmόs	عَيْن / ʕajn
+heart	heart / /ˈhɑɹt/	cor / kor	καρδία / kardίa	قَلْب / qalb
