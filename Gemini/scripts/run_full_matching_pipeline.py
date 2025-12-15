@@ -18,7 +18,10 @@ LEGACY_SEMITIC_FILES = [
 ]
 ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/_parts/english_ipa_merged_pos"
 LEGACY_ENGLISH_PARTS_DIR = BASE_DIR / "data/processed/_parts/english_ipa_merged"
-CONCEPTS_FILE = BASE_DIR / "data/processed/concepts/concepts_v3_2_enriched.jsonl"
+CONCEPTS_FILE = BASE_DIR / "resources/concepts/concepts_v3_2_enriched.jsonl"
+LEGACY_CONCEPTS_FILES = [
+    BASE_DIR / "data/processed/concepts/concepts_v3_2_enriched.jsonl",
+]
 OUTPUT_FILE = BASE_DIR / "Gemini/output/leads_full.jsonl"
 
 # Weights (tuned from prototype)
@@ -34,8 +37,14 @@ def run_pipeline(limit_per_part: int = 0):
     start_time = time.time()
     
     # 1. Load Resources
-    print(f"Loading Concept Map from {CONCEPTS_FILE}...")
-    mapper = ConceptMapper(CONCEPTS_FILE)
+    concepts_path = CONCEPTS_FILE
+    if not concepts_path.exists():
+        for candidate in LEGACY_CONCEPTS_FILES:
+            if candidate.exists():
+                concepts_path = candidate
+                break
+    print(f"Loading Concept Map from {concepts_path}...")
+    mapper = ConceptMapper(concepts_path if concepts_path.exists() else None)
     
     semitic_path = SEMITIC_FILE
     if not semitic_path.exists():

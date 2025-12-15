@@ -4,7 +4,7 @@ This repo separates **code**, **tracked references**, and **local datasets**:
 
 - `OpenAI/` and `Gemini/`: team workspaces (scripts + local outputs).
 - `src/`: reusable code and stubs (future: shared library).
-- `resources/`: tracked, lightweight reference assets (e.g., legacy concept lists).
+- `resources/`: tracked, lightweight reference assets (concept registry, anchors, small reference tables).
 - `data/`: local datasets and generated tables (**not committed by default**; see `data/README.md`).
 
 ## What “ingest” means here
@@ -33,4 +33,3 @@ Canonical outputs are documented in `data/processed/README.md`.
 
 - Some Arabic resources in this project were sourced from an external local folder (examples referenced in scripts): `C:/AI Projects/Resources/...`.
 - `src/ingest/*_stub.py` are stubs/plans, not the current production ingest path (which is `OpenAI/scripts/*`).
-

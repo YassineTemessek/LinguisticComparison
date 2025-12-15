@@ -1,0 +1,288 @@
+concept_id,core_gloss_en,category,priority_tier
+BODY_01_HEAD,Head,Body & Anatomy,C1 Core
+BODY_02_HAIR_(HEAD),Hair (head),Body & Anatomy,C2 Near-Universal
+BODY_03_EYE,Eye,Body & Anatomy,C1 Core
+BODY_04_EAR,Ear,Body & Anatomy,C1 Core
+BODY_05_NOSE,Nose,Body & Anatomy,C1 Core
+BODY_06_MOUTH,Mouth,Body & Anatomy,C1 Core
+BODY_07_TOOTH,Tooth,Body & Anatomy,C1 Core
+BODY_08_TONGUE,Tongue,Body & Anatomy,C1 Core
+BODY_09_NECK,Neck,Body & Anatomy,C2 Near-Universal
+BODY_10_SHOULDER,Shoulder,Body & Anatomy,C2 Near-Universal
+BODY_11_ARM,Arm,Body & Anatomy,C1 Core
+BODY_12_ELBOW,Elbow,Body & Anatomy,C2 Near-Universal
+BODY_13_HAND,Hand,Body & Anatomy,C1 Core
+BODY_14_FINGER,Finger,Body & Anatomy,C1 Core
+BODY_15_NAIL,Nail,Body & Anatomy,C2 Near-Universal
+BODY_16_CHEST_BREAST,Chest / Breast,Body & Anatomy,C2 Near-Universal
+BODY_17_BACK,Back,Body & Anatomy,C2 Near-Universal
+BODY_18_BELLY_STOMACH,Belly / Stomach,Body & Anatomy,C1 Core
+BODY_19_HIP,Hip,Body & Anatomy,C2 Near-Universal
+BODY_20_LEG,Leg,Body & Anatomy,C1 Core
+BODY_21_KNEE,Knee,Body & Anatomy,C2 Near-Universal
+BODY_22_FOOT,Foot,Body & Anatomy,C1 Core
+BODY_23_BONE,Bone,Body & Anatomy,C1 Core
+BODY_24_HEART,Heart,Body & Anatomy,C1 Core
+BODY_25_LUNG,Lung,Body & Anatomy,C2 Near-Universal
+BODY_26_LIVER,Liver,Body & Anatomy,C2 Near-Universal
+BODY_27_BLOOD,Blood,Body & Anatomy,C1 Core
+BODY_28_SKIN_HIDE,Skin / Hide,Body & Anatomy,C1 Core
+BODY_29_BRAIN,Brain,Body & Anatomy,C2 Near-Universal
+BODY_30_BREATH,Breath,Body & Anatomy,C1 Core
+BODY_31_FAT_GREASE,Fat / Grease,Body & Anatomy,C2 Near-Universal
+BODY_32_MARROW,Marrow,Body & Anatomy,C2 Near-Universal
+BODY_33_SWEAT,Sweat,Body & Anatomy,C2 Near-Universal
+BODY_34_TEAR_(EYE),Tear (eye),Body & Anatomy,C2 Near-Universal
+BODY_35_SALIVA,Saliva,Body & Anatomy,C2 Near-Universal
+BODY_36_VOICE,Voice,Body & Anatomy,C2 Near-Universal
+KIN_01_MOTHER,Mother,Family & Kinship,C1 Core
+KIN_02_FATHER,Father,Family & Kinship,C1 Core
+KIN_03_BROTHER,Brother,Family & Kinship,C1 Core
+KIN_04_SISTER,Sister,Family & Kinship,C1 Core
+KIN_05_SON,Son,Family & Kinship,C1 Core
+KIN_06_DAUGHTER,Daughter,Family & Kinship,C1 Core
+KIN_07_CHILD_(OFFSPRING),Child (offspring),Family & Kinship,C1 Core
+KIN_08_PARENT,Parent,Family & Kinship,C2 Near-Universal
+KIN_09_HUSBAND,Husband,Family & Kinship,C2 Near-Universal
+KIN_10_WIFE,Wife,Family & Kinship,C2 Near-Universal
+KIN_11_MAN_(MALE_HUMAN),Man (male human),Family & Kinship,C1 Core
+KIN_12_WOMAN_(FEMALE_HUMAN),Woman (female human),Family & Kinship,C1 Core
+KIN_13_PERSON_HUMAN,Person / Human,Family & Kinship,C1 Core
+KIN_14_FAMILY,Family,Family & Kinship,C2 Near-Universal
+KIN_15_ANCESTOR,Ancestor,Family & Kinship,C2 Near-Universal
+KIN_16_TRIBE_CLAN,Tribe / Clan,Family & Kinship,C2 Near-Universal
+NATURE_01_SUN,Sun,Nature & Environment,C1 Core
+NATURE_02_MOON,Moon,Nature & Environment,C1 Core
+NATURE_03_STAR,Star,Nature & Environment,C2 Near-Universal
+NATURE_04_SKY_HEAVEN,Sky / Heaven,Nature & Environment,C1 Core
+NATURE_05_EARTH_GROUND_SOIL,Earth / Ground / Soil,Nature & Environment,C1 Core
+NATURE_06_FIRE,Fire,Nature & Environment,C1 Core
+NATURE_07_WATER,Water,Nature & Environment,C1 Core
+NATURE_08_WIND_AIR,Wind / Air,Nature & Environment,C1 Core
+NATURE_09_STONE_ROCK,Stone / Rock,Nature & Environment,C1 Core
+NATURE_10_MOUNTAIN,Mountain,Nature & Environment,C2 Near-Universal
+NATURE_11_RIVER_STREAM,River / Stream,Nature & Environment,C1 Core
+NATURE_12_SEA_LAKE,Sea / Lake,Nature & Environment,C2 Near-Universal
+NATURE_13_TREE,Tree,Nature & Environment,C1 Core
+NATURE_14_LEAF,Leaf,Nature & Environment,C1 Core
+NATURE_15_SEED,Seed,Nature & Environment,C1 Core
+NATURE_16_ROOT_(PLANT),Root (plant),Nature & Environment,C1 Core
+NATURE_17_WOOD_(MATERIAL),Wood (material),Nature & Environment,C1 Core
+NATURE_18_GRASS,Grass,Nature & Environment,C2 Near-Universal
+NATURE_19_SAND,Sand,Nature & Environment,C2 Near-Universal
+NATURE_20_CLAY_MUD,Clay / Mud,Nature & Environment,C2 Near-Universal
+NATURE_21_DUST,Dust,Nature & Environment,C2 Near-Universal
+NATURE_22_SMOKE,Smoke,Nature & Environment,C1 Core
+NATURE_23_ASH,Ash,Nature & Environment,C1 Core
+NATURE_24_RAIN,Rain,Nature & Environment,C1 Core
+NATURE_25_SNOW_ICE,Snow / Ice,Nature & Environment,C2 Near-Universal
+NATURE_26_THUNDER,Thunder,Nature & Environment,C2 Near-Universal
+NATURE_27_LIGHTNING,Lightning,Nature & Environment,C2 Near-Universal
+NATURE_28_STONE_TOOL_AXE,Stone Tool / Axe,Nature & Environment,C2 Near-Universal
+CREATURE_01_ANIMAL_BEAST_(GENERIC),Animal / Beast (generic),Key Domesticates & Creatures,C1 Core
+CREATURE_02_BIRD,Bird,Key Domesticates & Creatures,C1 Core
+CREATURE_03_FISH,Fish,Key Domesticates & Creatures,C1 Core
+CREATURE_04_SNAKE_SERPENT,Snake / Serpent,Key Domesticates & Creatures,C2 Near-Universal
+CREATURE_05_DOG,Dog,Key Domesticates & Creatures,C1 Core
+CREATURE_06_COW_OX_CATTLE,Cow / Ox / Cattle,Key Domesticates & Creatures,C1 Core
+CREATURE_07_SHEEP_GOAT,Sheep / Goat,Key Domesticates & Creatures,C1 Core
+CREATURE_08_HORSE,Horse,Key Domesticates & Creatures,C2 Near-Universal
+CREATURE_09_DONKEY,Donkey,Key Domesticates & Creatures,C2 Near-Universal
+CREATURE_10_CAMEL,Camel,Key Domesticates & Creatures,R Regional
+CREATURE_11_PIG_BOAR,Pig / Boar,Key Domesticates & Creatures,C2 Near-Universal
+CREATURE_12_CHICKEN_FOWL,Chicken / Fowl,Key Domesticates & Creatures,C2 Near-Universal
+CREATURE_13_BEE,Bee,Key Domesticates & Creatures,C2 Near-Universal
+CREATURE_14_WOLF,Wolf,Key Domesticates & Creatures,C2 Near-Universal
+TIME_SPACE_01_DAY,Day,Time & Space,C1 Core
+TIME_SPACE_02_NIGHT,Night,Time & Space,C1 Core
+TIME_SPACE_03_YEAR,Year,Time & Space,C1 Core
+TIME_SPACE_04_TIME_(DURATION),Time (duration),Time & Space,C1 Core
+TIME_SPACE_05_MORNING,Morning,Time & Space,C2 Near-Universal
+TIME_SPACE_06_EVENING,Evening,Time & Space,C2 Near-Universal
+TIME_SPACE_07_TODAY_NOW,Today / Now,Time & Space,C1 Core
+TIME_SPACE_08_YESTERDAY,Yesterday,Time & Space,C1 Core
+TIME_SPACE_09_TOMORROW,Tomorrow,Time & Space,C1 Core
+TIME_SPACE_10_BEFORE,Before,Time & Space,C1 Core
+TIME_SPACE_11_AFTER,After,Time & Space,C1 Core
+TIME_SPACE_12_EARLY_SOON,Early / Soon,Time & Space,C2 Near-Universal
+TIME_SPACE_13_LATE,Late,Time & Space,C2 Near-Universal
+TIME_SPACE_14_HERE,Here,Time & Space,C1 Core
+TIME_SPACE_15_THERE,There,Time & Space,C1 Core
+TIME_SPACE_16_NEAR,Near,Time & Space,C1 Core
+TIME_SPACE_17_FAR,Far,Time & Space,C1 Core
+TIME_SPACE_18_UP_ABOVE,Up / Above,Time & Space,C1 Core
+TIME_SPACE_19_DOWN_BELOW,Down / Below,Time & Space,C1 Core
+TIME_SPACE_20_INSIDE,Inside,Time & Space,C1 Core
+TIME_SPACE_21_OUTSIDE,Outside,Time & Space,C1 Core
+TIME_SPACE_22_FRONT,Front,Time & Space,C2 Near-Universal
+TIME_SPACE_23_BACK_(LOCATION),Back (location),Time & Space,C2 Near-Universal
+TIME_SPACE_24_LEFT,Left,Time & Space,C2 Near-Universal
+TIME_SPACE_25_RIGHT,Right,Time & Space,C2 Near-Universal
+MOTION_01_GO_WALK,Go / Walk,Motion & Physical Verbs,C1 Core
+MOTION_02_COME,Come,Motion & Physical Verbs,C1 Core
+MOTION_03_RUN,Run,Motion & Physical Verbs,C1 Core
+MOTION_04_ENTER,Enter,Motion & Physical Verbs,C1 Core
+MOTION_05_EXIT_LEAVE,Exit / Leave,Motion & Physical Verbs,C1 Core
+MOTION_06_SIT,Sit,Motion & Physical Verbs,C1 Core
+MOTION_07_STAND,Stand,Motion & Physical Verbs,C1 Core
+MOTION_08_LIE_(RECLINE),Lie (recline),Motion & Physical Verbs,C2 Near-Universal
+MOTION_09_FALL,Fall,Motion & Physical Verbs,C1 Core
+MOTION_10_CLIMB,Climb,Motion & Physical Verbs,C2 Near-Universal
+MOTION_11_CARRY,Carry,Motion & Physical Verbs,C1 Core
+MOTION_12_BRING,Bring,Motion & Physical Verbs,C1 Core
+MOTION_13_TAKE,Take,Motion & Physical Verbs,C1 Core
+MOTION_14_GIVE,Give,Motion & Physical Verbs,C1 Core
+MOTION_15_PUT_PLACE,Put / Place,Motion & Physical Verbs,C1 Core
+MOTION_16_HOLD,Hold,Motion & Physical Verbs,C1 Core
+MOTION_17_THROW,Throw,Motion & Physical Verbs,C1 Core
+MOTION_18_HIT_STRIKE,Hit / Strike,Motion & Physical Verbs,C1 Core
+MOTION_19_CUT,Cut,Motion & Physical Verbs,C1 Core
+MOTION_20_BREAK,Break,Motion & Physical Verbs,C1 Core
+MOTION_21_OPEN,Open,Motion & Physical Verbs,C1 Core
+MOTION_22_CLOSE,Close,Motion & Physical Verbs,C1 Core
+MOTION_23_FLY,Fly,Motion & Physical Verbs,C2 Near-Universal
+MOTION_24_SWIM,Swim,Motion & Physical Verbs,C2 Near-Universal
+NEED_01_EAT,Eat,Needs & Human Actions,C1 Core
+NEED_02_DRINK,Drink,Needs & Human Actions,C1 Core
+NEED_03_BREATHE,Breathe,Needs & Human Actions,C1 Core
+NEED_04_SLEEP,Sleep,Needs & Human Actions,C1 Core
+NEED_05_WAKE,Wake,Needs & Human Actions,C1 Core
+NEED_06_LIVE_BE_ALIVE,Live / Be Alive,Needs & Human Actions,C1 Core
+NEED_07_DIE,Die,Needs & Human Actions,C1 Core
+NEED_08_KILL,Kill,Needs & Human Actions,C1 Core
+NEED_09_HUNT,Hunt,Needs & Human Actions,C2 Near-Universal
+NEED_10_COOK,Cook,Needs & Human Actions,C2 Near-Universal
+NEED_11_BURN_(TR/INTR),Burn (tr/intr),Needs & Human Actions,C1 Core
+NEED_12_SPEAK_SAY_TALK,Speak / Say / Talk,Needs & Human Actions,C1 Core
+NEED_13_HEAR,Hear,Needs & Human Actions,C1 Core
+NEED_14_SEE,See,Needs & Human Actions,C1 Core
+NEED_15_SMELL,Smell,Needs & Human Actions,C1 Core
+NEED_16_TASTE,Taste,Needs & Human Actions,C2 Near-Universal
+NEED_17_TOUCH,Touch,Needs & Human Actions,C1 Core
+NEED_18_KNOW,Know,Needs & Human Actions,C1 Core
+NEED_19_THINK,Think,Needs & Human Actions,C1 Core
+NEED_20_REMEMBER,Remember,Needs & Human Actions,C2 Near-Universal
+NEED_21_FORGET,Forget,Needs & Human Actions,C2 Near-Universal
+NEED_22_WANT_DESIRE,Want / Desire,Needs & Human Actions,C1 Core
+NEED_23_LIKE_LOVE,Like / Love,Needs & Human Actions,C1 Core
+NEED_24_FEAR,Fear,Needs & Human Actions,C1 Core
+NEED_25_PAIN_HURT,Pain / Hurt,Needs & Human Actions,C1 Core
+NEED_26_LAUGH,Laugh,Needs & Human Actions,C2 Near-Universal
+NEED_27_CRY_(WEEP),Cry (weep),Needs & Human Actions,C2 Near-Universal
+NEED_28_BITE,Bite,Needs & Human Actions,C1 Core
+NEED_29_CHEW,Chew,Needs & Human Actions,C2 Near-Universal
+NEED_30_SWALLOW,Swallow,Needs & Human Actions,C2 Near-Universal
+NEED_31_SPIT,Spit,Needs & Human Actions,C2 Near-Universal
+NEED_32_URINATE,Urinate,Needs & Human Actions,C2 Near-Universal
+NEED_33_DEFECATE,Defecate,Needs & Human Actions,C2 Near-Universal
+QUAL_01_ONE,One,"Quantity, Quality & Identity",C1 Core
+QUAL_02_TWO,Two,"Quantity, Quality & Identity",C1 Core
+QUAL_03_THREE,Three,"Quantity, Quality & Identity",C1 Core
+QUAL_04_FOUR,Four,"Quantity, Quality & Identity",C1 Core
+QUAL_05_FIVE,Five,"Quantity, Quality & Identity",C1 Core
+QUAL_06_SIX,Six,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_07_SEVEN,Seven,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_08_EIGHT,Eight,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_09_NINE,Nine,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_10_TEN,Ten,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_11_ALL,All,"Quantity, Quality & Identity",C1 Core
+QUAL_12_MANY,Many,"Quantity, Quality & Identity",C1 Core
+QUAL_13_FEW,Few,"Quantity, Quality & Identity",C1 Core
+QUAL_14_SOME,Some,"Quantity, Quality & Identity",C1 Core
+QUAL_15_SAME,Same,"Quantity, Quality & Identity",C1 Core
+QUAL_16_DIFFERENT,Different,"Quantity, Quality & Identity",C1 Core
+QUAL_17_BIG_LARGE,Big / Large,"Quantity, Quality & Identity",C1 Core
+QUAL_18_SMALL_LITTLE,Small / Little,"Quantity, Quality & Identity",C1 Core
+QUAL_19_LONG,Long,"Quantity, Quality & Identity",C1 Core
+QUAL_20_SHORT,Short,"Quantity, Quality & Identity",C1 Core
+QUAL_21_TALL_HIGH,Tall / High,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_22_DEEP,Deep,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_23_WIDE_BROAD,Wide / Broad,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_24_NARROW,Narrow,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_25_GOOD,Good,"Quantity, Quality & Identity",C1 Core
+QUAL_26_BAD_EVIL,Bad / Evil,"Quantity, Quality & Identity",C1 Core
+QUAL_27_HOT,Hot,"Quantity, Quality & Identity",C1 Core
+QUAL_28_COLD,Cold,"Quantity, Quality & Identity",C1 Core
+QUAL_29_WARM,Warm,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_30_COOL,Cool,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_31_NEW,New,"Quantity, Quality & Identity",C1 Core
+QUAL_32_OLD,Old,"Quantity, Quality & Identity",C1 Core
+QUAL_33_DRY,Dry,"Quantity, Quality & Identity",C1 Core
+QUAL_34_WET,Wet,"Quantity, Quality & Identity",C1 Core
+QUAL_35_HEAVY,Heavy,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_36_LIGHT_(WEIGHT),Light (weight),"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_37_HARD,Hard,"Quantity, Quality & Identity",C1 Core
+QUAL_38_SOFT,Soft,"Quantity, Quality & Identity",C1 Core
+QUAL_39_SHARP,Sharp,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_40_DULL_BLUNT,Dull / Blunt,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_41_FULL,Full,"Quantity, Quality & Identity",C1 Core
+QUAL_42_EMPTY,Empty,"Quantity, Quality & Identity",C1 Core
+QUAL_43_CLEAN,Clean,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_44_DIRTY,Dirty,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_45_WHITE,White,"Quantity, Quality & Identity",C1 Core
+QUAL_46_BLACK,Black,"Quantity, Quality & Identity",C1 Core
+QUAL_47_RED,Red,"Quantity, Quality & Identity",C1 Core
+QUAL_48_GREEN,Green,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_49_YELLOW,Yellow,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_50_BLUE,Blue,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_51_SWEET,Sweet,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_52_SALTY,Salty,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_53_SOUR,Sour,"Quantity, Quality & Identity",C2 Near-Universal
+QUAL_54_BITTER,Bitter,"Quantity, Quality & Identity",C2 Near-Universal
+CULT_01_GOD_DEITY,God / Deity,Cultural & Spiritual Concepts,C1 Core
+CULT_02_SPIRIT_SOUL_BREATH,Spirit / Soul / Breath,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_03_KING_RULER,King / Ruler,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_04_SLAVE_SERVANT,Slave / Servant,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_05_HOUSE_HOME_DWELLING,House / Home / Dwelling,Cultural & Spiritual Concepts,C1 Core
+CULT_06_DOOR,Door,Cultural & Spiritual Concepts,C1 Core
+CULT_07_WALL,Wall,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_08_PATH_WAY_ROAD,Path / Way / Road,Cultural & Spiritual Concepts,C1 Core
+CULT_09_VILLAGE_TOWN,Village / Town,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_10_NAME,Name,Cultural & Spiritual Concepts,C1 Core
+CULT_11_LAW_RULE_ORDER,Law / Rule / Order,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_12_TRUTH,Truth,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_13_BREAD_STAPLE_FOOD,Bread / Staple Food,Cultural & Spiritual Concepts,C1 Core
+CULT_14_MEAT,Meat,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_15_MILK,Milk,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_16_SALT,Salt,Cultural & Spiritual Concepts,C1 Core
+CULT_17_OIL_FAT,Oil / Fat,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_18_HONEY,Honey,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_19_BOAT_SHIP,Boat / Ship,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_20_FIREPLACE_HEARTH,Fireplace / Hearth,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_21_MARKET_TRADE,Market / Trade,Cultural & Spiritual Concepts,C2 Near-Universal
+CULT_22_WAR_BATTLE,War / Battle,Cultural & Spiritual Concepts,C2 Near-Universal
+PRONQ_01_I_ME,I / Me,Pronouns & Interrogatives,C1 Core
+PRONQ_02_YOU_(SG),You (sg),Pronouns & Interrogatives,C1 Core
+PRONQ_03_HE_SHE_IT,He / She / It,Pronouns & Interrogatives,C1 Core
+PRONQ_04_WE_(INCLUSIVE/EXCLUSIVE_NOT_MARKED),We (inclusive/exclusive not marked),Pronouns & Interrogatives,C1 Core
+PRONQ_05_YOU_(PL),You (pl),Pronouns & Interrogatives,C1 Core
+PRONQ_06_THEY,They,Pronouns & Interrogatives,C1 Core
+PRONQ_07_WHO,Who?,Pronouns & Interrogatives,C1 Core
+PRONQ_08_WHAT,What?,Pronouns & Interrogatives,C1 Core
+PRONQ_09_WHERE,Where?,Pronouns & Interrogatives,C1 Core
+PRONQ_10_WHEN,When?,Pronouns & Interrogatives,C1 Core
+PRONQ_11_HOW,How?,Pronouns & Interrogatives,C1 Core
+PRONQ_12_WHY,Why?,Pronouns & Interrogatives,C2 Near-Universal
+PRONQ_13_THIS_(PROXIMAL),This (proximal),Pronouns & Interrogatives,C1 Core
+PRONQ_14_THAT_(DISTAL),That (distal),Pronouns & Interrogatives,C1 Core
+PRONQ_15_THESE_(PROX._PL.),These (prox. pl.),Pronouns & Interrogatives,C2 Near-Universal
+PRONQ_16_THOSE_(DIST._PL.),Those (dist. pl.),Pronouns & Interrogatives,C2 Near-Universal
+REL_01_AND,And,Relational & Function Words,C1 Core
+REL_02_OR,Or,Relational & Function Words,C1 Core
+REL_03_NOT_NO,Not / No,Relational & Function Words,C1 Core
+REL_04_IF,If,Relational & Function Words,C1 Core
+REL_05_BECAUSE,Because,Relational & Function Words,C2 Near-Universal
+REL_06_WITH,With,Relational & Function Words,C1 Core
+REL_07_WITHOUT,Without,Relational & Function Words,C2 Near-Universal
+REL_08_IN_AT_ON,In / At / On,Relational & Function Words,C1 Core
+REL_09_FROM,From,Relational & Function Words,C1 Core
+REL_10_TO_TOWARD,To / Toward,Relational & Function Words,C1 Core
+REL_11_OVER_ABOVE,Over / Above,Relational & Function Words,C2 Near-Universal
+REL_12_UNDER_BELOW,Under / Below,Relational & Function Words,C2 Near-Universal
+REL_13_BETWEEN,Between,Relational & Function Words,C2 Near-Universal
+REL_14_BEFORE_(TIME),Before (time),Relational & Function Words,C1 Core
+REL_15_AFTER_(TIME),After (time),Relational & Function Words,C1 Core
+POSEX_01_HAVE_POSSESS,Have / Possess,Possession & Existence,C1 Core
+POSEX_02_BE_EXIST,Be / Exist,Possession & Existence,C1 Core
+POSEX_03_OWN_PROPERTY,Own / Property,Possession & Existence,C2 Near-Universal
+POSEX_04_BELONG_(TO),Belong (to),Possession & Existence,C2 Near-Universal

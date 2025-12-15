@@ -1,14 +1,17 @@
 """
 Enrich the normalized concept inventory with English synonyms/meronyms/holonyms
-and a few figurative links. Output: data/processed/concepts/concepts_v3_2_enriched.jsonl
+and a few figurative links.
+
+Input: resources/concepts/concepts_v3_2_normalized.jsonl
+Output: resources/concepts/concepts_v3_2_enriched.jsonl
 """
 
 import json
 from pathlib import Path
 
-BASE = Path(__file__).resolve().parents[1]
-IN_PATH = BASE / "data" / "processed" / "concepts" / "concepts_v3_2_normalized.jsonl"
-OUT_PATH = BASE / "data" / "processed" / "concepts" / "concepts_v3_2_enriched.jsonl"
+REPO_ROOT = Path(__file__).resolve().parents[2]
+IN_PATH = REPO_ROOT / "resources" / "concepts" / "concepts_v3_2_normalized.jsonl"
+OUT_PATH = REPO_ROOT / "resources" / "concepts" / "concepts_v3_2_enriched.jsonl"
 
 # Enrichment payload; keep English-forward and light-touch (no semantic claims).
 UPDATES = {
@@ -551,6 +554,10 @@ UPDATES = {
 
 def main() -> None:
     count = 0
+    if not IN_PATH.exists():
+        raise SystemExit(f"Missing input concepts file: {IN_PATH}")
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+
     with IN_PATH.open(encoding="utf-8") as f_in, OUT_PATH.open("w", encoding="utf-8") as f_out:
         for line in f_in:
             obj = json.loads(line)

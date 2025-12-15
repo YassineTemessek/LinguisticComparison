@@ -6,17 +6,22 @@ This repository does **not** commit the datasets themselves by default (see `.gi
 
 ## Canonical outputs (downstream should use these)
 
-These are the “stable targets” we optimize for and keep consistent across versions:
+These are the "stable targets" we optimize for and keep consistent across versions:
 
 - `data/processed/arabic/quran_lemmas_enriched.jsonl` (Quran lemmas + translit + IPA)
 - `data/processed/arabic/hf_roots.jsonl` (Arabic roots dataset with translit + IPA)
 - `data/processed/english/english_ipa_merged_pos.jsonl` (merged English IPA lexicon with POS)
 - `data/processed/wiktionary_stardict/filtered/*_filtered.jsonl` (filtered Wiktionary stardict exports for languages where we run filtering)
-- `data/processed/concepts/concepts_v3_2_enriched.jsonl` (concept registry used for semantic gating/mapping)
-- `data/processed/anchors/*.csv` (anchor tables/scaffolds)
-- `data/processed/arabic/word_root_map_filtered.jsonl` (word→root mapping with high-noise rows removed; adds `type`)
+- `data/processed/arabic/word_root_map_filtered.jsonl` (word-root mapping with high-noise rows removed; adds `type`)
 
 Downstream scripts should prefer these paths and avoid hard-coding intermediate filenames.
+
+## Tracked reference inputs (in `resources/`)
+
+Some "inputs" are small and stable enough to commit to Git. They live under `resources/` and are consumed by matchers/enrichers alongside `data/processed/`:
+
+- `resources/concepts/concepts_v3_2_enriched.jsonl` (concept registry used for semantic gating/mapping)
+- `resources/anchors/*.csv` (anchor tables/scaffolds)
 
 ## Common JSONL schema (target contract)
 
@@ -51,7 +56,7 @@ Use `OpenAI/scripts/split_processed_jsonl.py` to generate these without clutteri
 
 ## Folder layout (summary)
 
-- Canonical: language folders (`arabic/`, `english/`, `concepts/`, `anchors/`) + `wiktionary_stardict/filtered/`
+- Canonical: language folders (`arabic/`, `english/`) + `wiktionary_stardict/filtered/`
 - Intermediate: `data/processed/_intermediate/`
 - Chunked parts: `data/processed/_parts/`
 - Wiktionary staging: `data/processed/wiktionary_stardict/{raw,enriched,normalized,filtered}/`

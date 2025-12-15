@@ -17,7 +17,10 @@ OUTPUT_FILE = OUTPUT_DIR / "prototype_leads.jsonl"
 BASE_DIR = Path(__file__).resolve().parents[2]
 DEFAULT_SEMITIC_FILE = BASE_DIR / "data/processed/wiktionary_stardict/filtered/Arabic-English_Wiktionary_dictionary_stardict_filtered.jsonl"
 DEFAULT_IE_FILE = BASE_DIR / "data/processed/english/english_ipa_merged_pos.jsonl"
-DEFAULT_CONCEPTS_FILE = BASE_DIR / "data/processed/concepts/concepts_v3_2_enriched.jsonl"
+DEFAULT_CONCEPTS_FILE = BASE_DIR / "resources/concepts/concepts_v3_2_enriched.jsonl"
+LEGACY_CONCEPTS_FILES = [
+    BASE_DIR / "data/processed/concepts/concepts_v3_2_enriched.jsonl",
+]
 
 # Default Weights (Master Foundation v3.2)
 DEFAULT_WEIGHTS = {
@@ -234,7 +237,15 @@ def load_jsonl(path: Path, limit: int = 0, filter_arabic: bool = False) -> List[
 
 def run(semitic_path: Optional[str] = None, ie_path: Optional[str] = None, concepts_path: Optional[str] = None, weights: Optional[Dict[str, float]] = None, limit: int = 1000):
     
-    concepts_file = Path(concepts_path) if concepts_path else DEFAULT_CONCEPTS_FILE
+    if concepts_path:
+        concepts_file = Path(concepts_path)
+    else:
+        concepts_file = DEFAULT_CONCEPTS_FILE
+        if not concepts_file.exists():
+            for candidate in LEGACY_CONCEPTS_FILES:
+                if candidate.exists():
+                    concepts_file = candidate
+                    break
     mapper = ConceptMapper(concepts_file) if concepts_file.exists() else None
     scorer = DiscoveryScorer(weights if weights else DEFAULT_WEIGHTS, mapper=mapper)
     

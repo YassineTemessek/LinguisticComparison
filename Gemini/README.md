@@ -8,7 +8,7 @@ Gemini scripts are designed to consume the canonical processed datasets under `d
 
 - `data/processed/wiktionary_stardict/filtered/Arabic-English_Wiktionary_dictionary_stardict_filtered.jsonl`
 - `data/processed/_parts/english_ipa_merged_pos/*.jsonl`
-- `data/processed/concepts/concepts_v3_2_enriched.jsonl`
+- `resources/concepts/concepts_v3_2_enriched.jsonl`
 
 ## Outputs
 
