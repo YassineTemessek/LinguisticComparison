@@ -27,11 +27,9 @@ Desktop.ini
 /data/processed/*
 !/data/processed/README.md
 
-# Local QA reports
-OpenAI/output/processed_manifest*.json
-
-# Local previews
-OpenAI/output/anchor_previews/
+# OpenAI local outputs (generated artifacts)
+OpenAI/output/*
+!OpenAI/output/README.md
 
 # Gemini local outputs (generated artifacts)
 Gemini/output/*
