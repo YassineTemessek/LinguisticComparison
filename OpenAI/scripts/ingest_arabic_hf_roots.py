@@ -40,7 +40,7 @@ def ingest(parquet_path: Path, out_path: Path) -> int:
     out_path.parent.mkdir(parents=True, exist_ok=True)
     count = 0
     with out_path.open("w", encoding="utf-8") as out_f:
-        for _, row in df.iterrows():
+        for row_num, (_, row) in enumerate(df.iterrows(), start=1):
             lemma = str(row.get("root", "")).strip()
             definition = str(row.get("definition", "")).strip()
             tr, ipa = translit_and_ipa(lemma)
@@ -54,6 +54,7 @@ def ingest(parquet_path: Path, out_path: Path) -> int:
                 "stage": "Classical",
                 "script": "Arabic",
                 "source": "arabic_roots_hf",
+                "source_ref": f"arabic_roots_hf:row:{row_num}",
                 "lemma_status": "auto_brut",
             }
             rec = ensure_min_schema(rec)

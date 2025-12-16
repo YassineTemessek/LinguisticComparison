@@ -36,12 +36,15 @@ def read_morph(path: pathlib.Path) -> Dict[Tuple[str, str], Dict[str, str]]:
             if not line or "\t" not in line:
                 continue
             try:
-                _ref, surface, pos_tag, feats = line.split("\t", 3)
+                ref, surface, pos_tag, feats = line.split("\t", 3)
             except ValueError:
                 continue
             feat_map = parse_features(feats)
-            lemma = feat_map.get("LEM", surface)
-            root = feat_map.get("ROOT", "")
+            surface = (surface or "").strip()
+            lemma = (feat_map.get("LEM") or surface or "").strip()
+            if not lemma:
+                continue
+            root = (feat_map.get("ROOT") or "").strip()
             key = (lemma, root)
             if key not in records:
                 records[key] = {
@@ -50,6 +53,7 @@ def read_morph(path: pathlib.Path) -> Dict[Tuple[str, str], Dict[str, str]]:
                     "pos_tag": pos_tag,
                     "pos": [pos_tag] if pos_tag else [],
                     "example_surface": surface,
+                    "source_ref": ref,
                     "language": "ara-qur",
                     "stage": "Classical",
                     "script": "Arabic",

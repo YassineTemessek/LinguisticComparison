@@ -35,7 +35,7 @@ def ingest(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
     total = 0
     with input_path.open("r", encoding="utf-8") as fh, output_path.open("w", encoding="utf-8") as out_f:
         reader = csv.DictReader(fh)
-        for row in reader:
+        for row_num, row in enumerate(reader, start=2):
             word = row.get("word") or row.get("word_form") or ""
             root = row.get("root") or ""
             tr, ipa = translit_and_ipa(word)
@@ -49,6 +49,7 @@ def ingest(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
                 "stage": "Classical",
                 "script": "Arabic",
                 "source": "word_root_map.csv",
+                "source_ref": f"word_root_map.csv:row:{row_num}:{word}:{root}",
                 "lemma_status": "auto_brut",
                 "pos": [],
             }

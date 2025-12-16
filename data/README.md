@@ -44,6 +44,7 @@ Some small, stable resources are shared via Git and live under `resources/` inst
 
 - `resources/concepts/` (concept registry used for semantic gating/mapping)
 - `resources/anchors/` (anchor tables/scaffolds)
+- `resources/samples/processed/` (small samples of canonical processed JSONL for collaboration)
 
 ## How to use
 

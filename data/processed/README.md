@@ -32,6 +32,7 @@ For JSONL lexeme files, we aim for a shared minimal schema:
   - `ipa_raw` + `ipa` (where `ipa` is normalized; no surrounding `/.../` or `[...]`)
   - `pos` (always a list)
   - `gloss_html` + `gloss_plain` (when a gloss exists)
+  - `source_ref` (optional stable pointer back to source row/key for traceability)
 
 ## Intermediate outputs (debugging / pipeline stages)
 

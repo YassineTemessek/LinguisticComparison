@@ -57,6 +57,7 @@ def merge_sources() -> List[dict]:
                     "script": "Latin",
                     "lemma_status": "auto_brut",
                     "source": f"ipa-dict:{variant}",
+                    "source_ref": f"ipa-dict:{variant}:{word}:{idx}",
                     "variant": variant,
                 }
                 rec = ensure_min_schema(rec)

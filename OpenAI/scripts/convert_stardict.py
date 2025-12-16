@@ -101,6 +101,7 @@ def convert_package(
     script: str,
     out_path: pathlib.Path,
     source: str = "wiktionary-stardict",
+    source_ref_prefix: str | None = None,
     limit: int | None = None,
 ) -> int:
     ifo = next(pkg_dir.glob("*.ifo"), None)
@@ -132,6 +133,7 @@ def convert_package(
                 "stage": stage,
                 "script": script,
                 "source": source,
+                "source_ref": f"{source_ref_prefix}:{word}" if source_ref_prefix else word,
                 "lemma_status": "auto_brut",
                 "pos": [],
             }
@@ -172,7 +174,7 @@ def main() -> None:
         lang_code, stage, script = infer_lang_stage_script(safe_slug, inferred_lang)
         out_file = args.out / f"{safe_slug}.jsonl"
         try:
-            total = convert_package(pkg, lang_code, stage, script, out_file, limit=args.limit)
+            total = convert_package(pkg, lang_code, stage, script, out_file, source_ref_prefix=safe_slug, limit=args.limit)
             print(f"[ok] {pkg} -> {out_file} ({total} entries, lang={lang_code}, stage={stage}, script={script})")
         except Exception as exc:  # noqa: BLE001
             print(f"[fail] {pkg}: {exc}")

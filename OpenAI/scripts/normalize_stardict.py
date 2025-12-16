@@ -20,7 +20,8 @@ from processed_schema import coerce_pos_list, ensure_min_schema
 POS_MAP: Dict[str, str] = {
     "noun": "N",
     "n": "N",
-    "proper noun": "N",
+    "proper noun": "name",
+    "name": "name",
     "verb": "V",
     "v": "V",
     "adjective": "ADJ",
@@ -34,9 +35,12 @@ POS_MAP: Dict[str, str] = {
     "interjection": "INTJ",
     "preposition": "PREP",
     "number": "NUM",
+    "abbreviation": "abbreviation",
+    "initialism": "abbreviation",
 }
 
 SYMBOL_RE = re.compile(r"^[^A-Za-z\u0370-\u03ff\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff]+$")  # drops pure symbols/punct
+POS_TAG_RE = re.compile(r"<i>([^<]+)</i>", re.IGNORECASE)
 
 
 def normalize_pos(raw_pos: str) -> str:
@@ -44,6 +48,12 @@ def normalize_pos(raw_pos: str) -> str:
         return ""
     key = raw_pos.lower()
     return POS_MAP.get(key, raw_pos.lower())
+
+def extract_pos_from_gloss(gloss_html: str) -> str:
+    m = POS_TAG_RE.search(gloss_html or "")
+    if not m:
+        return ""
+    return m.group(1).strip().lower()
 
 
 def normalize_file(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
@@ -56,7 +66,7 @@ def normalize_file(input_path: pathlib.Path, output_path: pathlib.Path) -> int:
             if not lemma or SYMBOL_RE.match(lemma):
                 continue
             pos_list = coerce_pos_list(rec.get("pos"))
-            raw_pos = pos_list[0] if pos_list else ""
+            raw_pos = pos_list[0] if pos_list else extract_pos_from_gloss(str(rec.get("gloss_html") or ""))
             norm = normalize_pos(raw_pos)
             rec["pos"] = [norm] if norm else []
             rec["lemma_status"] = rec.get("lemma_status", "auto_brut")

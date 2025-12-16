@@ -19,7 +19,9 @@ If validation still fails after rebuild, fix the ingest scripts to:
 
 Goal: measure improvements with numbers (coverage, IPA availability, POS availability, duplicates).
 
-Create a script that outputs a CSV/JSON report with:
+Use: `python "OpenAI/scripts/kpi_processed.py" --all` (writes JSON + CSV under `OpenAI/output/`).
+
+It should output a CSV/JSON report with:
 
 - Row counts per canonical file
 - % missing IPA per language/source
@@ -52,4 +54,3 @@ Goal: avoid repeated entries across sources and keep traceability.
 
 - Deduplicate near-identical records (keep best provenance).
 - Ensure every record has stable `source` + (optional) `source_ref` fields so you can trace back to origin lines/keys.
-

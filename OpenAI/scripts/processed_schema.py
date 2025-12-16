@@ -2,11 +2,13 @@ from __future__ import annotations
 
 import hashlib
 import re
+import unicodedata
 from typing import Any, Iterable
 
 
 _HTML_TAG_RE = re.compile(r"<[^>]+>")
 _WS_RE = re.compile(r"\s+")
+_IPA_STRESS_MARKS = str.maketrans({"\u02c8": "", "\u02cc": "", "'": ""})  # ˈ ˌ '
 
 
 def strip_html(text: str) -> str:
@@ -23,6 +25,9 @@ def normalize_ipa(ipa: str) -> str:
     ipa = ipa.strip()
     if len(ipa) >= 2 and ((ipa[0] == "/" and ipa[-1] == "/") or (ipa[0] == "[" and ipa[-1] == "]")):
         ipa = ipa[1:-1].strip()
+    ipa = unicodedata.normalize("NFC", ipa)
+    ipa = _WS_RE.sub("", ipa)
+    ipa = ipa.translate(_IPA_STRESS_MARKS)
     return ipa
 
 
@@ -67,8 +72,8 @@ def ensure_min_schema(
     rec["source"] = str(rec.get("source") or default_source or "").strip()
     rec["lemma_status"] = str(rec.get("lemma_status") or default_lemma_status or "").strip()
 
-    if "ipa" in rec:
-        ipa_raw = str(rec.get("ipa") or "")
+    if ("ipa" in rec) or ("ipa_raw" in rec):
+        ipa_raw = str(rec.get("ipa_raw") or rec.get("ipa") or "")
         rec.setdefault("ipa_raw", ipa_raw)
         rec["ipa"] = normalize_ipa(ipa_raw)
 
@@ -100,4 +105,3 @@ def iter_missing_required(rec: dict) -> Iterable[str]:
     for k in ("id", "lemma", "language", "stage", "script", "source", "lemma_status"):
         if not rec.get(k):
             yield k
-

@@ -37,7 +37,7 @@ def arpabet_to_ipa(phones: list[str]) -> str:
 def parse_cmudict(path: pathlib.Path) -> list[dict]:
     records: list[dict] = []
     with path.open("r", encoding="utf-8") as fh:
-        for line in fh:
+        for line_num, line in enumerate(fh, start=1):
             if not line or line.startswith(";"):
                 continue
             parts = line.strip().split()
@@ -56,6 +56,7 @@ def parse_cmudict(path: pathlib.Path) -> list[dict]:
                 "script": "Latin",
                 "lemma_status": "auto_brut",
                 "source": "cmudict",
+                "source_ref": f"cmudict:line:{line_num}:{word}",
                 "pos": [],
             }
             rec = ensure_min_schema(rec)
