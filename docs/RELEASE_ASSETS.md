@@ -37,3 +37,13 @@ It downloads the zip and extracts it into the repo root, creating `data/processe
 
 To avoid overwriting existing files, extraction skips files by default; pass `--overwrite` to replace.
 
+## Temporary processed-data mirror (Google Drive)
+
+Until a GitHub Release asset is available (or if you prefer Drive), maintainers may also share a Drive folder:
+
+- https://drive.google.com/drive/folders/13WZMxImkBikiyP7NXvcCth82bKJyUDj1?usp=sharing
+
+Notes:
+
+- Drive links are convenient but not strongly versioned; prefer Release assets for reproducibility.
+- After download, extract into the repo root so `data/processed/...` and any other included paths land correctly.

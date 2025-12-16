@@ -37,6 +37,11 @@ If you don't want to rebuild `data/processed/` locally, you can download a maint
 - `python "OpenAI/scripts/fetch_processed_release.py"`
 - Details: `docs/RELEASE_ASSETS.md`
 
+Temporary mirror (Google Drive):
+
+- https://drive.google.com/drive/folders/13WZMxImkBikiyP7NXvcCth82bKJyUDj1?usp=sharing
+- Download the folder (or its zip) and extract it into the repo root so paths like `data/processed/...` exist.
+
 ## Where to read next
 
 - Pipeline details: `docs/INGEST.md`

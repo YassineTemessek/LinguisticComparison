@@ -17,6 +17,8 @@ LV3 is “discovery-first”: it surfaces candidates for human review; it does n
 - Large datasets live under `data/raw/` and are **not committed** by default.
 - Generated outputs under `data/processed/`, `OpenAI/output/`, and `Gemini/output/` are **not committed** by default.
 
+If you want to use prebuilt `data/processed/` outputs without rebuilding locally, see `docs/RELEASE_ASSETS.md` (Release zip + temporary Google Drive mirror).
+
 ## Layout
 
 - `OpenAI/`: OpenAI-side scripts + local outputs
