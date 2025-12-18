@@ -2,9 +2,9 @@
 Generate simple KPI/coverage reports for canonical `data/processed/` outputs.
 
 Outputs:
-  - JSON summary (default): OpenAI/output/kpi_processed.json
-  - Per-file CSV (default): OpenAI/output/kpi_processed_files.csv
-  - IPA/POS coverage CSV (default): OpenAI/output/kpi_processed_ipa_by_source.csv
+  - JSON summary (default): outputs/kpi_processed.json
+  - Per-file CSV (default): outputs/kpi_processed_files.csv
+  - IPA/POS coverage CSV (default): outputs/kpi_processed_ipa_by_source.csv
 
 Notes:
   - Designed to stream JSONL (no pandas dependency).
@@ -240,12 +240,12 @@ def main() -> None:
     ap = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     ap.add_argument("paths", nargs="*", type=Path, help="Optional JSONL paths to summarize (in addition to --all).")
     ap.add_argument("--all", action="store_true", help="Summarize the canonical processed outputs list.")
-    ap.add_argument("--out-json", type=Path, default=Path("OpenAI/output/kpi_processed.json"), help="Output JSON path.")
-    ap.add_argument("--out-files-csv", type=Path, default=Path("OpenAI/output/kpi_processed_files.csv"), help="Output per-file CSV path.")
+    ap.add_argument("--out-json", type=Path, default=Path("outputs/kpi_processed.json"), help="Output JSON path.")
+    ap.add_argument("--out-files-csv", type=Path, default=Path("outputs/kpi_processed_files.csv"), help="Output per-file CSV path.")
     ap.add_argument(
         "--out-ipa-csv",
         type=Path,
-        default=Path("OpenAI/output/kpi_processed_ipa_by_source.csv"),
+        default=Path("outputs/kpi_processed_ipa_by_source.csv"),
         help="Output per-(language,source) IPA/POS coverage CSV path.",
     )
     ap.add_argument("--compute-duplicates", action="store_true", help="Compute duplicate counts (can be memory-heavy).")

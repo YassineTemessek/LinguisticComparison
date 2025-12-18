@@ -1,5 +1,5 @@
 """
-Prototype Matcher for Gemini.
+Legacy prototype matcher.
 Prototype implementation of the LV3 similarity scoring approach (separate orthography vs sound components + combined ranking).
 Refactored for modularity and future expansion.
 """

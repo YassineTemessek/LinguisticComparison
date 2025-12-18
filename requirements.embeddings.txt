@@ -6,7 +6,7 @@
 # Notes:
 # - This file is intentionally separate from `requirements.txt` so CI and basic
 #   ingest/validation stay lightweight.
-# - SONAR will download model weights on first run (see `Gemini/scripts/run_discovery_retrieval.py`).
+# - SONAR will download model weights on first run (see `scripts/discovery/run_discovery_retrieval.py`).
 
 # Core numeric stack
 numpy>=2.2,<3

@@ -6,7 +6,7 @@ This repo intentionally does not commit large processed datasets. Instead:
   - publish full processed canonicals as a GitHub Release asset (zip)
 
 Typical usage (after rebuilding processed outputs locally):
-  python OpenAI/scripts/package_processed_release.py --all
+  python scripts/ingest/package_processed_release.py --all
 
 Then upload the produced zip to a GitHub Release (see docs/RELEASE_ASSETS.md).
 """
@@ -78,13 +78,13 @@ def main() -> None:
     ap.add_argument(
         "--out-zip",
         type=Path,
-        default=Path("OpenAI/output/release_assets/processed_canonicals.zip"),
+        default=Path("outputs/release_assets/processed_canonicals.zip"),
         help="Zip output path.",
     )
     ap.add_argument(
         "--out-manifest",
         type=Path,
-        default=Path("OpenAI/output/release_assets/processed_canonicals_manifest.json"),
+        default=Path("outputs/release_assets/processed_canonicals_manifest.json"),
         help="Manifest JSON output path (file list, sizes, hashes).",
     )
     args = ap.parse_args()

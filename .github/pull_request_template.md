@@ -4,9 +4,9 @@ Explain what changed and why.
 
 ## How to test
 
-- [ ] `python -m compileall OpenAI/scripts Gemini/scripts src`
-- [ ] `python OpenAI/scripts/run_ingest_all.py --list`
-- [ ] `python OpenAI/scripts/validate_processed.py --all`
+- [ ] `python -m compileall scripts/ingest scripts/discovery src`
+- [ ] `python scripts/ingest/run_ingest_all.py --list`
+- [ ] `python scripts/ingest/validate_processed.py --all`
 
 ## Notes
 

@@ -22,7 +22,7 @@ CONCEPTS_FILE = BASE_DIR / "resources/concepts/concepts_v3_2_enriched.jsonl"
 LEGACY_CONCEPTS_FILES = [
     BASE_DIR / "data/processed/concepts/concepts_v3_2_enriched.jsonl",
 ]
-OUTPUT_FILE = BASE_DIR / "Gemini/output/leads_full.jsonl"
+OUTPUT_FILE = BASE_DIR / "outputs/leads_full.jsonl"
 
 # Weights (tuned from prototype)
 WEIGHTS = {

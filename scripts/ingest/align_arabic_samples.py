@@ -1,7 +1,7 @@
 """
 Quick alignment between HF roots and Quran lemmas to test recall.
 Scoring: normalized Levenshtein on IPA/translit + skeleton overlap.
-Outputs: OpenAI/output/arabic_alignment_samples.csv
+Outputs: outputs/arabic_alignment_samples.csv
 """
 
 from __future__ import annotations
@@ -56,7 +56,7 @@ def main() -> None:
     ap.add_argument("--quran", type=Path, default=Path("data/processed/arabic/quran_lemmas_enriched.jsonl"))
     ap.add_argument("--hf-limit", type=int, default=200)
     ap.add_argument("--quran-limit", type=int, default=200)
-    ap.add_argument("--out", type=Path, default=Path("OpenAI/output/arabic_alignment_samples.csv"))
+    ap.add_argument("--out", type=Path, default=Path("outputs/arabic_alignment_samples.csv"))
     args = ap.parse_args()
 
     hf = load_jsonl(args.hf, args.hf_limit)

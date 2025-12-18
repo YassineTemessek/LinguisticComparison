@@ -19,12 +19,12 @@ This repository expects datasets under `data/raw/` in a stable, script-friendly 
 - `data/raw/arabic/arabic_roots_hf/train-00000-of-00001.parquet` (used to build `data/processed/arabic/hf_roots.jsonl`)
 - `data/raw/english/ipa-dict/data/en_US.txt` and/or `data/raw/english/ipa-dict/data/en_UK.txt`
 - `data/raw/english/cmudict/cmudict.dict`
-- `data/raw/wiktionary_extracted/` (StarDict-extracted Wiktionary dictionaries; used by `OpenAI/scripts/convert_stardict.py`)
+- `data/raw/wiktionary_extracted/` (StarDict-extracted Wiktionary dictionaries; used by `scripts/ingest/convert_stardict.py`)
 
 If you keep datasets outside the repo, you can:
 
 - Run specific scripts with `--input <path>`, or
-- Set `LC_RESOURCES_DIR` (or pass `--resources-dir` to `OpenAI/scripts/run_ingest_all.py`) for Arabic "Resources-style" inputs.
+- Set `LC_RESOURCES_DIR` (or pass `--resources-dir` to `scripts/ingest/run_ingest_all.py`) for Arabic "Resources-style" inputs.
 
 ## `data/processed/` (outputs)
 
@@ -49,5 +49,5 @@ Some small, stable resources are shared via Git and live under `resources/` inst
 ## How to use
 
 - Put downloaded sources under `data/raw/`.
-- Run the ingest scripts (see `OpenAI/scripts/run_ingest_all.py`) to generate/refresh `data/processed/`.
-- Downstream preview/matching scripts consume `data/processed/` and `resources/` (and write results under `OpenAI/output/` or `Gemini/output/`).
+- Run the ingest scripts (see `scripts/ingest/run_ingest_all.py`) to generate/refresh `data/processed/`.
+- Downstream preview/matching scripts consume `data/processed/` and `resources/` (and write results under `outputs/` or `outputs/`).

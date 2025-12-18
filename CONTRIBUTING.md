@@ -5,15 +5,15 @@
 LV3 produces (discovery-first):
 
 - Canonical processed tables under `data/processed/`
-- Ranked “lead” candidates under `Gemini/output/`
-- Local caches/artifacts under `OpenAI/output/` (manifests, embeddings, indexes, previews)
+- Ranked “lead” candidates under `outputs/`
+- Local caches/artifacts under `outputs/` (manifests, embeddings, indexes, previews)
 
 LV3 is **iterative discovery**: we compare + score aggressively to see what results look like.
 Stricter “validation/proof” lives in LV4.
 
 ## Data policy
 
-Large datasets under `data/raw/` and generated artifacts under `data/processed/`, `OpenAI/output/`, and `Gemini/output/` are intentionally not committed by default.
+Large datasets under `data/raw/` and generated artifacts under `data/processed/`, `outputs/`, and `outputs/` are intentionally not committed by default.
 
 ## Setup
 
@@ -24,10 +24,10 @@ Large datasets under `data/raw/` and generated artifacts under `data/processed/`
 
 ## Run + validate
 
-- Ingest: `python "OpenAI/scripts/run_ingest_all.py"`
-- Validate: `python "OpenAI/scripts/validate_processed.py" --all`
-- Discover + score (SONAR/CANINE retrieval + hybrid scoring): `python "Gemini/scripts/run_discovery_retrieval.py" --source ... --target ...`
-- Legacy matcher (classic scoring): `python "Gemini/scripts/run_full_matching_pipeline.py"`
+- Ingest: `python "scripts/ingest/run_ingest_all.py"`
+- Validate: `python "scripts/ingest/validate_processed.py" --all`
+- Discover + score (SONAR/CANINE retrieval + hybrid scoring): `python "scripts/discovery/run_discovery_retrieval.py" --source ... --target ...`
+- Legacy matcher (classic scoring): `python "scripts/discovery/run_full_matching_pipeline.py"`
 
 ## Where to start (recommended)
 
@@ -35,7 +35,7 @@ Large datasets under `data/raw/` and generated artifacts under `data/processed/`
 2) Run discovery on tracked samples (fast smoke test):
 
 ```bash
-python "Gemini/scripts/run_discovery_retrieval.py" \
+python "scripts/discovery/run_discovery_retrieval.py" \
   --source ara@modern@arb_Arab="resources/samples/processed/Arabic-English_Wiktionary_dictionary_stardict_filtered_sample.jsonl" \
   --target eng@modern@eng_Latn="resources/samples/processed/english_ipa_merged_pos_sample.jsonl" \
   --models sonar canine --topk 200 --max-out 200 --limit 200
@@ -51,4 +51,4 @@ python "Gemini/scripts/run_discovery_retrieval.py" \
 
 - Ensure CI passes (compile + validation + ingest smoke).
 - Update docs when you change file contracts or CLI behavior.
-- Keep generated data out of git; add/update docs instead (`data/README.md`, `OpenAI/output/README.md`, `Gemini/output/README.md`).
+- Keep generated data out of git; add/update docs instead (`data/README.md`, `outputs/README.md`, `outputs/README.md`).

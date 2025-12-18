@@ -11,17 +11,17 @@ Collaboration model:
 
 1) Rebuild processed outputs locally:
 
-- `python OpenAI/scripts/run_ingest_all.py --require-inputs --fail-fast`
-- `python OpenAI/scripts/validate_processed.py --all --require-files`
+- `python scripts/ingest/run_ingest_all.py --require-inputs --fail-fast`
+- `python scripts/ingest/validate_processed.py --all --require-files`
 
 2) Package canonicals into a zip:
 
-- `python OpenAI/scripts/package_processed_release.py --all --require-files`
+- `python scripts/ingest/package_processed_release.py --all --require-files`
 
 This writes:
 
-- `OpenAI/output/release_assets/processed_canonicals.zip`
-- `OpenAI/output/release_assets/processed_canonicals_manifest.json`
+- `outputs/release_assets/processed_canonicals.zip`
+- `outputs/release_assets/processed_canonicals_manifest.json`
 
 3) Upload the zip to a GitHub Release
 
@@ -31,7 +31,7 @@ Create a release (tag any version you want) and upload `processed_canonicals.zip
 
 If a Release exists with an asset named `processed_canonicals.zip`:
 
-- `python OpenAI/scripts/fetch_processed_release.py`
+- `python scripts/ingest/fetch_processed_release.py`
 
 It downloads the zip and extracts it into the repo root, creating `data/processed/...`.
 

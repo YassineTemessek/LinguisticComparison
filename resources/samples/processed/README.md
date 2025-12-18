@@ -12,7 +12,7 @@ This folder contains **small JSONL samples** of canonical processed outputs so c
 
 From repo root:
 
-`python "OpenAI/scripts/build_processed_samples.py" --all --rows 1000`
+`python "scripts/ingest/build_processed_samples.py" --all --rows 1000`
 
 This writes:
 

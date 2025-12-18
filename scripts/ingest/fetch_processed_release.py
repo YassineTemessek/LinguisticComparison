@@ -73,7 +73,7 @@ def main() -> None:
     ap.add_argument("--url", type=str, default=None, help="Optional direct URL override (skips --repo/--asset).")
     ap.add_argument("--dest", type=Path, default=repo_root, help="Destination directory for extraction.")
     ap.add_argument("--overwrite", action="store_true", help="Overwrite existing files when extracting.")
-    ap.add_argument("--out-zip", type=Path, default=Path("OpenAI/output/downloads/processed_canonicals.zip"), help="Download target path.")
+    ap.add_argument("--out-zip", type=Path, default=Path("outputs/downloads/processed_canonicals.zip"), help="Download target path.")
     args = ap.parse_args()
 
     url = args.url or f"https://github.com/{args.repo}/releases/latest/download/{args.asset}"

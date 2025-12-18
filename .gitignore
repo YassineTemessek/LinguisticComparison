@@ -27,13 +27,9 @@ Desktop.ini
 /data/processed/*
 !/data/processed/README.md
 
-# OpenAI local outputs (generated artifacts)
-OpenAI/output/*
-!OpenAI/output/README.md
-
-# Gemini local outputs (generated artifacts)
-Gemini/output/*
-!Gemini/output/README.md
+# Local outputs (generated artifacts)
+outputs/*
+!outputs/README.md
 
 # Python caches
-Gemini/scripts/__pycache__/
+scripts/discovery/__pycache__/

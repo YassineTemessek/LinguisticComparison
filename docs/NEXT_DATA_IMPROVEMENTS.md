@@ -6,8 +6,8 @@ These are the next concrete tasks to improve **data quality and usefulness** (no
 
 Goal: every canonical processed JSONL passes `validate_processed.py` (no missing required fields, no malformed rows).
 
-- Rebuild Arabic only (using your external folder): `python "OpenAI/scripts/run_ingest_all.py" --only arabic --resources-dir "C:/AI Projects/Resources" --require-inputs --fail-fast`
-- Validate: `python "OpenAI/scripts/validate_processed.py" --all --require-files`
+- Rebuild Arabic only (using your external folder): `python "scripts/ingest/run_ingest_all.py" --only arabic --resources-dir "C:/AI Projects/Resources" --require-inputs --fail-fast`
+- Validate: `python "scripts/ingest/validate_processed.py" --all --require-files`
 
 If validation still fails after rebuild, fix the ingest scripts to:
 
@@ -19,7 +19,7 @@ If validation still fails after rebuild, fix the ingest scripts to:
 
 Goal: measure improvements with numbers (coverage, IPA availability, POS availability, duplicates).
 
-Use: `python "OpenAI/scripts/kpi_processed.py" --all` (writes JSON + CSV under `OpenAI/output/`).
+Use: `python "scripts/ingest/kpi_processed.py" --all` (writes JSON + CSV under `outputs/`).
 
 It should output a CSV/JSON report with:
 
@@ -33,7 +33,7 @@ It should output a CSV/JSON report with:
 
 Goal: reduce obvious noise that pollutes top-ranked candidates.
 
-Improve `OpenAI/scripts/filter_stardict.py` to better exclude:
+Improve `scripts/ingest/filter_stardict.py` to better exclude:
 
 - Abbreviations/initialisms
 - Proper names (where detectable)

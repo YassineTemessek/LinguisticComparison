@@ -75,7 +75,7 @@ def load_lexemes(spec: CorpusSpec, *, limit: int) -> list[LexemeRow]:
 
 
 def cache_paths(*, model: str, spec: CorpusSpec) -> tuple[Path, Path, Path, Path]:
-    base = REPO_ROOT / "OpenAI" / "output"
+    base = REPO_ROOT / "outputs"
     embeddings_dir = base / "embeddings" / model / spec.lang / (spec.stage or "unknown")
     vectors_path = embeddings_dir / "vectors.npy"
     rows_path = embeddings_dir / "rows.jsonl"
@@ -213,7 +213,7 @@ def main() -> int:
     )
 
     run_id = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-    out_path = args.output or (REPO_ROOT / "Gemini" / "output" / "leads" / f"discovery_{run_id}.jsonl")
+    out_path = args.output or (REPO_ROOT / "outputs" / "leads" / f"discovery_{run_id}.jsonl")
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     target_indexes: dict[str, list[tuple[CorpusSpec, Any, list[LexemeRow]]]] = {m: [] for m in args.models}

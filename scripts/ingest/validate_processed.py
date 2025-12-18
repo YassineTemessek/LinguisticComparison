@@ -6,9 +6,9 @@ Default behavior is CI-friendly:
   - validation fails only on malformed/invalid rows in files that exist
 
 Usage:
-  python OpenAI/scripts/validate_processed.py --all
-  python OpenAI/scripts/validate_processed.py data/processed/arabic/quran_lemmas_enriched.jsonl
-  python OpenAI/scripts/validate_processed.py --require-files --all
+  python scripts/ingest/validate_processed.py --all
+  python scripts/ingest/validate_processed.py data/processed/arabic/quran_lemmas_enriched.jsonl
+  python scripts/ingest/validate_processed.py --require-files --all
 """
 
 from __future__ import annotations

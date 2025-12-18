@@ -9,20 +9,20 @@ LV3 is “discovery-first”: it surfaces candidates for human review; it does n
 ## What You Get
 
 - Canonical, machine-readable lexeme tables under `data/processed/` (JSONL contract).
-- Discovery outputs under `Gemini/output/` (ranked leads) and `OpenAI/output/` (manifests/caches/previews).
+- Discovery outputs under `outputs/` (ranked leads, manifests, caches, previews).
 - Validation tooling to catch broken rows early.
 
 ## Repo Policy (Important)
 
 - Large datasets live under `data/raw/` and are **not committed** by default.
-- Generated outputs under `data/processed/`, `OpenAI/output/`, and `Gemini/output/` are **not committed** by default.
+- Generated outputs under `data/processed/` and `outputs/` are **not committed** by default.
 
 If you want to use prebuilt `data/processed/` outputs without rebuilding locally, see `docs/RELEASE_ASSETS.md` (Release zip + temporary Google Drive mirror).
 
 ## Layout
 
-- `OpenAI/`: OpenAI-side scripts + local outputs
-- `Gemini/`: Gemini-side scripts + local outputs
+- `scripts/`: runnable pipeline entrypoints (ingest + discovery)
+- `outputs/`: local run artifacts (ignored by default)
 - `data/`: local datasets (ignored by default) and processed outputs docs (`data/README.md`, `data/processed/README.md`)
 - `resources/`: tracked reference assets (small, versioned)
 - `src/`: reusable code (LV3 discovery modules live here)
@@ -47,13 +47,13 @@ Stages are treated as **free text** (e.g., `old`, `middle`, `modern`, `classical
 
 2) Put datasets under `data/raw/` (see `data/README.md`).
 
-3) Build/refresh processed tables (writes a manifest under `OpenAI/output/manifests/`):
+3) Build/refresh processed tables (writes a manifest under `outputs/manifests/`):
 
-- `python "OpenAI/scripts/run_ingest_all.py"`
+- `python "scripts/ingest/run_ingest_all.py"`
 
 4) Validate canonical processed outputs:
 
-- `python "OpenAI/scripts/validate_processed.py" --all --require-files`
+- `python "scripts/ingest/validate_processed.py" --all --require-files`
 
 5) Run discovery retrieval (ranked leads):
 
@@ -66,13 +66,13 @@ Where `sonar_lang` is a SONAR code like `arb_Arab`, `eng_Latn`, `grc_Grek`. If o
 Example (small/sample run using tracked samples):
 
 ```bash
-python "Gemini/scripts/run_discovery_retrieval.py" \
+python "scripts/discovery/run_discovery_retrieval.py" \
   --source ara@modern@arb_Arab="resources/samples/processed/Arabic-English_Wiktionary_dictionary_stardict_filtered_sample.jsonl" \
   --target eng@modern@eng_Latn="resources/samples/processed/english_ipa_merged_pos_sample.jsonl" \
   --models sonar canine --topk 200 --max-out 200 --limit 200
 ```
 
-Outputs are written to `Gemini/output/leads/` and embeddings/index caches to `OpenAI/output/`.
+Outputs are written to `outputs/leads/` and embeddings/index caches to `outputs/`.
 By default the script also adds a `hybrid` section per lead with component scores and a `combined_score` for rough ranking.
 
 ## Contributing
@@ -83,7 +83,7 @@ See `CONTRIBUTING.md`.
 
 The classic LV3 scorer (orthography vs IPA sound scoring) remains available:
 
-- `python "Gemini/scripts/run_full_matching_pipeline.py"`
+- `python "scripts/discovery/run_full_matching_pipeline.py"`
 
 ## What this repo is (LV3)
 

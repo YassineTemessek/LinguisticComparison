@@ -7,4 +7,4 @@
 
 LV3 discovery entrypoint:
 
-- `Gemini/scripts/run_discovery_retrieval.py` (SONAR + CANINE)
+- `scripts/discovery/run_discovery_retrieval.py` (SONAR + CANINE)

@@ -5,5 +5,5 @@
 Current status:
 
 - `src/ingest/*_stub.py`: language ingest stubs/plans (not the active pipeline).
-- The active ingestion pipeline lives under `OpenAI/scripts/`.
+- The active ingestion pipeline lives under `scripts/ingest/`.
 - LV3 discovery retrieval modules live under `src/lv3/` (SONAR + CANINE + indexing helpers).

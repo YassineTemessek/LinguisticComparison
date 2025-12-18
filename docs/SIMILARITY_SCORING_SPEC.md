@@ -24,7 +24,7 @@ This LV3 repo is **discovery-first**: it ranks and surfaces candidates for human
   - Concept registry (Tier A/B/C).
   - Anchor tables (e.g., Latin anchors) and scaffolds.
 - `data/` (local, git‑ignored): raw dumps and generated processed tables.
-- `OpenAI/output/` and `Gemini/output/` (local, git‑ignored): run artifacts, previews, candidate lists.
+- `outputs/` and `outputs/` (local, git‑ignored): run artifacts, previews, candidate lists.
 
 ## Core languages (LV3 v1)
 
@@ -67,7 +67,7 @@ In practice LV3 uses embedding retrieval to generate *candidates*, then applies 
 
 Entry point:
 
-- `Gemini/scripts/run_discovery_retrieval.py`
+- `scripts/discovery/run_discovery_retrieval.py`
 
 ### Hybrid scoring (after retrieval)
 
@@ -125,7 +125,7 @@ Default (v1) is a weighted blend:
 
 Weights should be configurable per run (and may differ by language/script coverage).
 
-## Output artifacts (OpenAI/output/, Gemini/output/)
+## Output artifacts (outputs/, outputs/)
 
 The default “product” of LV3 is a set of ranked candidate lists plus QA/KPI summaries.
 
@@ -139,9 +139,9 @@ Minimum useful artifacts:
 
 The pipeline is designed to be runnable end‑to‑end from a clean checkout + local datasets:
 
-- Ingest: `python "OpenAI/scripts/run_ingest_all.py"`
-- Matching: `python "Gemini/scripts/run_full_matching_pipeline.py"`
-- Discovery retrieval: `python "Gemini/scripts/run_discovery_retrieval.py" ...`
+- Ingest: `python "scripts/ingest/run_ingest_all.py"`
+- Matching: `python "scripts/discovery/run_full_matching_pipeline.py"`
+- Discovery retrieval: `python "scripts/discovery/run_discovery_retrieval.py" ...`
 
 Each run should record:
 
