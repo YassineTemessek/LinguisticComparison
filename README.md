@@ -75,6 +75,10 @@ python "Gemini/scripts/run_discovery_retrieval.py" \
 Outputs are written to `Gemini/output/leads/` and embeddings/index caches to `OpenAI/output/`.
 By default the script also adds a `hybrid` section per lead with component scores and a `combined_score` for rough ranking.
 
+## Contributing
+
+See `CONTRIBUTING.md`.
+
 ## Legacy (Classic Scoring Pipeline)
 
 The classic LV3 scorer (orthography vs IPA sound scoring) remains available:
