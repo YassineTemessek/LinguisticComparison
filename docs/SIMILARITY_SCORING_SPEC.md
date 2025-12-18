@@ -2,11 +2,19 @@
 
 This repository (LV3) is a **similarity scoring engine + dataset registry + report outputs**.
 
-Goal: for a shared list of **essential concepts** (Tier A/B/C), compare **Arabic (and Arabic-related languages)** against selected **Indo‑European languages** and produce:
+Goal: compare **Arabic (and Arabic-related languages)** against selected **Indo‑European languages** (and more) and produce ranked candidate matches for human review.
 
-- `orthography_score` (shape / spelling / consonantal skeleton echoes)
-- `sound_score` (IPA / phonetic similarity)
-- `combined_score` (a weighted combination for ranking)
+LV3 supports two discovery strategies:
+
+1) **Embedding-first retrieval (recommended):**
+   - `sonar_score` (multilingual semantic similarity; raw script)
+   - `canine_score` (character/form similarity; raw Unicode)
+   - Category labels for triage (`strong_union`, `semantic_only`, `form_only`)
+
+2) **Classic similarity scoring (legacy / secondary signal):**
+   - `orthography_score` (shape / spelling / consonantal skeleton echoes)
+   - `sound_score` (IPA / phonetic similarity)
+   - `combined_score` (a weighted combination for ranking)
 
 This LV3 repo is **discovery-first**: it ranks and surfaces candidates for human review. It does **not** attempt to prove historical directionality. The deeper “language history” thesis lives in the separate LV4 workspace.
 
@@ -47,6 +55,23 @@ The matcher should only depend on these *canonical outputs* (not intermediate sc
 ## Similarity scoring model (LV3)
 
 We always compute **separate component scores**, then a combined score.
+
+## Embedding-first retrieval (SONAR + CANINE)
+
+This is the primary LV3 discovery mode.
+
+- **SONAR** provides multilingual sentence/word embeddings; similarity is cosine/inner-product over L2-normalized vectors.
+- **CANINE** provides character-level embeddings over raw Unicode strings; similarity is cosine/inner-product over L2-normalized vectors.
+
+In practice LV3 uses embedding retrieval to generate *candidates* and writes JSONL leads for human review.
+
+Entry point:
+
+- `Gemini/scripts/run_discovery_retrieval.py`
+
+Corpus identity:
+
+- LV3 treats `lang` and `stage` as **free text** labels (e.g., `eng@old`, `eng@modern`, `grc@attic`).
 
 ### 1) `orthography_score` (shape)
 
@@ -96,7 +121,7 @@ The default “product” of LV3 is a set of ranked candidate lists plus QA/KPI 
 
 Minimum useful artifacts:
 
-- “leads” JSONL (top candidates per concept, with component scores + provenance)
+- “leads” JSONL (ranked candidates with retrieval/scoring signals + provenance)
 - coverage/KPI report (how many concepts have usable lemmas/IPA per language)
 - small previews (CSV/Markdown) for human review
 
@@ -106,6 +131,7 @@ The pipeline is designed to be runnable end‑to‑end from a clean checkout + l
 
 - Ingest: `python "OpenAI/scripts/run_ingest_all.py"`
 - Matching: `python "Gemini/scripts/run_full_matching_pipeline.py"`
+- Discovery retrieval: `python "Gemini/scripts/run_discovery_retrieval.py" ...`
 
 Each run should record:
 

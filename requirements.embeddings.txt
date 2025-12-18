@@ -1,0 +1,23 @@
+# Optional LV3 discovery dependencies (SONAR + CANINE + ANN indexing).
+#
+# Install (recommended in a venv):
+#   python -m pip install -r requirements.embeddings.txt
+#
+# Notes:
+# - This file is intentionally separate from `requirements.txt` so CI and basic
+#   ingest/validation stay lightweight.
+# - SONAR will download model weights on first run (see `Gemini/scripts/run_discovery_retrieval.py`).
+
+# Core numeric stack
+numpy>=2.2,<3
+
+# ANN index (cosine / inner product)
+faiss-cpu>=1.8,<2
+
+# CANINE (character-level embeddings)
+torch>=2.2,<3
+transformers>=4.45,<5
+
+# Meta SONAR (sentence embeddings)
+sonar>=0.4,<1
+fairseq2>=0.5,<1

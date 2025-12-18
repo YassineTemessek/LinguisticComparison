@@ -1,6 +1,7 @@
 # Core runtime dependencies (minimal, flexible ranges)
 #
 # If you want a fully reproducible environment, use `requirements.lock.txt` instead.
+# For embedding-first discovery (Meta SONAR + CANINE), install `requirements.embeddings.txt`.
 #
 # Install:
 #   python -m pip install -r requirements.txt
@@ -12,4 +13,3 @@ numpy>=2.2,<3
 # Optional visualization / previews (used by `OpenAI/scripts/match_preview.py`)
 matplotlib>=3.10,<4
 seaborn>=0.13,<0.14
-
