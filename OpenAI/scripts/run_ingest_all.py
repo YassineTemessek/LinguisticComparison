@@ -1,5 +1,5 @@
 """
-Orchestrator to run Codex-side ingestion scripts (not src stubs).
+Orchestrator to run repository ingestion scripts (not `src/` stubs).
 This is a thin runner; add/remove scripts as they stabilize.
 """
 
@@ -16,9 +16,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
-CODEX_DIR = Path(__file__).resolve().parents[1]
-REPO_ROOT = CODEX_DIR.parent
-SCRIPTS_DIR = CODEX_DIR / "scripts"
+OPENAI_DIR = Path(__file__).resolve().parents[1]
+REPO_ROOT = OPENAI_DIR.parent
+SCRIPTS_DIR = OPENAI_DIR / "scripts"
 
 CANONICAL_OUTPUTS: tuple[Path, ...] = (
     Path("data/processed/arabic/quran_lemmas_enriched.jsonl"),

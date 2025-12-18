@@ -7,7 +7,6 @@
 # - This file is intentionally separate from `requirements.txt` so CI and basic
 #   ingest/validation stay lightweight.
 # - SONAR will download model weights on first run (see `Gemini/scripts/run_discovery_retrieval.py`).
-# - On Android/Termux, heavy ML wheels may be unavailable; use a desktop if installs fail.
 
 # Core numeric stack
 numpy>=2.2,<3
