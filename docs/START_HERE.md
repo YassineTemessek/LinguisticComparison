@@ -38,6 +38,12 @@ LV3’s recommended mode is embedding-first retrieval:
 - **SONAR**: multilingual semantic retrieval (raw script)
 - **CANINE**: multilingual character/form retrieval (raw Unicode)
 
+After retrieval, LV3 applies **hybrid scoring** to the retrieved pairs (rough, iterative):
+
+- orthography signal (n-grams + string ratio; prefers `translit` when available)
+- sound signal (IPA when available)
+- consonant skeleton signal
+
 Stages are treated as **free text** and can be used to split corpora (e.g., `eng@old`, `eng@middle`, `eng@modern`).
 
 Corpus spec format:

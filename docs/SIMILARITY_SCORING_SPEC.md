@@ -63,11 +63,21 @@ This is the primary LV3 discovery mode.
 - **SONAR** provides multilingual sentence/word embeddings; similarity is cosine/inner-product over L2-normalized vectors.
 - **CANINE** provides character-level embeddings over raw Unicode strings; similarity is cosine/inner-product over L2-normalized vectors.
 
-In practice LV3 uses embedding retrieval to generate *candidates* and writes JSONL leads for human review.
+In practice LV3 uses embedding retrieval to generate *candidates*, then applies a lightweight **hybrid scoring** pass on the retrieved pairs to produce additional component scores and a rough `combined_score` for ranking/inspection.
 
 Entry point:
 
 - `Gemini/scripts/run_discovery_retrieval.py`
+
+### Hybrid scoring (after retrieval)
+
+Hybrid scoring is intentionally simple (LV3 “what results look like” iteration):
+
+- `orthography`: character n-gram overlap + string ratio (prefers `translit` when available)
+- `sound`: IPA similarity when present (`ipa`/`ipa_raw`)
+- `skeleton`: consonant skeleton similarity (derived from `ipa`/`translit`/`lemma`)
+
+The script produces `hybrid.combined_score` by a weighted average of available signals, including SONAR/CANINE retrieval scores.
 
 Corpus identity:
 

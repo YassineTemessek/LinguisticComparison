@@ -30,10 +30,11 @@ If you want to use prebuilt `data/processed/` outputs without rebuilding locally
 
 ## Quickstart (Windows / PowerShell)
 
-LV3’s recommended discovery mode is embedding-first retrieval:
+LV3’s recommended discovery mode is:
 
 - **Meta SONAR**: multilingual semantic retrieval (raw script)
 - **CANINE**: character-level form retrieval (raw Unicode)
+- **Hybrid scoring (LV3)**: after retrieval, compute additional rough scores (orthography / IPA / skeleton) on the retrieved pairs
 
 Stages are treated as **free text** (e.g., `old`, `middle`, `modern`, `classical`, `attic`, …), and are included in outputs for review and filtering.
 
@@ -72,6 +73,7 @@ python "Gemini/scripts/run_discovery_retrieval.py" \
 ```
 
 Outputs are written to `Gemini/output/leads/` and embeddings/index caches to `OpenAI/output/`.
+By default the script also adds a `hybrid` section per lead with component scores and a `combined_score` for rough ranking.
 
 ## Legacy (Classic Scoring Pipeline)
 

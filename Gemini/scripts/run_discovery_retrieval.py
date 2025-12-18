@@ -25,6 +25,7 @@ import sys
 sys.path.insert(0, str(SRC_DIR))
 
 from lv3.discovery.embeddings import CanineConfig, CanineEmbedder, SonarConfig, SonarEmbedder  # noqa: E402
+from lv3.discovery.hybrid_scoring import HybridWeights, compute_hybrid  # noqa: E402
 from lv3.discovery.index import FaissIndex, build_flat_ip  # noqa: E402
 from lv3.discovery.jsonl import LexemeRow, read_jsonl_rows, write_jsonl  # noqa: E402
 from lv3.discovery.lang import resolve_sonar_lang  # noqa: E402
@@ -186,6 +187,12 @@ def main() -> int:
     parser.add_argument("--sonar-tokenizer", type=str, default="text_sonar_basic_encoder")
     parser.add_argument("--canine-model", type=str, default="google/canine-c")
     parser.add_argument("--canine-pooling", type=str, default="mean", choices=["mean", "cls"])
+    parser.add_argument("--no-hybrid", action="store_true", help="Disable heuristic scoring after retrieval.")
+    parser.add_argument("--w-sonar", type=float, default=HybridWeights.sonar)
+    parser.add_argument("--w-canine", type=float, default=HybridWeights.canine)
+    parser.add_argument("--w-orth", type=float, default=HybridWeights.orthography)
+    parser.add_argument("--w-sound", type=float, default=HybridWeights.sound)
+    parser.add_argument("--w-skeleton", type=float, default=HybridWeights.skeleton)
     parser.add_argument("--output", type=Path, default=None, help="Override output JSONL path.")
     args = parser.parse_args()
 
@@ -197,6 +204,13 @@ def main() -> int:
 
     sonar_cfg = SonarConfig(encoder=args.sonar_encoder, tokenizer=args.sonar_tokenizer)
     canine_cfg = CanineConfig(model_id=args.canine_model, pooling=args.canine_pooling)
+    hybrid_weights = HybridWeights(
+        sonar=float(args.w_sonar),
+        canine=float(args.w_canine),
+        orthography=float(args.w_orth),
+        sound=float(args.w_sound),
+        skeleton=float(args.w_skeleton),
+    )
 
     run_id = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
     out_path = args.output or (REPO_ROOT / "Gemini" / "output" / "leads" / f"discovery_{run_id}.jsonl")
@@ -275,6 +289,18 @@ def main() -> int:
                                     },
                                     "scores": {},
                                     "retrieved_by": [],
+                                    "_source_fields": {
+                                        "lemma": src_row.data.get("lemma"),
+                                        "translit": src_row.data.get("translit"),
+                                        "ipa": src_row.data.get("ipa"),
+                                        "ipa_raw": src_row.data.get("ipa_raw"),
+                                    },
+                                    "_target_fields": {
+                                        "lemma": tgt_row.data.get("lemma"),
+                                        "translit": tgt_row.data.get("translit"),
+                                        "ipa": tgt_row.data.get("ipa"),
+                                        "ipa_raw": tgt_row.data.get("ipa_raw"),
+                                    },
                                 }
                                 candidates[key] = entry
                             entry["scores"][model] = float(score)
@@ -294,6 +320,15 @@ def main() -> int:
                     else:
                         entry["category"] = "unclassified"
 
+                    if not args.no_hybrid:
+                        entry["hybrid"] = compute_hybrid(
+                            source=entry.get("_source_fields", {}),
+                            target=entry.get("_target_fields", {}),
+                            sonar=entry["scores"].get("sonar"),
+                            canine=entry["scores"].get("canine"),
+                            weights=hybrid_weights,
+                        )
+
                     entry["provenance"] = {
                         "lv": "LV3",
                         "mode": "discovery_retrieval",
@@ -303,9 +338,11 @@ def main() -> int:
                     }
 
                 def sort_key(e: dict[str, Any]):
-                    # Prefer union leads, then higher SONAR, then higher CANINE.
                     scores = e.get("scores", {})
+                    hybrid = e.get("hybrid") or {}
+                    combined = hybrid.get("combined_score")
                     return (
+                        float(combined) if combined is not None else -1e9,
                         2 if e.get("category") == "strong_union" else 1,
                         float(scores.get("sonar", -1e9)),
                         float(scores.get("canine", -1e9)),
@@ -313,6 +350,8 @@ def main() -> int:
 
                 ranked = sorted(candidates.values(), key=sort_key, reverse=True)[:max_out]
                 for row in ranked:
+                    row.pop("_source_fields", None)
+                    row.pop("_target_fields", None)
                     out_fh.write(json.dumps(row, ensure_ascii=False) + "\n")
 
     print(f"Wrote discovery leads: {out_path}")
