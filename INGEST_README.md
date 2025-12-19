@@ -1,17 +1,21 @@
 # Ingest documentation
 
-Ingest and pipeline documentation lives in `docs/INGEST.md`.
+LV3 does not own ingest anymore.
+
+Raw → processed canonical datasets live in LV0:
+
+- `https://github.com/YassineTemessek/LinguisticDataCore-LV0`
+
+See `docs/LV0_DATA_CORE.md`.
 
 ## Quick commands
 
-- Ingest (all): `python "scripts/ingest/run_ingest_all.py"`
-- Ingest (skipping missing inputs): `python "scripts/ingest/run_ingest_all.py" --skip-missing-inputs`
-- Validate canonical outputs: `python "scripts/ingest/validate_processed.py" --all`
+- Fetch LV0 release bundles: `ldc fetch --release latest --dest .`
 
 ## Where outputs go
 
 - Canonical processed outputs: `data/processed/` (local, not committed by default)
-- Run artifacts (manifests, caches): `outputs/` (local, not committed by default)
+- Run artifacts (leads, caches): `outputs/` (local, not committed by default)
 
 ## Next step after ingest
 

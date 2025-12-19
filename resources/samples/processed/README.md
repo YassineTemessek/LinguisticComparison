@@ -8,19 +8,15 @@ This folder contains **small JSONL samples** of canonical processed outputs so c
 - Run small-scale matching experiments
 - Review typical row shapes without downloading large datasets
 
-## Build/update samples
+## How to update samples
 
-From repo root:
+Samples should be produced in LV0 (data core) and then copied into this folder when they change.
 
-`python "scripts/ingest/build_processed_samples.py" --all --rows 1000`
+LV0 repo:
 
-This writes:
-
-- `resources/samples/processed/*_sample.jsonl`
-- `resources/samples/processed/manifest.json`
+- `https://github.com/YassineTemessek/LinguisticDataCore-LV0`
 
 ## Notes
 
 - Samples are meant for development/QA only; they are not representative of full coverage.
 - If you plan to share full datasets publicly, confirm source licenses first.
-

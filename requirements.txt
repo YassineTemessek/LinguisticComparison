@@ -10,6 +10,6 @@ pandas>=2.3,<3
 pyarrow>=22,<23
 numpy>=2.2,<3
 
-# Optional visualization / previews (used by `scripts/ingest/match_preview.py`)
+# Optional visualization / previews
 matplotlib>=3.10,<4
 seaborn>=0.13,<0.14

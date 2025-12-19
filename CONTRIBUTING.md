@@ -24,8 +24,7 @@ Large datasets under `data/raw/` and generated artifacts under `data/processed/`
 
 ## Run + validate
 
-- Ingest: `python "scripts/ingest/run_ingest_all.py"`
-- Validate: `python "scripts/ingest/validate_processed.py" --all`
+- Get/build processed data via LV0: see `docs/LV0_DATA_CORE.md`
 - Discover + score (SONAR/CANINE retrieval + hybrid scoring): `python "scripts/discovery/run_discovery_retrieval.py" --source ... --target ...`
 - Legacy matcher (classic scoring): `python "scripts/discovery/run_full_matching_pipeline.py"`
 
@@ -49,6 +48,6 @@ python "scripts/discovery/run_discovery_retrieval.py" \
 
 ## Before opening a PR
 
-- Ensure CI passes (compile + validation + ingest smoke).
+- Ensure CI passes (compile).
 - Update docs when you change file contracts or CLI behavior.
 - Keep generated data out of git; add/update docs instead (`data/README.md`, `outputs/README.md`, `outputs/README.md`).

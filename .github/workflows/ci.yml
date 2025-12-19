@@ -21,14 +21,4 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Compile
         run: |
-          python -m compileall scripts/ingest scripts/discovery src
-      - name: Validate (skip missing data)
-        env:
-          PYTHONUTF8: "1"
-        run: |
-          python scripts/ingest/validate_processed.py --all
-      - name: Ingest smoke (skips missing inputs)
-        env:
-          PYTHONUTF8: "1"
-        run: |
-          python scripts/ingest/run_ingest_all.py --skip-missing-inputs --no-count-lines --no-write-manifest
+          python -m compileall scripts/discovery src

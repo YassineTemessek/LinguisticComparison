@@ -1,56 +1,17 @@
-# Ingest & pipeline
+# Data ingest (LV0) and LV3 pipeline
 
-This repo separates **code**, **tracked references**, and **local datasets**:
+LV3 no longer owns ingest.
 
-- `scripts/`: runnable pipeline entrypoints (ingest + discovery).
-- `outputs/`: local run artifacts (ignored by default).
-- `src/`: reusable code and stubs (future: shared library).
-- `resources/`: tracked, lightweight reference assets (concept registry, anchors, small reference tables).
-- `data/`: local datasets and generated tables (**not committed by default**; see `data/README.md`).
+Raw → processed canonical datasets live in LV0:
 
-## What "ingest" means here
+- `https://github.com/YassineTemessek/LinguisticDataCore-LV0`
 
-Ingest converts raw linguistic sources under `data/raw/` into consistent JSONL/CSV tables under `data/processed/` that downstream matchers can consume.
+See `docs/LV0_DATA_CORE.md` for how to fetch/build processed data.
 
-Canonical outputs are documented in `data/processed/README.md`.
+## LV3 pipeline (discovery)
 
-## What "matching" means here (LV3)
+LV3 consumes canonical processed tables (from LV0) and runs:
 
-Matching computes **separate component scores** (orthography vs sound) and a combined score to rank cross-language candidates per concept.
-
-See `docs/SIMILARITY_SCORING_SPEC.md`.
-
-## Run the pipeline (recommended)
-
-1) Put datasets under `data/raw/` (see `data/README.md` for expected structure).
-
-2) Build/refresh processed outputs:
-
-- `python "scripts/ingest/run_ingest_all.py"`
-
-Common options:
-
-- List steps: `python "scripts/ingest/run_ingest_all.py" --list`
-- Run only Arabic: `python "scripts/ingest/run_ingest_all.py" --only arabic`
-- Run only English: `python "scripts/ingest/run_ingest_all.py" --only english`
-- Use an external datasets folder: `python "scripts/ingest/run_ingest_all.py" --resources-dir "C:/AI Projects/Resources"`
-- Produce a run manifest: enabled by default (disable with `--no-write-manifest`)
-
-3) (Optional) Split large English JSONL for chunked matching:
-
-- `python "scripts/ingest/split_processed_jsonl.py" data/processed/english/english_ipa_merged_pos.jsonl --lines 50000`
-
-4) Run discovery / matching:
-
-- Discovery retrieval + hybrid scoring: `python "scripts/discovery/run_discovery_retrieval.py" --source ... --target ...`
-- Legacy matcher: `python "scripts/discovery/run_full_matching_pipeline.py"`
-
-## Validate outputs
-
-- Validate canonical processed outputs (skips missing files): `python "scripts/ingest/validate_processed.py" --all`
-- Fail on missing files too: `python "scripts/ingest/validate_processed.py" --all --require-files`
-
-## Notes
-
-- Some Arabic datasets may live outside the repo on your machine; for the related ingest scripts you can set `LC_RESOURCES_DIR` (e.g., `C:/AI Projects/Resources`) instead of copying files into `data/raw/`.
-- `src/ingest/*_stub.py` are stubs/plans, not the current production ingest path.
+- SONAR/CANINE retrieval (high recall)
+- Hybrid scoring (rough component scores + combined score)
+- Output ranked leads under `outputs/`

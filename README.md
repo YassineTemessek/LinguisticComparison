@@ -47,15 +47,14 @@ Stages are treated as **free text** (e.g., `old`, `middle`, `modern`, `classical
 
 2) Put datasets under `data/raw/` (see `data/README.md`).
 
-3) Build/refresh processed tables (writes a manifest under `outputs/manifests/`):
+3) Get canonical processed data (LV0):
 
-- `python "scripts/ingest/run_ingest_all.py"`
+- Option A (recommended): use LV0 release bundles (fast): install LV0 package and run `ldc fetch ...`
+- Option B: build locally in the LV0 repo (most reproducible): `ldc ingest --all`
 
-4) Validate canonical processed outputs:
+4) Run discovery retrieval (ranked leads):
 
-- `python "scripts/ingest/validate_processed.py" --all --require-files`
-
-5) Run discovery retrieval (ranked leads):
+- `python "scripts/discovery/run_discovery_retrieval.py" ...`
 
 This script expects corpus specs in the format:
 

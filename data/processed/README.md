@@ -53,7 +53,7 @@ For chunked processing (optional), prefer putting splits under:
 
 - `data/processed/_parts/<stem>/...`
 
-Use `scripts/ingest/split_processed_jsonl.py` to generate these without cluttering language folders.
+If you need to split large processed JSONL into parts, do it in LV0 (data core) and keep LV3 focused on discovery/scoring.
 
 ## Folder layout (summary)
 
@@ -66,4 +66,4 @@ Use `scripts/ingest/split_processed_jsonl.py` to generate these without clutteri
 
 - Canonical outputs: stable names (no timestamps), consistent schema, safe to depend on.
 - Intermediate outputs: stage suffixes (`_normalized`, `_enriched`, `_with_pos`) and/or generated folders (`*_parts/`).
-- Previews/checkpoints: should live under `outputs/` or `outputs/`, not `data/processed/`.
+- Previews/checkpoints: should live under `outputs/`, not `data/processed/`.

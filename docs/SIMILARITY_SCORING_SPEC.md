@@ -139,9 +139,9 @@ Minimum useful artifacts:
 
 The pipeline is designed to be runnable end‑to‑end from a clean checkout + local datasets:
 
-- Ingest: `python "scripts/ingest/run_ingest_all.py"`
-- Matching: `python "scripts/discovery/run_full_matching_pipeline.py"`
+- Processed data: build/fetch via LV0 (`docs/LV0_DATA_CORE.md`)
 - Discovery retrieval: `python "scripts/discovery/run_discovery_retrieval.py" ...`
+- Legacy matcher: `python "scripts/discovery/run_full_matching_pipeline.py"`
 
 Each run should record:
 

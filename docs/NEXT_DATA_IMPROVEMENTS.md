@@ -4,10 +4,11 @@ These are the next concrete tasks to improve **data quality and usefulness** (no
 
 ## 1) Rebuild + make validation “green”
 
-Goal: every canonical processed JSONL passes `validate_processed.py` (no missing required fields, no malformed rows).
+Goal: every canonical processed JSONL passes validation (no missing required fields, no malformed rows).
 
-- Rebuild Arabic only (using your external folder): `python "scripts/ingest/run_ingest_all.py" --only arabic --resources-dir "C:/AI Projects/Resources" --require-inputs --fail-fast`
-- Validate: `python "scripts/ingest/validate_processed.py" --all --require-files`
+LV3 no longer owns ingest; these improvements belong in LV0:
+
+- `https://github.com/YassineTemessek/LinguisticDataCore-LV0`
 
 If validation still fails after rebuild, fix the ingest scripts to:
 
@@ -19,7 +20,7 @@ If validation still fails after rebuild, fix the ingest scripts to:
 
 Goal: measure improvements with numbers (coverage, IPA availability, POS availability, duplicates).
 
-Use: `python "scripts/ingest/kpi_processed.py" --all` (writes JSON + CSV under `outputs/`).
+KPI tooling belongs in LV0 (writes JSON + CSV under LV0 `outputs/`).
 
 It should output a CSV/JSON report with:
 
@@ -33,7 +34,7 @@ It should output a CSV/JSON report with:
 
 Goal: reduce obvious noise that pollutes top-ranked candidates.
 
-Improve `scripts/ingest/filter_stardict.py` to better exclude:
+Improve LV0 `scripts/ingest/filter_stardict.py` to better exclude:
 
 - Abbreviations/initialisms
 - Proper names (where detectable)
