@@ -33,3 +33,6 @@ outputs/*
 
 # Python caches
 scripts/discovery/__pycache__/
+
+# Local scratch space (do not commit)
+.scratch/

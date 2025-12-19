@@ -1,4 +1,4 @@
-# Contributing
+# Contributing 🤝
 
 ## Project goal
 
@@ -13,12 +13,13 @@ Stricter “validation/proof” lives in LV4.
 
 ## Data policy
 
-Large datasets under `data/raw/` and generated artifacts under `data/processed/`, `outputs/`, and `outputs/` are intentionally not committed by default.
+Large datasets under `data/raw/` and generated artifacts under `data/processed/` and `outputs/` are intentionally not committed by default.
 
 ## Setup
 
 - Create venv: `python -m venv .venv`
 - Activate (PowerShell): `.\.venv\Scripts\Activate.ps1`
+- Activate (bash/zsh): `source .venv/bin/activate`
 - Install deps: `python -m pip install -r requirements.txt`
 - If you want SONAR/CANINE discovery runs: `python -m pip install -r requirements.embeddings.txt`
 
@@ -50,4 +51,8 @@ python "scripts/discovery/run_discovery_retrieval.py" \
 
 - Ensure CI passes (compile).
 - Update docs when you change file contracts or CLI behavior.
-- Keep generated data out of git; add/update docs instead (`data/README.md`, `outputs/README.md`, `outputs/README.md`).
+- Keep generated data out of git; add/update docs instead (`data/README.md`, `outputs/README.md`).
+
+## Contact
+
+For collaboration: `yassine.temessek@hotmail.com`
