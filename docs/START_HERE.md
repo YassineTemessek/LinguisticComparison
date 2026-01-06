@@ -20,6 +20,22 @@ Full datasets are not committed by default, but small samples are tracked under 
 - Run a quick discovery smoke test on samples:
   - `python "scripts/discovery/run_discovery_retrieval.py" --source ara@modern@arb_Arab="resources/samples/processed/Arabic-English_Wiktionary_dictionary_stardict_filtered_sample.jsonl" --target eng@modern@eng_Latn="resources/samples/processed/english_ipa_merged_pos_sample.jsonl" --models sonar canine --topk 200 --max-out 200 --limit 200`
 
+## Recommended runs (Arabic → Indo‑European)
+
+Replace paths with your LV0 outputs:
+
+- Arabic (classical) vs English (modern):
+  - `python "scripts/discovery/run_discovery_retrieval.py" --pair-id ara_vs_eng_modern --language-group indo_european --source ara@classical="data/processed/arabic/classical/lexemes.jsonl" --target eng@modern="data/processed/english/modern/lexemes.jsonl" --models sonar canine --topk 200 --max-out 200`
+
+- Arabic (classical) vs English (old + middle + modern):
+  - `python "scripts/discovery/run_discovery_retrieval.py" --pair-id ara_vs_eng_all --language-group indo_european --source ara@classical="data/processed/arabic/classical/lexemes.jsonl" --target eng@old="data/processed/english/old/lexemes.jsonl" --target eng@middle="data/processed/english/middle/lexemes.jsonl" --target eng@modern="data/processed/english/modern/lexemes.jsonl" --models sonar canine --topk 200 --max-out 200`
+
+- Arabic (classical) vs Latin:
+  - `python "scripts/discovery/run_discovery_retrieval.py" --pair-id ara_vs_lat --language-group indo_european --source ara@classical="data/processed/arabic/classical/lexemes.jsonl" --target lat@old="data/processed/latin/old/lexemes.jsonl" --models sonar canine --topk 200 --max-out 200`
+
+- Arabic (classical) vs Ancient Greek:
+  - `python "scripts/discovery/run_discovery_retrieval.py" --pair-id ara_vs_grc --language-group indo_european --source ara@classical="data/processed/arabic/classical/lexemes.jsonl" --target grc@old="data/processed/greek/old/lexemes.jsonl" --models sonar canine --topk 200 --max-out 200`
+
 ## Core commands
 
 - Get/build canonical processed outputs: see `docs/LV0_DATA_CORE.md`

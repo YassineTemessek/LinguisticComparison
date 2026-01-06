@@ -193,6 +193,8 @@ def main() -> int:
     parser.add_argument("--w-orth", type=float, default=HybridWeights.orthography)
     parser.add_argument("--w-sound", type=float, default=HybridWeights.sound)
     parser.add_argument("--w-skeleton", type=float, default=HybridWeights.skeleton)
+    parser.add_argument("--pair-id", type=str, default=None, help="Optional run label (e.g., ara_vs_eng_modern).")
+    parser.add_argument("--language-group", type=str, default=None, help="Optional grouping label (e.g., indo_european).")
     parser.add_argument("--output", type=Path, default=None, help="Override output JSONL path.")
     args = parser.parse_args()
 
@@ -273,6 +275,8 @@ def main() -> int:
                             if entry is None:
                                 entry = {
                                     "run_id": run_id,
+                                    "pair_id": args.pair_id,
+                                    "language_group": args.language_group,
                                     "source": {
                                         "id": src_row.lexeme_id,
                                         "row_idx": src_row.row_idx,
@@ -351,6 +355,8 @@ def main() -> int:
                         "models": args.models,
                         "topk_per_target": topk,
                         "max_out_per_source": max_out,
+                        "pair_id": args.pair_id,
+                        "language_group": args.language_group,
                     }
 
                 def sort_key(e: dict[str, Any]):
