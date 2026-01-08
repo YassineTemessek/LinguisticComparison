@@ -9,9 +9,16 @@ Reproducible **discovery pipeline** that produces **ranked cross-language candid
 LV3 is “discovery-first”: results are **not polished/final**, but we still **compare and score** aggressively to see what the outputs look like.
 LV3 does not claim historical directionality.
 
+
+## Role in the stack ??
+
+LV3 compares Arabic 3-letter roots with Indo-European lexemes using orthographic and
+phonetic similarity, then ranks candidate connections for review.
+
 ## Project map 🧭
 
 - LV0 (data core): `https://github.com/YassineTemessek/LinguisticDataCore-LV0`
+- LV1 (Quranic analysis): `https://github.com/YassineTemessek/Quran-s-Words-decoding-LV1`
 - LV0 project ReadMe: `https://github.com/YassineTemessek/LinguisticDataCore-LV0/blob/main/ReadMe.txt`
 - LV2 (Arabic decoding & clustering): `https://github.com/YassineTemessek/Arabic-s-Words-decoding-LV2`
 - LV3 (this repo): `https://github.com/YassineTemessek/LinguisticComparison`
