@@ -5,6 +5,7 @@ This repo (LV3) **does not** own ingest anymore.
 Raw → processed canonical datasets live in the LV0 repo:
 
 - `https://github.com/YassineTemessek/LinguisticDataCore-LV0`
+- LV0 project ReadMe: `https://github.com/YassineTemessek/LinguisticDataCore-LV0/blob/main/ReadMe.txt`
 
 Use LV0 to build or fetch processed data, then run LV3 discovery on top.
 
