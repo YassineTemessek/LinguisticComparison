@@ -5,3 +5,7 @@ These files are a **legacy concept inventory** (v2.5) used earlier as a seed lis
 They are kept for reference/traceability and are **not** the canonical concept registry used by the current pipeline.
 
 Current canonical concepts live under `resources/concepts/` (e.g., `concepts_v3_2_enriched.jsonl`).
+
+
+## Project Status & Progress
+- Project-wide progress log: docs/PROGRESS_LOG.md`n- Raw data flow (Resources -> LV0 -> processed): docs/RAW_DATA_FLOW.md`n

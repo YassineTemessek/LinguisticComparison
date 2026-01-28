@@ -137,3 +137,7 @@ For collaboration: `yassine.temessek@hotmail.com`
 ## Suggested GitHub “About” 📝
 
 Discovery pipeline (LV3): SONAR/CANINE retrieval + hybrid scoring to surface ranked cross-language candidate pairs.
+
+
+## Project Status & Progress
+- Project-wide progress log: docs/PROGRESS_LOG.md`n- Raw data flow (Resources -> LV0 -> processed): docs/RAW_DATA_FLOW.md`n

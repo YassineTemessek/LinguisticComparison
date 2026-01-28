@@ -9,3 +9,7 @@ Canonical files:
 
 Downstream scripts should prefer reading concepts from `resources/concepts/` (not from `data/processed/`).
 
+
+
+## Project Status & Progress
+- Project-wide progress log: docs/PROGRESS_LOG.md`n- Raw data flow (Resources -> LV0 -> processed): docs/RAW_DATA_FLOW.md`n

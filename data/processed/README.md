@@ -67,3 +67,7 @@ If you need to split large processed JSONL into parts, do it in LV0 (data core) 
 - Canonical outputs: stable names (no timestamps), consistent schema, safe to depend on.
 - Intermediate outputs: stage suffixes (`_normalized`, `_enriched`, `_with_pos`) and/or generated folders (`*_parts/`).
 - Previews/checkpoints: should live under `outputs/`, not `data/processed/`.
+
+
+## Project Status & Progress
+- Project-wide progress log: docs/PROGRESS_LOG.md`n- Raw data flow (Resources -> LV0 -> processed): docs/RAW_DATA_FLOW.md`n

@@ -51,3 +51,7 @@ Some small, stable resources are shared via Git and live under `resources/` inst
 - Put downloaded sources under `data/raw/`.
 - Build/fetch canonical processed tables via LV0 (see `docs/LV0_DATA_CORE.md`) to generate/refresh `data/processed/`.
 - LV3 discovery consumes `data/processed/` and `resources/` and writes results under `outputs/`.
+
+
+## Project Status & Progress
+- Project-wide progress log: docs/PROGRESS_LOG.md`n- Raw data flow (Resources -> LV0 -> processed): docs/RAW_DATA_FLOW.md`n

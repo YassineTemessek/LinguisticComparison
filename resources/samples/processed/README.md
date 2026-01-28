@@ -20,3 +20,7 @@ LV0 repo:
 
 - Samples are meant for development/QA only; they are not representative of full coverage.
 - If you plan to share full datasets publicly, confirm source licenses first.
+
+
+## Project Status & Progress
+- Project-wide progress log: docs/PROGRESS_LOG.md`n- Raw data flow (Resources -> LV0 -> processed): docs/RAW_DATA_FLOW.md`n
